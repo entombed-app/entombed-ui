@@ -5,24 +5,27 @@ main {
 
 .window {
   display: grid;
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(5, 1fr);
+  height: 90vh;
+  grid-template-rows: 18% 7% 12% 20% 11% 9% 24%;
+  grid-template-columns: 6% 13% 20% 24% 18% 15% 7%;
+  width: 80vw;
 }
 
 .preview-pane {
   background-color: red;
-  grid-column: 2 / span 3;
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 2;
 }
 
 .countdown-pane {
   background-color: aqua;
-  grid-column: 3 / span 4;
+  grid-column: 4 / span 5;
   grid-row: 1 / span 3;
 }
 
 .executor-pane {
   background-color: purple;
-  grid-column: 4 / span 5;
+  grid-column: 5 / span 7;
   grid-row: 1 / span 5;
 }
 
@@ -34,31 +37,30 @@ main {
 
 .recipient-pane {
   background-color: red;
-  grid-column: 2 / span 3;
+  grid-column: 2 / span 4;
   grid-row: 3 / span 6;
 }
 
 .obit-pane {
   background-color: aqua;
-  grid-column: 3 / span 4;
+  grid-column: 4 / span 5;
   grid-row: 4 / span 8;
 }
 
 .timeline-pane {
   background-color: red;
-  grid-column: 2 / span 3;
+  grid-column: 3 / span 4;
   grid-row: 7 / span 8;
 }
 
 .gallery-pane {
   background-color: purple;
-  grid-column: 4 / span 5;
+  grid-column: 5 / span 6;
   grid-row: 5 / span 8;
 }
 
-
 .placeholder-2 {
   background-color: pink;
-  grid-column: 1 / span 2;
-  grid-row: 4 / span 6;
+  grid-column: 6 / span 8;
+  grid-row: 3 / span 8;
 }
