@@ -8,7 +8,6 @@ html {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  /* position: relative; */
   background: #0e1525;
   overflow: hidden;
 }
@@ -19,6 +18,17 @@ html {
   width: 43vh;
   border-radius: 50%;
   position: relative;
+  margin: 0;
+}
+
+.big-circle {
+  border: 1px solid #ad9976;
+  height: 50vh;
+  width: 50vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .marks {
@@ -34,11 +44,11 @@ html {
   width: 4vh;
   color: #ad9976;
   position: absolute;
-  bottom: 0; 
-  transform-origin: 2vh 20vh;
+  bottom: 4.75vh; 
+  transform-origin: 2vh 25vh;
   text-align: center;
   border: 1px solid #ad9976;
-  border-radius: 30%;
+  /* border-radius: 30%; */
   
 }
 
