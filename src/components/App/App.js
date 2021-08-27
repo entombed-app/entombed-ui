@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import { CountdownPane } from "../CountdownPane/CountdownPane"
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             </div>
           </section>
         </Route>
+        <Route exact path="/countdown" render={() => <CountdownPane />}/>
       </Switch>
     </main>
   );

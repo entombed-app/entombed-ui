@@ -1,0 +1,32 @@
+.sundial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  border: 1px solid black;
+  height: 43vh;
+  width: 43vh;
+  border-radius: 50%;
+  position: relative;
+}
+
+.marks {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.mark {
+  height: 20vh;
+  width: 4vh;
+  position: absolute;
+  bottom: 0;
+  transform-origin: 2vh 20vh;
+  text-align: center;
+  border: 1px solid black;
+}
+
