@@ -10,66 +10,73 @@ h1 {
 
 .window {
   display: grid;
-  height: 90vh;
+  height: 85%;
   grid-template-rows: 18% 7% 12% 20% 11% 9% 24%;
   grid-template-columns: 6% 13% 20% 24% 18% 15% 7%;
-  width: 80vw;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* width: 88%; */
 }
 
 .preview-pane {
   background-color: red;
+  clip-path: polygon(14% 29%, 68% 5%, 75% 100%, 23% 100%);
   grid-column: 2 / span 2;
   grid-row: 1 / span 1;
 }
 
 .countdown-pane {
   background-color: aqua;
+  clip-path: circle(109.4% at 50% 86%);
   grid-column: 4 / span 1;
   grid-row: 1 / span 2;
 }
 
 .executor-pane {
   background-color: purple;
+  clip-path: polygon(42% 6%, 101% 14%, 75% 88%, 28% 85%);
   grid-column: 5 / span 2;
-  grid-row: 1 / span 5;
+  grid-row: 1 / span 4;
 }
 
 .placeholder-1 {
-  /* background-color: yellow; */
-  border-bottom: 74vh solid yellow;
-  border-right: 100px solid transparent;
+  background-color: yellow;
+  clip-path: polygon(0 0, 0% 100%,91% 100%);
   grid-column: 1 / span 2;
   grid-row: 2 / span 8;
-  width: 0;
-  height: 0;
 }
 
 .recipient-pane {
   background-color: red;
+  clip-path: polygon(21% 0%, 68% 0, 89% 99%, 51% 95%);
   grid-column: 2 / span 2;
   grid-row: 3 / span 3;
 }
 
 .obit-pane {
   background-color: aqua;
+  clip-path: polygon(7% 6%, 98% 0, 71% 100%, 28% 100%);
   grid-column: 4 / span 1;
   grid-row: 4 / span 4;
 }
 
 .timeline-pane {
   background-color: red;
+  clip-path: polygon(34% 3%, 86% 7%, 98% 100%, 56% 81%);
   grid-column: 3 / span 1;
   grid-row: 7 / span 8;
 }
 
 .gallery-pane {
   background-color: purple;
+  clip-path: polygon(24% 0, 67% 3%, 34% 100%, 8% 100%);
   grid-column: 5 / span 2;
   grid-row: 5 / span 3;
 }
 
 .placeholder-2 {
-  background-color: green;
+  background-color: palevioletred;
+  clip-path: polygon(100% 0, 20% 100%, 100% 100%);
   grid-column: 6 / span 2;
   grid-row: 3 / span 5;
 }
