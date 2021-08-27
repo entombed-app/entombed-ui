@@ -6,6 +6,9 @@ export const CountdownPane = () => {
     <section className="sundial">
       <div className="big-circle">
         <div className="circle">
+        <div className="profile">
+          <img className="prof-photo" src="https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg" />
+        </div>
           <div className="marks">
             <div className="wedge"></div>
             <div className="mark">I</div>

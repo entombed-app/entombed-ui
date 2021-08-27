@@ -19,6 +19,9 @@ html {
   border-radius: 50%;
   position: relative;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .big-circle {
@@ -48,8 +51,7 @@ html {
   transform-origin: 2vh 25vh;
   text-align: center;
   border: 1px solid #ad9976;
-  /* border-radius: 30%; */
-  
+  border-top: 0;
 }
 
 .wedge {
@@ -58,6 +60,25 @@ html {
   background-color: #ad9976;
   clip-path: polygon(0 0, 0 100%, 58% 0);
   border-radius: 0;
+}
+
+.profile {
+  margin-right: 20vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: 9vh;
+}
+
+.prof-photo {
+  border-radius: 50%;
+  height: 11vh;
+  width: 11vh;
+  position: absolute;
+  object-fit: cover;
+  overflow: hidden;
+  border: 1px solid #4d7880;
+  z-index: 2;
 }
 
 .mark:nth-child(1) {
