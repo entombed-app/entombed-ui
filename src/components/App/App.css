@@ -3,6 +3,10 @@ main {
   width: 100vw;
 }
 
+h1 {
+  color: #ad9976;
+}
+
 .window {
   display: grid;
   height: 90vh;

@@ -6,6 +6,7 @@ export const CountdownPane = () => {
     <section className="sundial">
       <div className="circle">
         <div className="marks">
+          <div className="wedge"></div>
           <div className="mark">I</div>
           <div className="mark">II</div>
           <div className="mark">III</div>

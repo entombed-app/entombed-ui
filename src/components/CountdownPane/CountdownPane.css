@@ -1,11 +1,20 @@
+html {
+  background-color: #0e1525;
+}
+
 .sundial {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
+  /* position: relative; */
+  background: #0e1525;
+  overflow: hidden;
 }
 
 .circle {
-  border: 1px solid black;
+  border: 1px solid #ad9976;
   height: 43vh;
   width: 43vh;
   border-radius: 50%;
@@ -20,60 +29,75 @@
   left: 50%;
 }
 
-.mark {
+.mark, .wedge {
   height: 20vh;
   width: 4vh;
+  color: #ad9976;
   position: absolute;
-  bottom: 0;
+  bottom: 0; 
   transform-origin: 2vh 20vh;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid #ad9976;
+  border-radius: 30%;
+  
+}
+
+.wedge {
+  height: 0vh;
+  border-top: 20vh solid #ad9976;
+  background-color: #ad9976;
+  clip-path: polygon(0 0, 0 100%, 58% 0);
+  border-radius: 0;
 }
 
 .mark:nth-child(1) {
-  transform: translateX(-2vh) rotate(30deg);
+  transform: translateX(-2vh) rotate(0deg);
 }
 
 .mark:nth-child(2) {
-  transform: translateX(-2vh) rotate(60deg);
+  transform: translateX(-2vh) rotate(30deg);
 }
 
 .mark:nth-child(3) {
-  transform: translateX(-2vh) rotate(90deg);
+  transform: translateX(-2vh) rotate(60deg);
 }
 
 .mark:nth-child(4) {
-  transform: translateX(-2vh) rotate(120deg);
+  transform: translateX(-2vh) rotate(90deg);
 }
 
 .mark:nth-child(5) {
-  transform: translateX(-2vh) rotate(150deg);
+  transform: translateX(-2vh) rotate(120deg);
 }
 
 .mark:nth-child(6) {
-  transform: translateX(-2vh) rotate(180deg);
+  transform: translateX(-2vh) rotate(150deg);
 }
 
 .mark:nth-child(7) {
-  transform: translateX(-2vh) rotate(210deg);
+  transform: translateX(-2vh) rotate(180deg);
 }
 
 .mark:nth-child(8) {
-  transform: translateX(-2vh) rotate(240deg);
+  transform: translateX(-2vh) rotate(210deg);
 }
 
 .mark:nth-child(9) {
-  transform: translateX(-2vh) rotate(270deg);
+  transform: translateX(-2vh) rotate(240deg);
 }
 
 .mark:nth-child(10) {
-  transform: translateX(-2vh) rotate(300deg);
+  transform: translateX(-2vh) rotate(270deg);
 }
 
 .mark:nth-child(11) {
-  transform: translateX(-2vh) rotate(330deg);
+  transform: translateX(-2vh) rotate(300deg);
 }
 
 .mark:nth-child(12) {
+  transform: translateX(-2vh) rotate(330deg);
+}
+
+.mark:nth-child(13) {
   transform: translateX(-2vh) rotate(360deg);
 }
