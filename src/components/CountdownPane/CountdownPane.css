@@ -30,3 +30,50 @@
   border: 1px solid black;
 }
 
+.mark:nth-child(1) {
+  transform: translateX(-2vh) rotate(30deg);
+}
+
+.mark:nth-child(2) {
+  transform: translateX(-2vh) rotate(60deg);
+}
+
+.mark:nth-child(3) {
+  transform: translateX(-2vh) rotate(90deg);
+}
+
+.mark:nth-child(4) {
+  transform: translateX(-2vh) rotate(120deg);
+}
+
+.mark:nth-child(5) {
+  transform: translateX(-2vh) rotate(150deg);
+}
+
+.mark:nth-child(6) {
+  transform: translateX(-2vh) rotate(180deg);
+}
+
+.mark:nth-child(7) {
+  transform: translateX(-2vh) rotate(210deg);
+}
+
+.mark:nth-child(8) {
+  transform: translateX(-2vh) rotate(240deg);
+}
+
+.mark:nth-child(9) {
+  transform: translateX(-2vh) rotate(270deg);
+}
+
+.mark:nth-child(10) {
+  transform: translateX(-2vh) rotate(300deg);
+}
+
+.mark:nth-child(11) {
+  transform: translateX(-2vh) rotate(330deg);
+}
+
+.mark:nth-child(12) {
+  transform: translateX(-2vh) rotate(360deg);
+}
