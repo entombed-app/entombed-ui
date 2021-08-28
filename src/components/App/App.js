@@ -1,6 +1,3 @@
-import React from 'react';
-import './App.css';
-import Header from '../Header/Header';
 import sundial from "../../assets/sundial_icon.png";
 import preview from "../../assets/preview (2).png"
 import suit from "../../assets/suit (1).png"
@@ -8,7 +5,11 @@ import scrollImg from "../../assets/scroll.png";
 import timelineImg from "../../assets/timeline.png";
 import familyTree from "../../assets/family-tree.png";
 import galleryImg from "../../assets/gallery.png"
+import React from 'react';
+import './App.css';
+import Header from '../Header/Header';
 import { CountdownPane } from "../CountdownPane/CountdownPane";
+import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           </section>
         </Route>
         <Route exact path="/countdown" render={() => <CountdownPane />}/>
+        <Route exact path="/obituary" render={() => <ObitPane />}/>
       </Switch>
     </main>
   );
