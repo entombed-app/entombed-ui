@@ -26,6 +26,16 @@ main {
   clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%);
   grid-column: 3 / span 3;
   grid-row: 1 / span 3;
+  position: relative;
+}
+.countdown-pane > img {
+  color: white;
+  height: 11rem;
+  width: 11rem;
+  position: absolute;
+  top: 55px;
+  right: 74px;
+  left: 37px;
 }
 
 .executor-pane {

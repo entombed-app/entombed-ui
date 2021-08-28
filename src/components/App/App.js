@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import sundial from "../../assets/sundial_icon.png";
 import { CountdownPane } from "../CountdownPane/CountdownPane"
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ const App = () => {
         <Route exact from='/'>
           <section className='window'>
             <NavLink className='preview-pane' exact to='/preview'>Preview</NavLink>
-            <NavLink className='countdown-pane' exact to='/countdown'>Countdown</NavLink>
+            <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
             <NavLink className='executor-pane' exact to='/executors'>Executors</NavLink>
             <div className='placeholder-1'>
                 Placeholder
