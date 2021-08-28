@@ -77,7 +77,8 @@ html {
   position: absolute;
   object-fit: cover;
   overflow: hidden;
-  border: 1px solid #4d7880;
+  border: 1px solid #bf381c;
+  background-color: #4d7880;
   z-index: 2;
 }
 

@@ -1,4 +1,5 @@
 import "./CountdownPane.css"
+import sunface from "../../assets/sunface.png"
 
 export const CountdownPane = () => {
   return (
@@ -7,7 +8,7 @@ export const CountdownPane = () => {
       <div className="big-circle">
         <div className="circle">
         <div className="profile">
-          <img className="prof-photo" src="https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg" />
+          <img className="prof-photo" src={sunface} />
         </div>
           <div className="marks">
             <div className="wedge"></div>
