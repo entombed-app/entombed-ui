@@ -3,8 +3,8 @@ import './App.css';
 import Header from '../Header/Header';
 import sundial from "../../assets/sundial_icon.png";
 import preview from "../../assets/preview (2).png"
-import tie from "../../assets/tie.png"
-import scrollImg from "../../assets/icons8-scroll-144.png";
+import suit from "../../assets/suit (1).png"
+import scrollImg from "../../assets/scroll.png";
 import timelineImg from "../../assets/timeline.png";
 import familyTree from "../../assets/family-tree.png";
 import galleryImg from "../../assets/gallery.png"
@@ -20,7 +20,7 @@ const App = () => {
           <section className='window'>
             <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
             <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
-            <NavLink className='executor-pane' exact to='/executors'><img src={tie}/></NavLink>
+            <NavLink className='executor-pane' exact to='/executors'><img src={suit}/></NavLink>
             <div className='placeholder-1'>
                 Placeholder
             </div>

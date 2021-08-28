@@ -99,12 +99,12 @@ main {
 
 .obit-pane > img {
   color: white;
-  height: 7rem;
+  height: 8rem;
   width: 7rem;
   position: absolute;
-  top: 510px;
+  top: 497px;
   right: 74px;
-  left: 134px;
+  left: 142px;
 }
 
 .timeline-pane {
