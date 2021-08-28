@@ -12,8 +12,9 @@ export const CountdownPane = () => {
     setError("")
     try {
       const response = await fetch(url)
-      const yearsLeft = await response.json()
-      setTimeLeft(yearsLeft)
+      const date = await response.json()
+      setEtd(date.data.etd)
+      calculateTimeLeft()
     } catch(err) {
       setError(err.message)
     }
@@ -23,11 +24,27 @@ export const CountdownPane = () => {
     getEtd()
   }, [])
 
+  const calculateTimeLeft = () => {
+    const difference = +new Date(etd) - +new Date()
+
+    let updatedTimeLeft = {}
+  
+    if (difference > 0) {
+      updatedTimeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      }
+    }
+
+    return setTimeLeft(updatedTimeLeft)
+  }
 
   // function to calculate the time remaining between current date and ETD
   // create a new variable called difference 
   // inside difference,  create a new date
-  // inside new Date() use a template literal with the ETD in a date format
+  // inside new Date() use etd
   // use + to coerce that date to an integer
   // deduct the current date from current date
 
