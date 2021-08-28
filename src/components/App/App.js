@@ -2,7 +2,13 @@ import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import sundial from "../../assets/sundial_icon.png";
-import { CountdownPane } from "../CountdownPane/CountdownPane"
+import preview from "../../assets/preview (2).png"
+import tie from "../../assets/tie.png"
+import scrollImg from "../../assets/icons8-scroll-144.png";
+import timelineImg from "../../assets/timeline.png";
+import familyTree from "../../assets/family-tree.png";
+import galleryImg from "../../assets/gallery.png"
+import { CountdownPane } from "../CountdownPane/CountdownPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
@@ -12,16 +18,16 @@ const App = () => {
       <Switch>
         <Route exact from='/'>
           <section className='window'>
-            <NavLink className='preview-pane' exact to='/preview'>Preview</NavLink>
+            <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
             <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
-            <NavLink className='executor-pane' exact to='/executors'>Executors</NavLink>
+            <NavLink className='executor-pane' exact to='/executors'><img src={tie}/></NavLink>
             <div className='placeholder-1'>
                 Placeholder
             </div>
-            <NavLink className='obit-pane' exact to='/obituary'>Obituary</NavLink>
-            <NavLink className='timeline-pane' exact to='/timeline'>Timeline</NavLink>
-            <NavLink className='recipient-pane' exact to='/recipients'>Recipients</NavLink>
-            <NavLink className='gallery-pane' exact to='/gallery'>Gallery</NavLink>
+            <NavLink className='obit-pane' exact to='/obituary'><img src={scrollImg}/></NavLink>
+            <NavLink className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></NavLink>
+            <NavLink className='recipient-pane' exact to='/recipients'><img src={familyTree}/></NavLink>
+            <NavLink className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></NavLink>
             <div className='placeholder-2'>
                 Placeholder
             </div>
