@@ -1,4 +1,5 @@
-import './ObitPane.css'
+import React from 'react';
+import './ObitPane.css';
 
 const ObitPane = () => {
     return (
