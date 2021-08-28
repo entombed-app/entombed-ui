@@ -24,7 +24,7 @@ const App = () => {
       email: "ex@ample.com",
       name: "bill withers",
       date_of_birth: "1/02/03",
-      etd: "6/06/06",
+      etd: "6/06/2106",
       profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
       obituary: "Lorem ipsum dolor amit"
     },
@@ -37,27 +37,28 @@ const App = () => {
   })
   const [error, setError] = useState("")
 
-  const getUser = async () => {
-    const url = '/api/v1/user/:id'
-    setError('')
+  // const getUser = async () => {
+  //   const url = '/api/v1/user/:id'
+  //   setError('')
 
-    try {
-      const response = await fetch(url)
-      const userData = await response.json()
-      setUser(userData.data)
-    } catch (err) {
-      setError(err.message)
-    }
-  }
+  //   try {
+  //     const response = await fetch(url)
+  //     const userData = await response.json()
+  //     console.log(userData)
+  //     setUser(userData.data)
+  //   } catch (err) {
+  //     setError(err.message)
+  //   }
+  // }
 
-  useEffect(() => {
-    getUser()
-  }, [])
+  // useEffect(() => {
+  //   getUser()
+  // }, [])
 
 
   return (
     <main>
-      <Link exact to="/" style={{textDecoration: 'none'}}><Header /></Link>
+      <Link to="/" style={{textDecoration: 'none'}}><Header /></Link>
       <Switch>
         <Route exact from='/'>
           <section className='window'>
