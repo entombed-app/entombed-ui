@@ -21,6 +21,16 @@ main {
   grid-row: 1 / span 2;
 }
 
+.preview-pane > img {
+  color: white;
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  top: 164px;
+  right: 87px;
+  left: 40px;
+}
+
 .countdown-pane {
   background-color: aqua;
   clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%);
@@ -28,6 +38,7 @@ main {
   grid-row: 1 / span 3;
   position: relative;
 }
+
 .countdown-pane > img {
   color: white;
   height: 11rem;
@@ -45,6 +56,16 @@ main {
   grid-row: 1 / span 4;
 }
 
+.executor-pane > img {
+  color: white;
+  height: 12rem;
+  width: 12rem;
+  position: absolute;
+  top: 252px;
+  right: 16px;
+  left: 232px;
+}
+
 .placeholder-1 {
   background-color: yellow;
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
@@ -59,11 +80,31 @@ main {
   grid-row: 3 / span 4;
 }
 
+.recipient-pane > img {
+  color: white;
+  height: 10rem;
+  width: 11rem;
+  position: absolute;
+  top: 355px;
+  right: 74px;
+  left: -18px;
+}
+
 .obit-pane {
   background-color: aqua;
   clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%);
   grid-column: 4 / span 2;
   grid-row: 4 / span 4;
+}
+
+.obit-pane > img {
+  color: white;
+  height: 7rem;
+  width: 7rem;
+  position: absolute;
+  top: 510px;
+  right: 74px;
+  left: 134px;
 }
 
 .timeline-pane {
@@ -73,11 +114,31 @@ main {
   grid-row: 7 / span 8;
 }
 
+.timeline-pane > img {
+  color: white;
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  top: 684px;
+  right: 74px;
+  left: 102px;
+}
+
 .gallery-pane {
   background-color: purple;
   clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%);
   grid-column: 5 / span 2;
   grid-row: 5 / span 3;
+}
+
+.gallery-pane > img {
+  color: white;
+  height: 6rem;
+  width: 6rem;
+  position: absolute;
+  top: 595px;
+  right: 69px;
+  left: 215px;
 }
 
 .placeholder-2 {
