@@ -26,9 +26,8 @@ main {
   height: 5rem;
   width: 5rem;
   position: absolute;
-  top: 164px;
-  right: 87px;
-  left: 40px;
+  top: 10rem;
+  left: 2rem;
 }
 
 .countdown-pane {
@@ -44,9 +43,8 @@ main {
   height: 11rem;
   width: 11rem;
   position: absolute;
-  top: 55px;
-  right: 74px;
-  left: 37px;
+  top: 4rem;
+  left: 2rem;
 }
 
 .executor-pane {
@@ -62,7 +60,6 @@ main {
   width: 12rem;
   position: absolute;
   top: 252px;
-  right: 16px;
   left: 232px;
 }
 
@@ -85,9 +82,8 @@ main {
   height: 10rem;
   width: 11rem;
   position: absolute;
-  top: 355px;
-  right: 74px;
-  left: -18px;
+  top: 23rem;
+  left: -1rem;
 }
 
 .obit-pane {
@@ -102,9 +98,8 @@ main {
   height: 8rem;
   width: 7rem;
   position: absolute;
-  top: 497px;
-  right: 74px;
-  left: 142px;
+  top: 32rem;
+  left: 9rem;
 }
 
 .timeline-pane {
@@ -116,12 +111,11 @@ main {
 
 .timeline-pane > img {
   color: white;
-  height: 5rem;
-  width: 5rem;
+  height: 6rem;
+  width: 6rem;
   position: absolute;
-  top: 684px;
-  right: 74px;
-  left: 102px;
+  top: 42rem;
+  left: 6rem;
 }
 
 .gallery-pane {
@@ -136,9 +130,8 @@ main {
   height: 6rem;
   width: 6rem;
   position: absolute;
-  top: 595px;
-  right: 69px;
-  left: 215px;
+  top: 37rem;
+  left: 16rem;
 }
 
 .placeholder-2 {
