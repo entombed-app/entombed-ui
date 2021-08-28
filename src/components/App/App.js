@@ -16,7 +16,25 @@ import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({
+    //temporary data below
+    id: 1,
+    type: "user",
+    attributes: {
+      email: "ex@ample.com",
+      name: "bill withers",
+      date_of_birth: "1/02/03",
+      etd: "4/05/06",
+      profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
+      obituary: "Lorem ipsum dolor amit"
+    },
+    //  "relationships": {
+    //    "images": [img1, img2],
+    //    "recipients": [rec1, rec2, rec3],
+    //    "executors": [exc1, exc2, exc3],
+    //     "videos": [v1, v2, v3]
+    //     } 
+  })
   const [error, setError] = useState("")
 
   const getUser = async () => {
@@ -27,7 +45,7 @@ const App = () => {
       const response = await fetch(url)
       const userData = await response.json()
       setUser(userData.data)
-    } catch(err) {
+    } catch (err) {
       setError(err.message)
     }
   }
@@ -35,7 +53,7 @@ const App = () => {
   useEffect(() => {
     getUser()
   }, [])
-  
+
 
   return (
     <main>
@@ -47,14 +65,14 @@ const App = () => {
             <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
             <NavLink className='executor-pane' exact to='/executors'><img src={suit}/></NavLink>
             <div className='placeholder-1'>
-                Placeholder
+              Placeholder
             </div>
             <NavLink className='obit-pane' exact to='/obituary'><img src={scrollImg}/></NavLink>
             <NavLink className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></NavLink>
             <NavLink className='recipient-pane' exact to='/recipients'><img src={familyTree}/></NavLink>
             <NavLink className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></NavLink>
             <div className='placeholder-2'>
-                Placeholder
+              Placeholder
             </div>
           </section>
         </Route>
