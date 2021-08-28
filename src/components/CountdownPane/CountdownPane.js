@@ -1,7 +1,49 @@
 import "./CountdownPane.css"
 import sunface from "../../assets/sunface.png"
+import { useEffect } from "react"
 
 export const CountdownPane = () => {
+  const [etd, setEtd] = useState(0)
+  const [timeLeft, setTimeLeft] = useState(0)
+  const [error, setError] = useState('')
+
+  const getEtd = async () => {
+    const url = '/api/v1/user/:id' 
+    setError("")
+    try {
+      const response = await fetch(url)
+      const yearsLeft = await response.json()
+      setTimeLeft(yearsLeft)
+    } catch(err) {
+      setError(err.message)
+    }
+  }
+
+  useEffect(() => {
+    getEtd()
+  }, [])
+
+
+  // function to calculate the time remaining between current date and ETD
+  // create a new variable called difference 
+  // inside difference,  create a new date
+  // inside new Date() use a template literal with the ETD in a date format
+  // use + to coerce that date to an integer
+  // deduct the current date from current date
+
+  // create an empty object to catch timeLeft
+  // use if statement to check if there is time left (if difference is > 0)
+  // calculate the amount of time left in that if statement
+  // update the value of timeLeft using math.floor and division
+
+  // return timeleft out of function
+  
+  // Add timeleft to state with useState
+  // use set timeleft inside the function to set the value
+
+  // api call here that sets in state the ETD
+  // useEffect to getETD
+
   return (
     <>
     <section className="sundial">
