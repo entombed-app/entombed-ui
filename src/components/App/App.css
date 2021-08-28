@@ -6,12 +6,11 @@ main {
 
 .window {
   display: grid;
-  height: 85%;
+  height: 85vh;
   grid-template-rows: 18% 7% 12% 20% 11% 9% 24%;
   grid-template-columns: 6% 13% 20% 24% 18% 15% 7%;
   margin-left: 5%;
   margin-right: 5%;
-  /* width: 88%; */
 }
 
 .preview-pane {
