@@ -17,3 +17,12 @@
     height: 100px;
     border-radius: 50%
 }
+
+.sun > img {
+    color: white;
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    top: 1rem;
+    left: 1.1rem;
+}
