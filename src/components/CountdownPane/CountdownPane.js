@@ -12,7 +12,7 @@ export const CountdownPane = ({est, err}) => {
   }, [])
 
   const calculateTimeLeft = () => {
-    const difference = +etd - +new Date()
+    const difference = +new Date(`${etd}`) - +new Date()
 
     let updatedTimeLeft = {}
   
@@ -24,7 +24,7 @@ export const CountdownPane = ({est, err}) => {
         seconds: Math.floor((difference / 1000) % 60)
       }
     }
-
+    console.log(updatedTimeLeft)
     setTimeLeft(updatedTimeLeft)
   }
 
@@ -32,7 +32,7 @@ export const CountdownPane = ({est, err}) => {
     <>
     <section className="sundial">
       <section className="release-days">
-        <h2>{timeLeft.days}</h2>
+        {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
       </section>
       <div className="big-circle">
         <div className="circle">

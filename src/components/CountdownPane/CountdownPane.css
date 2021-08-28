@@ -4,6 +4,7 @@ html {
 
 .sundial {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -132,4 +133,8 @@ html {
 
 .mark:nth-child(13) {
   transform: translateX(-2vh) rotate(360deg);
+}
+
+.release-days {
+  color: #ad9976
 }
