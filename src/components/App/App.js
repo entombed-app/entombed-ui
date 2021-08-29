@@ -14,6 +14,7 @@ import galleryImg from "../../assets/gallery.png"
 import { CountdownPane } from "../CountdownPane/CountdownPane";
 import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 const App = () => {
   const [user, setUser] = useState({
@@ -23,8 +24,8 @@ const App = () => {
     attributes: {
       email: "ex@ample.com",
       name: "bill withers",
-      date_of_birth: "1/02/03",
-      etd: "6/06/07",
+      date_of_birth: "1/02/2003",
+      etd: "6/06/2107",
       profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
       obituary: "Lorem ipsum dolor amit"
     },
@@ -76,7 +77,7 @@ const App = () => {
             </div>
           </section>
         </Route>
-        <Route exact path="/countdown" render={() => <CountdownPane est={user.attributes.etd} err={error}/>}/>
+        <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
         <Route exact path="/obituary" render={() => <ObitPane />}/>
       </Switch>
     </main>
