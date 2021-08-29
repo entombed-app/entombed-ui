@@ -29,10 +29,12 @@ const ObitPane = () => {
                 ? <button className='edit-button rectangle' onClick={() => handleSubmit()}>Submit</button>
                 : <button className='edit-button rectangle' onClick={() => setEditMode(true)}>Edit</button>
             }
-            
             <div className='rectangle'></div>
             <div className='small-square corner4'></div>
-            <article className='obit-text'>Obituary: I was a good boy, a nice friend, and good at sharing</article>
+            {editMode 
+                ? <textarea className='obit-text'></textarea>
+                : <article className='obit-text'>Obituary: I was a good boy, a nice friend, and good at sharing</article>
+            }
         </section>
     )
 }
