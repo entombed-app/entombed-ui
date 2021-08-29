@@ -8,6 +8,10 @@ const ObitPane = () => {
     const handleSubmit = () => {
         setEditMode(false)
     }
+
+    const handleChange = (e) => {
+        setObituary(e.target.value)
+    }
     
     return (
         <section className='obit'>
@@ -32,8 +36,15 @@ const ObitPane = () => {
             <div className='rectangle'></div>
             <div className='small-square corner4'></div>
             {editMode 
-                ? <textarea className='obit-text'></textarea>
-                : <article className='obit-text'>Obituary: I was a good boy, a nice friend, and good at sharing</article>
+                ? <textarea 
+                    className='obit-text'
+                    placeholder='How do you want to be remembered?'
+                    value={obituary}
+                    onChange={(e) => {handleChange(e)}}
+                    maxLength='500'
+                  >
+                    </textarea>
+                : <article className='obit-text'>Obituary: {obituary}</article>
             }
         </section>
     )
