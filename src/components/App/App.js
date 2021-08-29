@@ -38,7 +38,7 @@ const App = () => {
   const [error, setError] = useState("")
 
   // const getUser = async () => {
-  //   const url = '/api/v1/user/:id'
+  //   const url = 'https://elegy-backend.herokuapp.com/api/v1/user/1'
   //   setError('')
 
   //   try {

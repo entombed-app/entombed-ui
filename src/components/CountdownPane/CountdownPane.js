@@ -1,6 +1,8 @@
 import "./CountdownPane.css"
 import sunface from "../../assets/sunface.png"
 import React, { useEffect, useState } from "react";
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export const CountdownPane = ({est, err}) => {
   const [etd] = useState(est)
@@ -33,22 +35,7 @@ export const CountdownPane = ({est, err}) => {
           {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
       </section>
       <section className="sundial">
-        {/* <div className="progress-outer">
-          <div className="progress-inner"> */}
-          <svg 
-            className="progress"
-          >
-              <circle
-                className="progress-ring"
-                // stroke={"#FFFFFF"}
-                // strokeWidth={4}
-                // fill="transparent"
-                r="27vh"
-                cx="25vh"
-                cy="25vh"
-              >
-              </circle>
-          </svg>
+          <CircularProgressbar value={66} text={`66%`} styles={buildStyles({strokeLinecap: 'butt', pathColor: `#4d7880`, trailColor: "#0e1525"})}/>;
             <div className="big-circle">
               <div className="circle">
                 <div className="profile">
@@ -71,17 +58,6 @@ export const CountdownPane = ({est, err}) => {
                 </div>
               </div>
             </div>
-            {/* </div> */}
-            {/* <div className="outer">
-              <div className="bar left">
-                <div className="progress"></div>
-              </div>
-              <div className="bar right">
-                <div className="progress"></div>
-              </div>
-            </div> */}
-          {/* </div>
-        </div> */}
       </section>
     </section>
   )
