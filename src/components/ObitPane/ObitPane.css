@@ -63,6 +63,13 @@
 }
 
 .edit-button {
-  padding: 0%;  
-  text-align: center;
+    padding: 0%;  
+    text-align: center;
+}
+
+.remaining {
+    color: white;
+    grid-row: 4 / span 1;
+    grid-column: 4 / span 1;
+    text-align: center;
 }
