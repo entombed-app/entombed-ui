@@ -12,14 +12,17 @@ export const CountdownPane = ({est, err}) => {
 
   useEffect(() => {
     calculateTimeLeft()
-    calculateProgress()
   }, [])
 
   const calculateTimeLeft = () => {
+    let newYear, newEtd
     const splitEtd = etd.split("/")
-    const newYear = Number(`21${splitEtd[2]}`) + 122
-    const newEtd = `${splitEtd[0]}/${splitEtd[1]}/${newYear}`
-    setEtd(newEtd)
+    if (splitEtd[2].length < 4) {
+      newYear = Number(`21${splitEtd[2]}`) + 122
+      newEtd = `${splitEtd[0]}/${splitEtd[1]}/${newYear}`
+      setEtd(newEtd)
+      calculateProgress()
+    }
 
     const difference = +new Date(`${newEtd}`) - +new Date()
     let updatedTimeLeft = {}
@@ -35,7 +38,11 @@ export const CountdownPane = ({est, err}) => {
     setTimeLeft(updatedTimeLeft)
   }
 
-
+  const calculateProgress = () => {
+    const total = +new Date(`${etd}`)
+    const perc = total / +new Date
+    setPercentage(perc * 100)
+  }
 
   return (
     <section className="sundial-display">
@@ -50,7 +57,6 @@ export const CountdownPane = ({est, err}) => {
                   <img className="prof-photo" src={sunface} />
                 </div>
                 <div className="marks">
-                  {/* <div className="wedge"></div> */}
                   <div className="mark">XII</div>
                   <div className="mark">I</div>
                   <div className="mark">II</div>

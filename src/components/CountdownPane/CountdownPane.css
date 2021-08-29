@@ -9,11 +9,9 @@
 
 .sundial {
   position: relative;
-  border: 1px solid white;
   height: 56vh;
   width: 56vh;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }
