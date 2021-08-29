@@ -1,16 +1,21 @@
-html {
-  background-color: #0e1525;
-}
-
-.sundial {
+.sundial-display {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: #0e1525;
-  overflow: hidden;
+}
+
+.sundial {
+  position: relative;
+  border: 1px solid white;
+  height: 56vh;
+  width: 56vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle {
@@ -34,6 +39,8 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #0e1525;
+  margin: 3vh;
+  position: absolute;
   z-index: 1;
 }
 
@@ -139,15 +146,81 @@ html {
 
 .release-days {
   color: #ad9976;
-  margin-bottom: 3vh;
+  display: flex;
+  justify-content: center;;
 }
 
 .progress-outer {
   border-radius: 50%;
+  position: relative;
+  border: 1px solid #ad9976;
 }
 
 .progress-inner {
   border-radius: 50%;
-  background-color: #4d7880;
+  background: #126374;
   padding: 2em;
+  /* position: absolute; */
 }
+
+.progress {
+  position: absolute;
+  width: 50vh;
+  height: 50vh;
+  /* border: 2vh solid yellow; */
+  border-radius: 50%;
+  z-index: 1;
+  /* clip-path: polygon(50% 0%, 50% 50%, 100% 50%, 100% 0%); */
+}
+
+.progress-ring {
+  z-index: 6;
+  stroke-width: .25em;
+  stroke: #FFFFFF;
+  fill: red;
+}
+
+/* .sundial .bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #126374;
+  -webkit-border-radius: 100%;
+  clip: rect(0vh, 49vh, 3vh, 28vh);
+} */
+
+/* .sundial .bar .progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #126374;
+  -webkit-border-radius: 100%;
+  clip: rect(0vh, 50px, 100px, 0vh);
+}
+
+.outer .left .progress {
+  z-index: 1;
+  animation: left 4s linear both;
+}
+
+@keyframes left {
+  100% {
+    transform: rotate(180deg)
+  }
+}
+
+.outer .right {
+  transform: rotate(180deg);
+  z-index: 3
+}
+
+.outer .right .progress { 
+  animation: right 4s linear both;
+  animation-delay: 4s;
+}
+
+@keyframes left {
+  100%{
+    transform: rotate(180deg)
+  }
+} */
