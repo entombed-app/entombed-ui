@@ -1,5 +1,5 @@
-main {
-  background-color: black;
+main, html {
+  background-color: #0e1525;
   height: 100vh;
   width: 100vw;
 }
