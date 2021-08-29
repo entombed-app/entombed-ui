@@ -62,4 +62,14 @@ describe('Countdown', () => {
       .children(".mark")
       .should("have.length", "12")
   })
+
+  it("Should display a progress bar", () => {
+    cy.get(".countdown-pane")
+      .click()
+    cy.get("svg")
+      .children("path")
+      .should("be.visible")
+  })
+
+
 })
