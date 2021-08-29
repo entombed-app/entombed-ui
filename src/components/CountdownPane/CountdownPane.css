@@ -158,17 +158,14 @@
   border-radius: 50%;
   background: #126374;
   padding: 2em;
-  /* position: absolute; */
 }
 
 .progress {
   position: absolute;
   width: 50vh;
   height: 50vh;
-  /* border: 2vh solid yellow; */
   border-radius: 50%;
   z-index: 1;
-  /* clip-path: polygon(50% 0%, 50% 50%, 100% 50%, 100% 0%); */
 }
 
 .progress-ring {
@@ -177,48 +174,3 @@
   stroke: #FFFFFF;
   fill: red;
 }
-
-/* .sundial .bar {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: #126374;
-  -webkit-border-radius: 100%;
-  clip: rect(0vh, 49vh, 3vh, 28vh);
-} */
-
-/* .sundial .bar .progress {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: #126374;
-  -webkit-border-radius: 100%;
-  clip: rect(0vh, 50px, 100px, 0vh);
-}
-
-.outer .left .progress {
-  z-index: 1;
-  animation: left 4s linear both;
-}
-
-@keyframes left {
-  100% {
-    transform: rotate(180deg)
-  }
-}
-
-.outer .right {
-  transform: rotate(180deg);
-  z-index: 3
-}
-
-.outer .right .progress { 
-  animation: right 4s linear both;
-  animation-delay: 4s;
-}
-
-@keyframes left {
-  100%{
-    transform: rotate(180deg)
-  }
-} */
