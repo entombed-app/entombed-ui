@@ -55,7 +55,6 @@ const App = () => {
   //   getUser()
   // }, [])
 
-
   return (
     <main>
       <Link to="/" style={{textDecoration: 'none'}}><Header /></Link>
@@ -77,7 +76,7 @@ const App = () => {
             </div>
           </section>
         </Route>
-        <Route exact path="/countdown" render={() => <CountdownPane />}/>
+        <Route exact path="/countdown" render={() => <CountdownPane est={user.attributes.etd} err={error}/>}/>
         <Route exact path="/obituary" render={() => <ObitPane />}/>
       </Switch>
     </main>
