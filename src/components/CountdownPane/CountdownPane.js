@@ -5,17 +5,23 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export const CountdownPane = ({est, err}) => {
-  const [etd] = useState(est)
+  const [etd, setEtd] = useState(est)
   const [timeLeft, setTimeLeft] = useState(0)
+  const [percentage, setPercentage] = useState(60)
   const [error] = useState(err)
 
   useEffect(() => {
     calculateTimeLeft()
+    calculateProgress()
   }, [])
 
   const calculateTimeLeft = () => {
-    const difference = +new Date(`${etd}`) - +new Date()
+    const splitEtd = etd.split("/")
+    const newYear = Number(`21${splitEtd[2]}`) + 122
+    const newEtd = `${splitEtd[0]}/${splitEtd[1]}/${newYear}`
+    setEtd(newEtd)
 
+    const difference = +new Date(`${newEtd}`) - +new Date()
     let updatedTimeLeft = {}
   
     if (difference > 0) {
@@ -29,13 +35,15 @@ export const CountdownPane = ({est, err}) => {
     setTimeLeft(updatedTimeLeft)
   }
 
+
+
   return (
     <section className="sundial-display">
       <section className="release-days">
           {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
       </section>
       <section className="sundial">
-          <CircularProgressbar value={66} text={`66%`} styles={buildStyles({strokeLinecap: 'butt', pathColor: `#4d7880`, trailColor: "#0e1525"})}/>;
+          <CircularProgressbar value={percentage} styles={buildStyles({strokeLinecap: 'butt', pathColor: `#4d7880`, trailColor: "#0e1525"})}/>;
             <div className="big-circle">
               <div className="circle">
                 <div className="profile">

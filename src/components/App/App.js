@@ -24,7 +24,7 @@ const App = () => {
       email: "ex@ample.com",
       name: "bill withers",
       date_of_birth: "1/02/03",
-      etd: "6/06/2106",
+      etd: "6/06/07",
       profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
       obituary: "Lorem ipsum dolor amit"
     },
