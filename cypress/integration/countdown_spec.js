@@ -36,21 +36,28 @@ describe('Countdown', () => {
 
   it("Should display the user's profile photo", () => {
     cy.get(".sun")
-      .contains("img")
+      .children("img")
+      .should("be.visible")
   })
 
   it("Should redirect user home if title is clicked", () => {
+    cy.get(".countdown-pane")
+      .click()
     cy.get("h1")
       .click()
-    cy.url().should("inlcude", "http://localhost:3000")
+    cy.url().should("include", "http://localhost:3000")
   })
 
   it("Should display the number of days until app release", () => {
+    cy.get(".countdown-pane")
+      .click()
     cy.get("h2")
       .contains("Days until release: ")
   })
 
   it("Should display the a sundial graphic with roman numerals", () => {
+    cy.get(".countdown-pane")
+      .click()
     cy.get(".marks")
       .children(".mark")
       .should("have.length", "12")
