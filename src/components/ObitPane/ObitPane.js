@@ -34,8 +34,10 @@ const ObitPane = () => {
                 : <button className='edit-button rectangle' onClick={() => setEditMode(true)}>Edit</button>
             }
             <div className='small-square middle4'></div>
-            <div className='rectangle'><p className='remaining'>{remainingChars}/500</p></div>
-            {/* <div className='rectangle'></div> */}
+            {editMode
+                ? <div className='rectangle'><p className='remaining'>Limit: {remainingChars}/500</p></div> 
+                : <div className='rectangle'></div>
+            }
             <div className='small-square corner4'></div>
             {editMode 
                 ?   <textarea 
