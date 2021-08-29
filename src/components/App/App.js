@@ -78,7 +78,7 @@ const App = () => {
           </section>
         </Route>
         <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
-        <Route exact path="/obituary" render={() => <ObitPane />}/>
+        <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
       </Switch>
     </main>
   );

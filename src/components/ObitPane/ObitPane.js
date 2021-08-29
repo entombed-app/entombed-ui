@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './ObitPane.css';
 
-const ObitPane = () => {
-    const [obituary, setObituary] = useState('');
+const ObitPane = ({obit}) => {
+    const [obituary, setObituary] = useState(obit);
     const [editMode, setEditMode] = useState(false);
     const [usedChars, setUsedChars] = useState(0);
 
