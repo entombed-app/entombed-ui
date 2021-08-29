@@ -9,11 +9,12 @@
 
 .sundial {
   position: relative;
-  height: 56vh;
-  width: 56vh;
+  height: 53vh;
+  width: 53vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3vh;
 }
 
 .circle {

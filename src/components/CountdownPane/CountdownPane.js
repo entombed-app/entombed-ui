@@ -50,7 +50,13 @@ export const CountdownPane = ({est, err}) => {
           {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
       </section>
       <section className="sundial">
-          <CircularProgressbar value={percentage} styles={buildStyles({strokeLinecap: 'butt', pathColor: `#4d7880`, trailColor: "#0e1525"})}/>;
+          <CircularProgressbar 
+            value={percentage} 
+            strokeWidth={2}
+            styles={buildStyles({strokeLinecap: 'butt', 
+            pathColor: `#4d7880`, 
+            trailColor: "#0e1525"})}
+          />;
             <div className="big-circle">
               <div className="circle">
                 <div className="profile">
