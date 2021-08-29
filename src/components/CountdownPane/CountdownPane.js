@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 export const CountdownPane = ({est, err}) => {
   const [etd, setEtd] = useState(est)
   const [timeLeft, setTimeLeft] = useState(0)
-  const [percentage, setPercentage] = useState(60)
+  const [percentage, setPercentage] = useState(0)
   const [error] = useState(err)
 
   useEffect(() => {
