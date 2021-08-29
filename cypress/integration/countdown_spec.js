@@ -18,7 +18,6 @@ describe('Countdown', () => {
     cy.visit("http://localhost:3000")
   })
 
-
   it('Should be able to visit the countdown by typing in the path in the url', () => {
       cy.visit('http://localhost:3000/countdown')
       cy.url().should("include", "http://localhost:3000/countdown")
@@ -44,5 +43,16 @@ describe('Countdown', () => {
     cy.get("h1")
       .click()
     cy.url().should("inlcude", "http://localhost:3000")
+  })
+
+  it("Should display the number of days until app release", () => {
+    cy.get("h2")
+      .contains("Days until release: ")
+  })
+
+  it("Should display the a sundial graphic with roman numerals", () => {
+    cy.get(".marks")
+      .children(".mark")
+      .should("have.length", "12")
   })
 })
