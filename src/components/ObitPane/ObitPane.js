@@ -4,7 +4,7 @@ import './ObitPane.css';
 const ObitPane = () => {
     const [obituary, setObituary] = useState('');
     const [editMode, setEditMode] = useState(false);
-    const [remainingChars, setRemainingChars] = useState(500);
+    const [usedChars, setUsedChars] = useState(0);
 
     const handleSubmit = () => {
         setEditMode(false)
@@ -12,7 +12,7 @@ const ObitPane = () => {
 
     const handleChange = (e) => {
         setObituary(e.target.value)
-        setRemainingChars(e.target.value.length)
+        setUsedChars(e.target.value.length)
     }
     
     return (
@@ -35,7 +35,7 @@ const ObitPane = () => {
             }
             <div className='small-square middle4'></div>
             {editMode
-                ? <div className='rectangle'><p className='remaining'>Limit: {remainingChars}/500</p></div> 
+                ? <div className='rectangle'><p className='remaining'>Limit: {usedChars}/500</p></div> 
                 : <div className='rectangle'></div>
             }
             <div className='small-square corner4'></div>
