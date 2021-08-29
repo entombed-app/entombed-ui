@@ -17,11 +17,11 @@ const ObitPane = () => {
             <div className='rectangle'></div>
             <div className='small-square corner3'></div>
             <div className='rectangle'></div>
-            <div className='small-square middle4'></div>
+            {/* <div className='small-square middle4'></div> */}
+            <button className='edit-button small-square middle4'>Edit</button>
             <div className='rectangle'></div>
             <div className='small-square corner4'></div>
             <article className='obit-text'>I was a good boy, a nice friend, and good at sharing</article>
-            <button className='edit-button'>Edit</button>
         </section>
     )
 }
