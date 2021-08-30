@@ -5,6 +5,7 @@ const ObitPane = ({obit}) => {
     const [obituary, setObituary] = useState(obit);
     const [editMode, setEditMode] = useState(false);
     const [usedChars, setUsedChars] = useState(0);
+    const [error, setError] = useState("");
 
     const handleSubmit = () => {
         setEditMode(false)
@@ -39,6 +40,7 @@ const ObitPane = ({obit}) => {
                 : <div className='rectangle'></div>
             }
             <div className='small-square corner4'></div>
+            {error && <div className='obit-error'>{error}!</div>}
             {editMode 
                 ?   <textarea 
                         className='obit-text'
