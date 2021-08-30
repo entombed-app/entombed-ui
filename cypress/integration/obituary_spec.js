@@ -31,7 +31,7 @@ describe('Countdown', () => {
         .contains("Edit")
     })
 
-    it("Should be able to click the edit button, edit the obituary, and see the number of chars I've typed", () => {
+    it("Should be able to click the edit button, edit the obituary, and see the number of chars typed", () => {
       cy.get(".edit-button")
         .click()
         .get(".obit-text")
@@ -40,10 +40,16 @@ describe('Countdown', () => {
         .contains("Limit: 70/500")
     })
 
-    // it("Should display the page title", () => {
-    //   cy.get("h1")
-    //     .contains("Elegy")
-    // })
+    it("Should show the newly typed obituary after clicking submit", () => {
+        cy.get(".edit-button")
+        .click()
+        .get(".obit-text")
+        .type(" I was always good but I could have been better.")
+        .get(".edit-button")
+        .click()
+        .get("article")
+        .contains("Lorem ipsum dolor amit I was always good but I could have been better.")
+    })
 
     // it("Should display the page title", () => {
     //   cy.get("h1")
