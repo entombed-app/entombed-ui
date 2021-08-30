@@ -1,19 +1,18 @@
 describe('Countdown', () => {
     beforeEach(() => {
   
-      // cy.fixture("user.json").as("user")
-      // cy.intercept("GET", "https://elegy-api.herokuapp.com/api/v1/user/1", {
-      //   { 
-      //     ok: true,
-      //     redirected: false,
-      //     status: 201, 
-      //     statusTest: "OK",
-      //     type: "cors",
-      //     url: "https://elegy-api.herokuapp.com/api/v1/user/1",
-      //     body: {
-      //     fixture: 'user'
-      //   }
-      // })
+      cy.fixture("user.json").as("user")
+      cy.intercept("GET", "https://elegy-api.herokuapp.com/api/v1/user/1", {
+          ok: true,
+          redirected: false,
+          status: 201, 
+          statusTest: "OK",
+          type: "cors",
+          url: "https://elegy-api.herokuapp.com/api/v1/user/1",
+          body: {
+          fixture: 'user'
+        }
+      })
   
       cy.visit("http://localhost:3000/obituary")
     })
@@ -41,7 +40,7 @@ describe('Countdown', () => {
     })
 
     it("Should show the newly typed obituary after clicking submit", () => {
-        cy.get(".edit-button")
+      cy.get(".edit-button")
         .click()
         .get(".obit-text")
         .type(" I was always good but I could have been better.")
@@ -51,14 +50,26 @@ describe('Countdown', () => {
         .contains("Lorem ipsum dolor amit I was always good but I could have been better.")
     })
 
-    // it("Should display the page title", () => {
-    //   cy.get("h1")
-    //     .contains("Elegy")
-    // })
+    it("Should show an error if the user has not typed anything in to the obituary", () => {
+      cy.get(".edit-button")
+        .click()
+        .get(".obit-text")
+        .type("")
+        .get(".edit-button")
+        .click()
+        .get("article")
+        .contains("Please type something for your obituary. Click Edit below")
+    })
 
-    // it("Should display the page title", () => {
-    //   cy.get("h1")
-    //     .contains("Elegy")
-    // })
+    it("Should not allow the user to type more than 500 characters", () => {
+      cy.get(".edit-button")
+        .click()
+        .get(".obit-text")
+        .type("as;dlkfja;lsdkjfa;lsdkjfal;ksdjf;alskdjfa;lskdfj;alskdfja;lsdkfj;alskdfja;lskdjf;alsdkfja;lsdkfja;lskdjf;alskdjf;alskdjf;laksdjf;laksdjf;alskdjflaksdjfhlaksjdfhqk3leryoiquwefhlkadjshfoiquewyfklasdjhfoqiuewyhflkasjdfhoqieuyfsdlkjfhoq8eiuyfsidjkfhoiweuyfdjfhoq843ieuyfskdjfhoi4q3uyfedjfho8i3u4eyfhaeiuedsfhqku34yewrfieudhfoqu34ewyhrfiedhfoqu3ewhfoisudhfqj3hwefiweuydfhgjq3h4efiuysrdiufhq34eiwuyfq3erwiuyfhoq3iu4weyfhvjshdfgoiuqy34ewhfiusdfhgoiu234ywefiuydshfoiuq234yrfiuyfqiwe4uyhrtoqi234urwyefd9siyuq2")
+        .get(".edit-button")
+        .click()
+        .get("article")
+        .contains("Lorem ipsum dolor amit I was always good but I could have been better.")
+    })
   
   })
