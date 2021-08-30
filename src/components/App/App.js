@@ -9,26 +9,23 @@ import scrollImg from "../../assets/scroll.png";
 import timelineImg from "../../assets/timeline.png";
 import familyTree from "../../assets/family-tree.png";
 import galleryImg from "../../assets/gallery.png"
-
-
 import { CountdownPane } from "../CountdownPane/CountdownPane";
 import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 const App = () => {
   const [user, setUser] = useState({
     //temporary data below
-    id: 1,
-    type: "user",
-    attributes: {
-      email: "ex@ample.com",
-      name: "bill withers",
-      date_of_birth: "1/02/2003",
-      etd: "6/06/2107",
-      profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
-      obituary: "Lorem ipsum dolor amit"
-    },
+    // id: 1,
+    // type: "user",
+    // attributes: {
+    //   email: "ex@ample.com",
+    //   name: "bill withers",
+    //   date_of_birth: "1/02/2003",
+    //   etd: "6/06/2107",
+    //   profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
+    //   obituary: "Lorem ipsum dolor amit"
+    // },
     //  "relationships": {
     //    "images": [img1, img2],
     //    "recipients": [rec1, rec2, rec3],
@@ -38,23 +35,22 @@ const App = () => {
   })
   const [error, setError] = useState("")
 
-  // const getUser = async () => {
-  //   const url = 'https://elegy-backend.herokuapp.com/api/v1/user/1'
-  //   setError('')
+  const getUser = async () => {
+    const url = 'https://elegy-backend.herokuapp.com/api/v1/user/1'
+    setError('')
+    try {
+      const response = await fetch(url)
+      const userData = await response.json()
+      console.log(userData)
+      setUser(userData.data)
+    } catch (err) {
+      setError(err.message)
+    }
+  }
 
-  //   try {
-  //     const response = await fetch(url)
-  //     const userData = await response.json()
-  //     console.log(userData)
-  //     setUser(userData.data)
-  //   } catch (err) {
-  //     setError(err.message)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <main>
