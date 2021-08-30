@@ -8,7 +8,17 @@ const ObitPane = ({obit}) => {
     const [error, setError] = useState("");
 
     const handleSubmit = () => {
+        if (!usedChars) {
+            setError("Please type something for your obituary. Click Edit below")
+        } else {
+            setError("")
+        }
         setEditMode(false)
+    }
+
+    const handleClickEdit = () => {
+        setError("")
+        setEditMode(true)
     }
 
     const handleChange = (e) => {
@@ -32,7 +42,7 @@ const ObitPane = ({obit}) => {
             <div className='small-square corner3'></div>
             {editMode 
                 ? <button className='edit-button rectangle' onClick={() => handleSubmit()}>Submit</button>
-                : <button className='edit-button rectangle' onClick={() => setEditMode(true)}>Edit</button>
+                : <button className='edit-button rectangle' onClick={() => handleClickEdit()}>Edit</button>
             }
             <div className='small-square middle4'></div>
             {editMode
