@@ -1,0 +1,27 @@
+{
+  "data": {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+          "email": "ex@ample.com",
+          "name": "Elder Bobby",
+          "date_of_birth": "1999-01-02",
+          "profile_picture": {
+              "name": "profile_picture",
+              "record": {
+                  "id": 1,
+                  "password_digest": "$2a$12$sUs/jqcAHHWePr27storZ.yWFmRxoMIZaFCz063m0Pm2EDbOw2sjS",
+                  "email": "ex@ample.com",
+                  "name": "Elder Bobby",
+                  "date_of_birth": "1999-01-02",
+                  "obituary": "Tedious and brief",
+                  "created_at": "2021-08-30T22:52:20.016Z",
+                  "updated_at": "2021-08-30T22:52:20.640Z"
+              },
+              "dependent": false
+          },
+          "obituary": "Tedious and brief",
+          "etd": "2119-06-22"
+      }
+  }
+}
