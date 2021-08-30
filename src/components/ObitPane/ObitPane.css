@@ -62,6 +62,16 @@
     grid-column: 2 / span 3;
 }
 
+.obit-error {
+    background-color: #AD9976;
+    border: .3rem solid black;
+    color: red;
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 3;
+    text-align: center;
+    z-index: 1;
+}
+
 .edit-button {
     padding: 0%;  
     text-align: center;
