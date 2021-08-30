@@ -57,7 +57,7 @@ const App = () => {
     <main>
       <Link to="/" style={{textDecoration: 'none'}}><Header /></Link>
       {!user.attributes 
-      ? <p className='loading-message'>Loading</p>
+      ? <p className='loading-message'>Loading...</p>
       : <Switch>
           <Route exact from='/'>
             <section className='window'>
