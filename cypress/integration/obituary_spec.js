@@ -31,24 +31,28 @@ describe('Countdown', () => {
         .contains("Edit")
     })
 
-    it("Should display the page title", () => {
-      cy.get("h1")
-        .contains("Elegy")
+    it("Should be able to click the edit button, edit the obituary, and see the number of chars I've typed", () => {
+      cy.get(".edit-button")
+        .click()
+        .get(".obit-text")
+        .type(" I was always good but I could have been better.")
+        .get(".remaining")
+        .contains("Limit: 70/500")
     })
 
-    it("Should display the page title", () => {
-      cy.get("h1")
-        .contains("Elegy")
-    })
+    // it("Should display the page title", () => {
+    //   cy.get("h1")
+    //     .contains("Elegy")
+    // })
 
-    it("Should display the page title", () => {
-      cy.get("h1")
-        .contains("Elegy")
-    })
+    // it("Should display the page title", () => {
+    //   cy.get("h1")
+    //     .contains("Elegy")
+    // })
 
-    it("Should display the page title", () => {
-      cy.get("h1")
-        .contains("Elegy")
-    })
+    // it("Should display the page title", () => {
+    //   cy.get("h1")
+    //     .contains("Elegy")
+    // })
   
   })
