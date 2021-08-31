@@ -55,11 +55,13 @@
 }
 
 .obit-text {
+    align-items: center;
     background-color: #AD9976;
     border: .3rem solid black;
     color: white;
     grid-row: 2 / span 3;
     grid-column: 2 / span 3;
+    word-wrap: break-word;
 }
 
 .obit-error {
