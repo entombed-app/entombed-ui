@@ -46,16 +46,12 @@ const App = () => {
               <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
               <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
               <NavLink className='executor-pane' exact to='/executors'><img src={suit}/></NavLink>
-              <div className='placeholder-1'>
-                Placeholder
-              </div>
+              <div className='placeholder-1'></div>
               <NavLink className='obit-pane' exact to='/obituary'><img src={scrollImg}/></NavLink>
               <NavLink className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></NavLink>
               <NavLink className='recipient-pane' exact to='/recipients'><img src={familyTree}/></NavLink>
               <NavLink className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></NavLink>
-              <div className='placeholder-2'>
-                Placeholder
-              </div>
+              <div className='placeholder-2'></div>
             </section>
           </Route>
           <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
