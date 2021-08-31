@@ -14,25 +14,7 @@ import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
-  const [user, setUser] = useState({
-    //temporary data below
-    // id: 1,
-    // type: "user",
-    // attributes: {
-    //   email: "ex@ample.com",
-    //   name: "bill withers",
-    //   date_of_birth: "1/02/2003",
-    //   etd: "6/06/2107",
-    //   profile_picture: "https://cdn.britannica.com/22/206222-131-E921E1FB/Domestic-feline-tabby-cat.jpg",
-    //   obituary: "Lorem ipsum dolor amit"
-    // },
-    //  "relationships": {
-    //    "images": [img1, img2],
-    //    "recipients": [rec1, rec2, rec3],
-    //    "executors": [exc1, exc2, exc3],
-    //     "videos": [v1, v2, v3]
-    //     } 
-  })
+  const [user, setUser] = useState({})
   const [error, setError] = useState("")
 
   const getUser = async () => {
@@ -49,7 +31,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    // getUser()
+    getUser()
     console.log(user)
   }, [])
 
