@@ -1,19 +1,11 @@
 describe('Countdown', () => {
     beforeEach(() => {
-  
-      cy.fixture("user.json").as("user")
-      cy.intercept("GET", "https://elegy-api.herokuapp.com/api/v1/user/1", {
+      cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/user/1", {
           ok: true,
-          redirected: false,
-          status: 201, 
-          statusTest: "OK",
-          type: "cors",
-          url: "https://elegy-api.herokuapp.com/api/v1/user/1",
-          body: {
+          status: 200, 
+          url: "https://elegy-backend.herokuapp.com/api/v1/user/1",
           fixture: 'user'
-        }
       })
-  
       cy.visit("http://localhost:3000/obituary")
     })
   
@@ -24,8 +16,8 @@ describe('Countdown', () => {
     it("Should display the obituary page with the default obituary", () => {
       cy.get("h1")
         .contains("Elegy")
-        .get("article")
-        .contains("Obituary: Lorem ipsum dolor amit")
+        .get(".obit-text")
+        .contains("Tedious and my goodness I am done.")
         .get(".edit-button")
         .contains("Edit")
     })
@@ -36,7 +28,7 @@ describe('Countdown', () => {
         .get(".obit-text")
         .type(" I was always good but I could have been better.")
         .get(".remaining")
-        .contains("Limit: 70/500")
+        .contains("Limit: 82/500")
     })
 
     it("Should show the newly typed obituary after clicking submit", () => {
@@ -47,17 +39,17 @@ describe('Countdown', () => {
         .get(".edit-button")
         .click()
         .get("article")
-        .contains("Lorem ipsum dolor amit I was always good but I could have been better.")
+        .contains("Tedious and my goodness I'm done. I was always good but I could have been better.")
     })
 
-    it("Should show an error if the user has not typed anything in to the obituary", () => {
+    it("Should show an error if the user has not typed anything into the obituary", () => {
       cy.get(".edit-button")
         .click()
         .get(".obit-text")
-        .type("")
+        .clear()
         .get(".edit-button")
         .click()
-        .get("article")
+        .get(".error-message")
         .contains("Please type something for your obituary. Click Edit below")
     })
 
