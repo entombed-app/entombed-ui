@@ -39,7 +39,7 @@ describe('Countdown', () => {
         .get(".edit-button")
         .click()
         .get("article")
-        .contains("Tedious and my goodness I'm done. I was always good but I could have been better.")
+        .contains("Tedious and my goodness I am done. I was always good but I could have been better.")
     })
 
     it("Should show an error if the user has not typed anything into the obituary", () => {
@@ -49,19 +49,22 @@ describe('Countdown', () => {
         .clear()
         .get(".edit-button")
         .click()
-        .get(".error-message")
+        .get(".obit-error")
         .contains("Please type something for your obituary. Click Edit below")
     })
 
     it("Should not allow the user to type more than 500 characters", () => {
+      let moreThan500 = "as;dlkfja;lsdkjfa;lsdkjfal;ksdjf;alskdjfa;lskdfj;alskdfja;lsdkfj;alskdfja;lskdjf;alsdkfja;lsdkfja;lskdjf;alskdjf;alskdjf;laksdjf;laksdjf;alskdjflaksdjfhlaksjdfhqk3leryoiquwefhlkadjshfoiquewyfklasdjhfoqiuewyhflkasjdfhoqieuyfsdlkjfhoq8eiuyfsidjkfhoiweuyfdjfhoq843ieuyfskdjfhoi4q3uyfedjfho8i3u4eyfhaeiuedsfhqku34yewrfieudhfoqu34ewyhrfiedhfoqu3ewhfoisudhfqj3hwefiweuydfhgjq3h4efiuysrdiufhq34eiwuyfq3erwiuyfhoq3iu4weyfhvjshdfgoiuqy34ewhfiusdfhgoiu234ywefiuydshfoiuq234yrfiuyfqiwe4uyhrtoqi234urwyefd9siyuq2e"
+ 
       cy.get(".edit-button")
         .click()
         .get(".obit-text")
-        .type("as;dlkfja;lsdkjfa;lsdkjfal;ksdjf;alskdjfa;lskdfj;alskdfja;lsdkfj;alskdfja;lskdjf;alsdkfja;lsdkfja;lskdjf;alskdjf;alskdjf;laksdjf;laksdjf;alskdjflaksdjfhlaksjdfhqk3leryoiquwefhlkadjshfoiquewyfklasdjhfoqiuewyhflkasjdfhoqieuyfsdlkjfhoq8eiuyfsidjkfhoiweuyfdjfhoq843ieuyfskdjfhoi4q3uyfedjfho8i3u4eyfhaeiuedsfhqku34yewrfieudhfoqu34ewyhrfiedhfoqu3ewhfoisudhfqj3hwefiweuydfhgjq3h4efiuysrdiufhq34eiwuyfq3erwiuyfhoq3iu4weyfhvjshdfgoiuqy34ewhfiusdfhgoiu234ywefiuydshfoiuq234yrfiuyfqiwe4uyhrtoqi234urwyefd9siyuq2")
+        .clear()
+        .type(moreThan500)
         .get(".edit-button")
         .click()
-        .get("article")
-        .contains("Lorem ipsum dolor amit I was always good but I could have been better.")
+        .get(".obit-text")
+        .should("not.have.value", moreThan500)
     })
   
   })
