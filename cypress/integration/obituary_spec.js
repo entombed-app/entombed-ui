@@ -1,4 +1,4 @@
-describe('Countdown', () => {
+describe('Obituary', () => {
     beforeEach(() => {
       cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/user/1", {
           ok: true,
