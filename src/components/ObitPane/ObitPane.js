@@ -4,7 +4,7 @@ import './ObitPane.css';
 const ObitPane = ({obit}) => {
     const [obituary, setObituary] = useState(obit);
     const [editMode, setEditMode] = useState(false);
-    const [usedChars, setUsedChars] = useState(0);
+    const [usedChars, setUsedChars] = useState(obit.length);
     const [error, setError] = useState("");
 
     const handleSubmit = () => {
@@ -61,7 +61,7 @@ const ObitPane = ({obit}) => {
                     >
                     </textarea>   
                     
-                : <article className='obit-text'>Obituary: {obituary}</article>
+                : <article className='obit-text'>{obituary}</article>
             }
         </section>
     )
