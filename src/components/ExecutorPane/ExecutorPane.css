@@ -1,9 +1,9 @@
 .exec-pane {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-top: 3vh;
+  padding-top: 5vh;
 }
 
 .exec-window {
@@ -75,7 +75,7 @@
 
 .seven {
   background: #126374;
-  clip-path: polygon(28% 51%, 100% 50%, 50% 100%, 16% 65%);
+  clip-path: polygon(29% 51%, 100% 50%, 50% 100%, 16% 65%);
   grid-area: 1/1/3/3;
 }
 
@@ -127,26 +127,26 @@
   width: 70%;
 }
 
-.executor-details {
+.exec-details {
   position: absolute;
   color: white;
-  margin-right: 3vh;
 }
 
 .exec-name {
-  margin-left: 1vh;
+  margin-left: 8vh;
 }
 
 h3 {
-  margin-left: 10vh;
+  margin-left: 15vh;
   margin-top: 5vh;
 }
 
 h4 {
   margin-top: 10vh;
+  margin-left: 8vh;
 }
 
 .exec-title {
-  color: #0E1525;
+  color: white;
   font-size: 2em;
 }
