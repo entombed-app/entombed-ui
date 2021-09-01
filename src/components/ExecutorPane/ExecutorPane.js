@@ -5,7 +5,7 @@ export const ExecutorPane = () => {
   return (
     <section className="exec-pane">
       <section className="exec-border">
-        <h2>Executor</h2>
+        <h2 className="exec-title">Executor</h2>
         <div className="exec-window">
           <div className="shape one">
           </div>
@@ -35,7 +35,7 @@ export const ExecutorPane = () => {
           </div>
         </div>
         <section className="executor-details">
-          <h2>Ashley</h2>
+          <h2 className="exec-name">Ashley</h2>
           <h3>Friend</h3>
           <h4>ashley@yaya.com</h4>
         </section>
