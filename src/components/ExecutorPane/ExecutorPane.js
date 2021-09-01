@@ -35,9 +35,9 @@ export const ExecutorPane = () => {
           </div>
         </div>
         <section className="exec-details">
-          <h2 className="exec-name">Ashley</h2>
-          <h3>(413) 666-6666</h3>
-          <h4>ashley@yaya.com</h4>
+          <h2 className="exec-name">Exectuor Name</h2>
+          <h3 data-cy="exec-phone">(413) 555-6666</h3>
+          <h4 data-cy="exec-email">email_address@hotmail.com</h4>
         </section>
       </section>
     </section>
