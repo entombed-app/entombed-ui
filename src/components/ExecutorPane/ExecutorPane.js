@@ -1,8 +1,9 @@
 import React from "react"
+import "./ExecutorPane.css"
 
 export const ExecutorPane = () => {
   return (
-    <section className="executor-pane">
+    <section className="exec-pane">
       <section className="exec-border">
         <h2>Executor</h2>
         <div className="exec-window">
