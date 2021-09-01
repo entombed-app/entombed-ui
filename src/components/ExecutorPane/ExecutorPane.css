@@ -117,3 +117,31 @@
     margin: 49% 2% 0 30%;
     width: 70%;
 }
+
+.executor-details {
+  position: absolute;
+  color: white;
+  margin-right: 3vh;
+}
+
+h3 {
+  margin-left: 10vh;
+  margin-top: 5vh;
+}
+
+h4 {
+  margin-top: 10vh;
+}
+
+.exec-border {
+  padding-left: 3vh;
+  padding-right: 3vh;
+  padding-bottom: 3vh;
+  border: 0.5em solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightpink;
+}
