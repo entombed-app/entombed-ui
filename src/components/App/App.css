@@ -26,7 +26,7 @@ main {
 }
 
 .preview-pane > img {
-  margin: 30%;
+  margin-left: 30%;
   color: white;
   height: 5rem;
   width: 5rem;
@@ -46,7 +46,7 @@ main {
 }
 
 .countdown-pane > img {
-  margin: 30%;
+  margin-left: 30%;
   color: white;
   height: 11rem;
   width: 11rem;
@@ -68,14 +68,14 @@ main {
 }
 
 .executor-pane > img {
-  margin: 30%;
+  margin-left: 30%;
   color: white;
   height: 12rem;
   width: 12rem;
   position: absolute;
   /* top: 15vw;
   left: -1vw; */
-  margin-left: 35%;
+  margin-left-left: 35%;
 }
 
 .placeholder-1 {
@@ -94,10 +94,11 @@ main {
   clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%);
   grid-column: 2 / span 2;
   grid-row: 3 / span 4;
+  position: relative;
 }
 
 .recipient-pane > img {
-  margin: 30%;
+  margin-left: 4%;
   color: white;
   height: 10rem;
   width: 11rem;
@@ -113,16 +114,15 @@ main {
   clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%);
   grid-column: 4 / span 2;
   grid-row: 4 / span 4;
+  position: relative;
 }
 
 .obit-pane > img {
-  margin: 30%;
+  margin-left: 16%;
   color: white;
   height: 8rem;
   width: 7rem;
   position: absolute;
-  top: 32rem;
-  left: 9rem;
 }
 
 .timeline-pane {
@@ -132,10 +132,11 @@ main {
   clip-path: polygon(7% 0%, 45% 25%, 50% 98%, 16% 73%);
   grid-column: 3 / span 2;
   grid-row: 7 / span 8;
+  position: relative;
 }
 
 .timeline-pane > img {
-  margin: 30%;
+  margin-left: 7%;
   color: white;
   height: 6rem;
   width: 6rem;
@@ -151,10 +152,11 @@ main {
   clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%);
   grid-column: 5 / span 2;
   grid-row: 5 / span 3;
+  position: relative;
 }
 
 .gallery-pane > img {
-  margin: 30%;
+  margin-left: 26%;
   color: white;
   height: 6rem;
   width: 6rem;
