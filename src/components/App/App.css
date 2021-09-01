@@ -1,5 +1,6 @@
-main, html {
+main {
   background-color: #0e1525;
+  background-color: white;
   height: 100vh;
   width: 100vw;
   font-family: 'Raleway', sans-serif;
@@ -15,23 +16,29 @@ main, html {
 }
 
 .preview-pane {
+  align-items: center;
   background-color: red;
+  display: flex;
   clip-path: polygon(7% 44%, 69% 5%, 74% 67%, 15% 99%);
   grid-column: 1 / span 3;
   grid-row: 1 / span 2;
+  position: relative;
 }
 
 .preview-pane > img {
+  margin: 30%;
   color: white;
   height: 5rem;
   width: 5rem;
   position: absolute;
-  top: 10rem;
-  left: 2rem;
+  /* top: 10vw;
+  left: 8vw; */
 }
 
 .countdown-pane {
+  align-items: center;
   background-color: aqua;
+  display: flex;
   clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%);
   grid-column: 3 / span 3;
   grid-row: 1 / span 3;
@@ -39,61 +46,77 @@ main, html {
 }
 
 .countdown-pane > img {
+  margin: 30%;
   color: white;
   height: 11rem;
   width: 11rem;
   position: absolute;
-  top: 4rem;
-  left: 2rem;
+  /* top: 15vw;
+  left: 15vw; */
 }
 
 .executor-pane {
+  align-items: center;
   background-color: purple;
+  display: flex;
   clip-path: polygon(45% 1%, 99% 17%, 73% 93%, 32% 82%);
+  display: flex;
+  align-items: center;
   grid-column: 5 / span 3;
   grid-row: 1 / span 4;
+  position: relative;
 }
 
 .executor-pane > img {
+  margin: 30%;
   color: white;
   height: 12rem;
   width: 12rem;
   position: absolute;
-  top: 252px;
-  left: 232px;
+  /* top: 15vw;
+  left: -1vw; */
+  margin-left: 35%;
 }
 
 .placeholder-1 {
+  align-items: center;
   background-color: yellow;
+  display: flex;
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
   grid-column: 1 / span 2;
   grid-row: 2 / span 8;
 }
 
 .recipient-pane {
+  align-items: center;
   background-color: red;
+  display: flex;
   clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%);
   grid-column: 2 / span 2;
   grid-row: 3 / span 4;
 }
 
 .recipient-pane > img {
+  margin: 30%;
   color: white;
   height: 10rem;
   width: 11rem;
   position: absolute;
-  top: 23rem;
-  left: -1rem;
+  /* top: 23rem;
+  left: -1rem; */
 }
 
 .obit-pane {
+  align-items: center;
   background-color: aqua;
+  display: flex;
   clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%);
   grid-column: 4 / span 2;
   grid-row: 4 / span 4;
 }
 
 .obit-pane > img {
+  margin: 30%;
   color: white;
   height: 8rem;
   width: 7rem;
@@ -103,39 +126,47 @@ main, html {
 }
 
 .timeline-pane {
+  align-items: center;
   background-color: red;
+  display: flex;
   clip-path: polygon(7% 0%, 45% 25%, 50% 98%, 16% 73%);
   grid-column: 3 / span 2;
   grid-row: 7 / span 8;
 }
 
 .timeline-pane > img {
+  margin: 30%;
   color: white;
   height: 6rem;
   width: 6rem;
   position: absolute;
-  top: 42rem;
-  left: 6rem;
+  /* top: 42rem;
+  left: 6rem; */
 }
 
 .gallery-pane {
+  align-items: center;
   background-color: purple;
+  display: flex;
   clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%);
   grid-column: 5 / span 2;
   grid-row: 5 / span 3;
 }
 
 .gallery-pane > img {
+  margin: 30%;
   color: white;
   height: 6rem;
   width: 6rem;
   position: absolute;
-  top: 37rem;
-  left: 16rem;
+  /* top: 37rem;
+  left: 16rem; */
 }
 
 .placeholder-2 {
+  align-items: center;
   background-color: palevioletred;
+  display: flex;
   clip-path: polygon(100% 0, 20% 100%, 100% 100%);
   grid-column: 6 / span 2;
   grid-row: 3 / span 5;
