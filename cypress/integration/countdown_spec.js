@@ -1,21 +1,12 @@
 describe('Countdown', () => {
   beforeEach(() => {
-
-    // cy.fixture("user.json").as("user")
-    // cy.intercept("GET", "https://elegy-api.herokuapp.com/api/v1/user/1", {
-    //   { 
-    //     ok: true,
-    //     redirected: false,
-    //     status: 201, 
-    //     statusTest: "OK",
-    //     type: "cors",
-    //     url: "https://elegy-api.herokuapp.com/api/v1/user/1",
-    //     body: {
-    //     fixture: 'user'
-    //   }
-    // })
-
-    cy.visit("http://localhost:3000")
+    cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/user/1", {
+        ok: true,
+        status: 200, 
+        url: "https://elegy-backend.herokuapp.com/api/v1/user/1",
+        fixture: 'user'
+    })
+    cy.visit("http://localhost:3000/countdown")
   })
 
   it('Should be able to visit the countdown by typing in the path in the url', () => {
