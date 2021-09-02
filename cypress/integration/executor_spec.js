@@ -22,7 +22,7 @@ describe('Executor', () => {
       .contains("Executor Name")
       .get("[data-cy=exec-phone]")
       .contains("(413) 555-6666")
-      .get("[data-cy=exec-email]")
+      .get(".exec-email")
       .contains("email_address@hotmail.com")
   })
 
