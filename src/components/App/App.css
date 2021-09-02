@@ -67,7 +67,7 @@ main {
   margin-left: 30%;
   color: white;
   height: 7rem;
-  width: 50%;
+  width: 59%;
   position: absolute;
   margin-left: 35%;
 }
@@ -94,8 +94,8 @@ main {
 .recipient-pane > img {
   margin-left: 10%;
   color: white;
-  height: 10rem;
-  width: 70%;
+  height: 8rem;
+  width: 82%;
   position: absolute;
 }
 
@@ -111,10 +111,10 @@ main {
 }
 
 .obit-pane > img {
-  margin-left: 16%;
+  margin-left: 10%;
   color: white;
   height: 8rem;
-  width: 7rem;
+  width: 6rem;
   position: absolute;
 }
 
@@ -167,4 +167,94 @@ main {
   color: white;
   font-size: 2rem;
   text-align: center;
+}
+
+@media screen and (min-width: 603px) {
+  .countdown-pane > img {
+    height: 18rem;
+    width: 53%;
+  }
+
+  .obit-pane > img {
+    margin-left: 13%;
+    height: 9rem;
+    width: 47%;
+  }
+
+  .preview-pane > img {
+    margin-left: 25%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .countdown-pane > img {
+    height: 18rem;
+    margin-left: 36%;
+    width: 45%;
+  }
+
+  .executor-pane > img {
+    margin-left: 35%;
+    width: 50%;
+  }
+
+  .obit-pane > img {
+    margin-left: 16%;
+    height: 9rem;
+    width: 42%;
+  }
+
+  .preview-pane > img {
+    margin-left: 25%;
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .recipient-pane > img {
+    margin-left: 18%;
+    width: 69%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .countdown-pane > img {
+    height: 21rem;
+    margin-left: 43%;
+    margin-top: 3%;
+    width: 28%;
+  }
+
+  .executor-pane > img {
+    margin-left: 43%;
+    height: 11rem;
+    width: 39%;
+  }
+
+  .gallery-pane > img {
+    margin-left: 30%;
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .obit-pane > img {
+    margin-left: 20%;
+    height: 12rem;
+    width: 36%;
+  }
+
+  .preview-pane > img {
+    margin-top: 4%;
+    margin-left: 30%;
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .recipient-pane > img {
+    margin-left: 34%;
+    width: 47%;
+  }
+
+  .timeline-pane > img {
+    margin-left: 21%;
+  }
 }
