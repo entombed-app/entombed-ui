@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import './Header.css';
 import userPicture from '../../assets/user.png';
 
-const Header = () => {
+const Header = ({profilePic}) => {
     return (
         <header className='header'>
             <div className='sun'><img src={userPicture}/></div>
@@ -24,6 +24,8 @@ const Header = () => {
                 </section>
             </Link>
 
+            <div className='sun'><img src={profilePic}/></div>
+            <h1 className='title'>Elegy</h1>
         </header>
     )
 }
