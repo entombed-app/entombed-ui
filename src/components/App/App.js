@@ -11,6 +11,7 @@ import familyTree from "../../assets/family-tree.png";
 import galleryImg from "../../assets/gallery.png"
 import { CountdownPane } from "../CountdownPane/CountdownPane";
 import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
+import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
@@ -68,6 +69,7 @@ const App = () => {
           <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
           <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
+          <Route exact path="/photoadd" render={() => <PhotoAdd />}/>
         </Switch>
       }
     </main>
