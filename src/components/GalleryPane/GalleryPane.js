@@ -11,11 +11,6 @@ export const GalleryPane = props => {
         </div>
         <div class="right-dome"></div>
       </section>
-      <section class="slideshow">
-        <h4 class="slideshow-header">Slideshow</h4>
-      </section>
-      <section class="gal-view">
-      </section>
   </section>
   )
 }

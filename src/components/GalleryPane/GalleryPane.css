@@ -1,0 +1,44 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-dome {
+  border: 1px solid black;
+  height: 25vh;
+  width: 75vh;
+  border-radius: 39vh 39vh 0vh 0vh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.left-dome {
+  height: 100%;
+  width: 30%;
+  border: 1px solid black;
+  z-index: 1;
+  position: absolute;
+  margin-left: 53vh;
+  background-color: pink;
+  border-radius: 0vh 39vh 0vh 0vh;
+}
+
+.right-dome {
+  height: 100%;
+  width: 30%;
+  border: 1px solid black;
+  z-index: 1;
+  position: absolute;
+  background-color: lightblue;
+    border-radius: 39vh 0vh 0vh 0vh;
+}
+
+.center-dome {
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  position: absolute;
+}
