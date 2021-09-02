@@ -25,6 +25,10 @@ const Header = ({profilePic}) => {
             </Link>
 
             <div className='sun'><img src={profilePic}/></div>
+            {profilePic.length 
+            ? <div className='sun'><img src={profilePic}/></div>
+            : <div className='sun'><img src={userPicture}/></div>
+            }
             <h1 className='title'>Elegy</h1>
         </header>
     )
