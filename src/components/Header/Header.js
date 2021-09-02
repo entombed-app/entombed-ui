@@ -4,6 +4,8 @@ import './Header.css';
 import userPicture from '../../assets/user.png';
 
 const Header = ({profilePic}) => {
+    let pic;
+    profilePic.length ? pic = profilePic : pic = userPicture;
     return (
         <header className='header'>
             <Link to="/" style={{textDecoration: 'none'}}>
@@ -22,10 +24,7 @@ const Header = ({profilePic}) => {
                     </div>
                 </section>
             </Link>
-            {profilePic.length 
-            ? <div className='sun'><img src={profilePic}/></div>
-            : <div className='sun'><img src={userPicture}/></div>
-            }
+            <div className='sun'><img src={pic}/></div>
         </header>
     )
 }
