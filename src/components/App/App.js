@@ -15,7 +15,18 @@ import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({
+      "id": "",
+      "type": "",
+      "attributes": {
+          "email": "",
+          "name": "",
+          "date_of_birth": "",
+          "obituary": "",
+          "profile_picture": "",
+          "etd": ""
+      }
+  })
   const [error, setError] = useState("")
 
   const getUser = async () => {
