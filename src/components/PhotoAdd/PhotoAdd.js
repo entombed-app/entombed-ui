@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './PhotoAdd.css'
 
 const PhotoAdd = () => {
-    const handleSubmit = () => {
-        console.log('Submitter')
+    const [photoFilePath, setPhotoFilePath] = useState("")
+
+    const handleSubmit = (e) => {
+        console.log(photoFilePath)
+    }
+    const handleInput = (e) => {
+        setPhotoFilePath(e.target.value)
     }
 
     return (
@@ -17,11 +22,11 @@ const PhotoAdd = () => {
         <div className="photo-rectangle side2"></div>
         <div className="photo-rectangle"></div>
         <div className="square3"></div>
-        <article className="file-form"><input type='file'></input></article>
+        <article className="file-form"><input type='file' accept="image/png, image/jpeg" onInput={(e) => {handleInput(e)}}></input></article>
         <div className="photo-rectangle"></div>
         <div className="photo-small-square photo-corner3"></div>
-        <button className='edit-button photo-rectangle bottom-rectangle1' onClick={() => handleSubmit()}>Submit</button>
-        <div className="photo-rectangle bottom-rectangle2"></div>
+        <div className="photo-rectangle bottom-rectangle1"></div>
+        <button className='edit-button photo-rectangle bottom-rectangle2' onClick={(e) => handleSubmit(e)}>Submit</button>
         <div className="photo-small-square photo-corner4"></div>
     </section>
     )
