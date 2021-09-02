@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <main>
-      <Link to="/" style={{textDecoration: 'none'}}><Header /></Link>
+      <Header />
       {!user.attributes 
       ? <p className='loading-message'>Loading...</p>
       : <Switch>
