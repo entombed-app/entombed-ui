@@ -1,65 +1,77 @@
 .photo-add {
     display: grid;
-    grid-template-rows: 10% 35% 10% 35% 10%;
-    grid-template-columns: 10% 35% 10% 35% 10% ;
+    grid-template-rows: 10% 45% 45% 10%;
+    grid-template-columns: 10% 40% 40% 10% ;
     height: 87vh;
     width: 99vw;
 }
 
-.corner1 {
+.photo-title {
+    background-color: #24CAFA;
+    border: .3rem solid black;
     grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
-}
-.corner2 {
-    grid-row: 1 / span 1;
-    grid-column: 5 / span 1;
-}
-.corner3 {
-    grid-row: 5 / span 1;
-    grid-column: 1 / span 1;
-}
-.corner4 {
-    grid-row: 5 / span 1;
-    grid-column: 5 / span 1;
+    grid-column: 2 / span 2;
+    text-align: center;
 }
 
-.middle1 {
+.photo-title > h2 {
+    margin: 0;
+}
+
+.photo-corner1 {
     grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+}
+.photo-corner2 {
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+}
+.photo-corner3 {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 1;
+}
+.photo-corner4 {
+    grid-row: 4 / span 1;
+    grid-column: 4 / span 1;
+}
+
+.side1 {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.side2 {
+    grid-row: 2 / span 1;
+    grid-column: 4 / span 1;
+}
+
+.bottom-rectangle1 {
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 1;
+}
+
+.bottom-rectangle2 {
+    grid-row: 4 / span 1;
     grid-column: 3 / span 1;
 }
 
-.middle2 {
-    grid-row: 3 / span 1;
-    grid-column: 1 / span 1;
-}
-
-.middle3 {
-    grid-row: 3 / span 1;
-    grid-column: 5 / span 1;
-}
-
-.middle4 {
-    grid-row: 5 / span 1;
-    grid-column: 3 / span 1;
-}
-
-.rectangle {
-    background-color: #126374;
+.photo-rectangle {
+    background-color: #24CAFA;
     border: .3rem solid black;
 }
 
-.small-square {
-    background-color: #900c3f;
+.photo-small-square {
+    background-color: #0406E7;
     border: .3rem solid black;
 }
 
 .file-form {
     align-items: center;
-    background-color: #AD9976;
+    background-color: #900c3f;
     border: .3rem solid black;
     color: white;
-    grid-row: 2 / span 3;
-    grid-column: 2 / span 3;
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 2;
     word-wrap: break-word;
 }
 
