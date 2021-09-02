@@ -17,7 +17,7 @@ main {
 
 .preview-pane {
   align-items: center;
-  background-color: red;
+  background-color: #900C3F;
   display: flex;
   clip-path: polygon(7% 44%, 69% 5%, 74% 67%, 15% 99%);
   grid-column: 1 / span 3;
@@ -35,7 +35,7 @@ main {
 
 .countdown-pane {
   align-items: center;
-  background-color: aqua;
+  background-color: #126374;
   display: flex;
   clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%);
   grid-column: 3 / span 3;
@@ -53,7 +53,7 @@ main {
 
 .executor-pane {
   align-items: center;
-  background-color: purple;
+  background-color: #AD9976;
   display: flex;
   clip-path: polygon(45% 1%, 99% 17%, 73% 93%, 32% 82%);
   display: flex;
@@ -74,7 +74,7 @@ main {
 
 .placeholder-1 {
   align-items: center;
-  background-color: yellow;
+  background-color: #ffff0085;
   display: flex;
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
   grid-column: 1 / span 2;
@@ -83,7 +83,7 @@ main {
 
 .recipient-pane {
   align-items: center;
-  background-color: red;
+  background-color: #900C3F;
   display: flex;
   clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%);
   grid-column: 2 / span 2;
@@ -101,7 +101,7 @@ main {
 
 .obit-pane {
   align-items: center;
-  background-color: aqua;
+  background-color: #126374;
   display: flex;
   clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%);
   font-size: 50px;
@@ -120,7 +120,7 @@ main {
 
 .timeline-pane {
   align-items: center;
-  background-color: red;
+  background-color: #900C3F;
   display: flex;
   clip-path: polygon(7% 0%, 45% 25%, 50% 98%, 16% 73%);
   grid-column: 3 / span 2;
@@ -138,7 +138,7 @@ main {
 
 .gallery-pane {
   align-items: center;
-  background-color: purple;
+  background-color: #AD9976;
   display: flex;
   clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%);
   grid-column: 5 / span 2;
@@ -156,7 +156,7 @@ main {
 
 .placeholder-2 {
   align-items: center;
-  background-color: palevioletred;
+  background-color: #db7093b8;
   display: flex;
   clip-path: polygon(100% 0, 20% 100%, 100% 100%);
   grid-column: 6 / span 2;
