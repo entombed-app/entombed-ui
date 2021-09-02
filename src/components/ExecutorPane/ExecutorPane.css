@@ -130,20 +130,21 @@
 .exec-details {
   position: absolute;
   color: white;
+  margin-left: 20vh;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .exec-name {
-  margin-left: 8vh;
+  margin-right: 5vh;
 }
 
-h3 {
-  margin-left: 15vh;
-  margin-top: 5vh;
-}
-
-h4 {
-  margin-top: 10vh;
-  margin-left: 8vh;
+.exec-email {
+  margin-right: 25vh;
+  margin-top: 0;
 }
 
 .exec-title {
