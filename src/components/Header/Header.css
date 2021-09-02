@@ -52,7 +52,7 @@
     transform: rotate(45deg);
     position: absolute;
     z-index: 1;
-    background-color: white;
+    background-color: #0E1525;
   }
   
   h1 {
@@ -77,3 +77,33 @@
     margin: 1vh;
   }
   
+  .left {
+    height: 5vh;
+    width: 5vh;
+    margin-right: 15vh;
+    z-index: 2;
+    background: transparent;
+  }
+  
+  .right {
+    height: 5vh;
+    width: 5vh;
+    margin-left: 15vh;
+    z-index: 2;
+    background: transparent;
+  }
+  
+  .center {
+    z-index: 1;
+    height: 10vh;
+    width: 10vh;
+  }
+  
+  .header-stone {
+    height: 11vh;
+    width: 10vh;
+    border: 1px solid black;
+    position: absolute;
+    background-color: white;
+    border-radius: 30% 30% 0% 0%;
+  }
