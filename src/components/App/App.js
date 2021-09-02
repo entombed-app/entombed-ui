@@ -38,6 +38,7 @@ const App = () => {
   return (
     <main>
       <Header />
+      <Link to="/" style={{textDecoration: 'none'}}><Header profilePic={user.attributes.profile_picture}/></Link>
       {!user.attributes 
       ? <p className='loading-message'>Loading...</p>
       : <Switch>
