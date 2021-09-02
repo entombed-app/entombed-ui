@@ -16,10 +16,10 @@ export const CountdownPane = ({etd, err, dob}) => {
   }, [])
 
   const calculateTimeLeft = () => {
-    let newYear, newEtd
-    const splitEtd = etd.split("/")
+    let newEtd
+    const splitEtd = etd.split("-")
 
-      newEtd = `${splitEtd[0]}/${splitEtd[1]}/${splitEtd[2]}`
+      newEtd = `${splitEtd[1]}/${splitEtd[2]}/${splitEtd[0]}`
       setEtd(newEtd)
       calculateProgress()
 
