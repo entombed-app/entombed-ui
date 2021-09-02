@@ -42,3 +42,19 @@
   overflow: hidden;
   position: absolute;
 }
+
+.slideshow {
+  border: 1px solid black;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75vh;
+  background-color: white;
+}
+
+.slideshow-header {
+/*   position: absolute; */
+  margin-top: 0;
+}
