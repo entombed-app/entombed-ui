@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .profile-dome {
@@ -46,15 +48,53 @@
 .slideshow {
   border: 1px solid black;
   height: 10vh;
+  width: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 75vh;
   background-color: white;
+  z-index:1;
 }
 
 .slideshow-header {
 /*   position: absolute; */
   margin-top: 0;
+}
+
+.gallery-panes {
+  display: grid;
+  grid-gap: 2vh;
+  grid-template-columns: repeat(4, 115px);
+/*    grid-template-rows: 40px repeat(4, 115px) 40px; */
+  grid-template-rows: repeat(8, 115px);
+  transform: rotate(-45deg);
+  /* position: relative; */
+  /* margin-left: 47vh; */
+  /* margin-top: -16vh; */
+  z-index: -1;
+}
+
+.gal-diamond {
+  font-size: 150%;
+  background-color: yellow;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.gal-img {
+ transform: rotate(45deg);
+ height: 20vh;
+}
+
+.gal-view {
+ /* position: absolute; */
+ height: 91vh;
+ width: 75vh;
+ border: 1px solid black;
+ object-fit: cover;
+ overflow: hidden;
 }
