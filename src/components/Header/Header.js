@@ -6,7 +6,6 @@ import userPicture from '../../assets/user.png';
 const Header = ({profilePic}) => {
     return (
         <header className='header'>
-            <div className='sun'><img src={userPicture}/></div>
             <Link to="/" style={{textDecoration: 'none'}}>
                 <section className="title-graphic">
                     <section className="title-diamond">
@@ -23,13 +22,10 @@ const Header = ({profilePic}) => {
                     </div>
                 </section>
             </Link>
-
-            <div className='sun'><img src={profilePic}/></div>
             {profilePic.length 
             ? <div className='sun'><img src={profilePic}/></div>
             : <div className='sun'><img src={userPicture}/></div>
             }
-            <h1 className='title'>Elegy</h1>
         </header>
     )
 }
