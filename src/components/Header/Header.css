@@ -1,11 +1,22 @@
-.header {
+.header, .title-graphic, .stripes, .title-diamond {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.title-diamond, .header-diamond, .header-stone, h1, .sun > img {
+    position: absolute;
+} 
+
+h1 {
+    z-index: 2;
+}
+
+.header {
     height: 20vh;
     width: 100%;
-    border: 2px solid black;
+    border-bottom: 2px solid black;
     margin-bottom: 3vh;
 }
 
@@ -25,10 +36,8 @@
 }
 
 .sun > img {
-    color: white;
     height: 4rem;
     width: 4rem;
-    position: absolute;
     top: 1rem;
     left: 1.1rem;
     background-color: #ad9976;
@@ -39,79 +48,55 @@
 .title-graphic {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 3vh;
 }
-  
-  .title-diamond {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
-  }
-  
-  .header-diamond {
-    border: 2px solid #ad9976;
+
+.header-diamond {
+    border: 1px solid #ad9976;
     height: 7vh;
     width: 7vh;
     transform: rotate(45deg);
-    position: absolute;
     z-index: 1;
     background-color: #0E1525;
-  }
-  
-  h1 {
-    z-index: 2;
-    position: absolute;
-  }
-  
-  .stripes {
+}
+
+.stripes {
     width: 55vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .stripe {
+}
+
+.stripe {
     height: .25vh;
-    width: 60%;
+    width: 67%;
     background-color: #ad9976;
     position: relative;
     margin: 1vh;
-  }
-  
-  .left {
+}
+
+.right, .left {
     height: 5vh;
     width: 5vh;
+    background: transparent;
+    z-index: 3;
+}
+
+.left {
     margin-right: 20vh;
-    z-index: 2;
-    background: transparent;
-  }
-  
-  .right {
-    height: 5vh;
-    width: 5vh;
+}
+
+.right {
     margin-left: 20vh;
+}
+
+.center {
     z-index: 2;
-    background: transparent;
-  }
-  
-  .center {
-    z-index: 1;
     height: 13vh;
     width: 13vh;
-  }
-  
-  .header-stone {
+}
+
+.header-stone {
     height: 11vh;
     width: 10vh;
-    border: 1px solid black;
-    position: absolute;
-    background-color: white;
+    border: 1px solid #ad9976;
+    background-color: #0E1525;
     border-radius: 30% 30% 0% 0%;
-  }
+}
