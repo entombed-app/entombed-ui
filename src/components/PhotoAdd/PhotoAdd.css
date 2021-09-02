@@ -1,5 +1,4 @@
-.obit {
-    background-color: rgb(62, 57, 57);
+.photo-add {
     display: grid;
     grid-template-rows: 10% 35% 10% 35% 10%;
     grid-template-columns: 10% 35% 10% 35% 10% ;
@@ -54,7 +53,7 @@
     border: .3rem solid black;
 }
 
-.obit-text {
+.file-form {
     align-items: center;
     background-color: #AD9976;
     border: .3rem solid black;
@@ -78,12 +77,5 @@
 
 .edit-button {
     padding: 0%;  
-    text-align: center;
-}
-
-.remaining {
-    color: white;
-    grid-row: 4 / span 1;
-    grid-column: 4 / span 1;
     text-align: center;
 }

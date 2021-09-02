@@ -1,8 +1,13 @@
 import React from 'react';
+import './PhotoAdd.css'
 
 const PhotoAdd = () => {
+    const handleSubmit = () => {
+        console.log('Submitter')
+    }
+
     return (
-        <section className='obit'>
+    <section className='photo-add'>
         <div className='small-square corner1'></div>
         <div className='rectangle'></div>
         <div className='small-square middle1'></div>
@@ -19,8 +24,8 @@ const PhotoAdd = () => {
         <div className='small-square middle4'></div>
         <div className='rectangle'></div>
         <div className='small-square corner4'></div>
-        {error && <div className='obit-error'>{error}!</div>}
-        <article><input type='file'></input></article>
+        {/* {error && <div className='obit-error'>{error}!</div>} */}
+        <article className="file-form"><input type='file'></input></article>
     </section>
     )
 }
