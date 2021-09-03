@@ -3,13 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 75%;
+  width: 80%;
   height: 100%;
   margin-left: 12%;
 }
 
 .profile-dome {
-  /* border: 2vh solid #0E1525; */
   height: 35vh;
   width: 75vh;
   border-radius: 39vh 39vh 0vh 0vh;
@@ -43,9 +42,12 @@
 
 .center-dome {
   height: 100%;
-  object-fit: cover;
-  overflow: hidden;
   position: absolute;
+}
+
+.gal-prof {
+  height: 100%;
+  margin-left: 53%;
 }
 
 .slideshow {
