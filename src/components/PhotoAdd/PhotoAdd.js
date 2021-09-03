@@ -8,10 +8,9 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
     const handleSubmit = (e) => {
         setPreviewHeader("Current Profile Picture")
         updateProfilePicture(photoFilePath)
-        console.log(photoFilePath)
     }
 
-    const handleInput = (e) => {
+    const handleChange = (e) => {
         setPreviewHeader("Picture to Upload")
         setPhotoFilePath(URL.createObjectURL(e.target.files[0]))
     }
@@ -31,7 +30,7 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
         <div className="square3"></div>
         <article className="photo-form">
             <p>Upload Your Photo Here</p>
-            <input className="photo-upload" type='file' accept="image/png, image/jpeg" onInput={(e) => {handleInput(e)}}></input>
+            <input className="photo-upload" type='file' accept="image/png, image/jpeg" onChange={(e) => {handleChange(e)}}></input>
             <button className="photo-edit-button" onClick={(e) => handleSubmit(e)}>Submit</button>
         </article>
         <div className="photo-rectangle"></div>
