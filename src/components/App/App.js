@@ -24,7 +24,7 @@ const App = () => {
           "name": "",
           "date_of_birth": "",
           "obituary": "",
-          "profile_picture": "",
+          "profile_picture_url": "",
           "etd": ""
       }
   })
@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <main>
-      <Header profilePic={user.attributes.profile_picture}/>
+      <Header profilePic={user.attributes.profile_picture_url}/>
       {!user.attributes 
       ? <p className='loading-message'>Loading...</p>
       : <Switch>
