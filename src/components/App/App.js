@@ -31,7 +31,7 @@ const App = () => {
   const [error, setError] = useState("")
 
   const getUser = async () => {
-    const url = 'https://elegy-backend.herokuapp.com/api/v1/user/1'
+    const url = 'https://elegy-backend.herokuapp.com/api/v1/users/2'
     setError('')
     try {
       const response = await fetch(url)
