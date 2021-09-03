@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import './PhotoAdd.css'
 import userPicture from '../../assets/user.png';
 
-const PhotoAdd = ({updateProfilePicture}) => {
-    const [photoFilePath, setPhotoFilePath] = useState(userPicture)
+const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
+    const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
 
     const handleSubmit = (e) => {
         updateProfilePicture(photoFilePath)

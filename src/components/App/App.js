@@ -75,7 +75,7 @@ const App = () => {
           <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
           <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
-          <Route exact path="/photoadd" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture}/>}/>
+          <Route exact path="/photoadd" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture}/>}/>
         </Switch>
       }
     </main>
