@@ -1,7 +1,6 @@
 describe("Change Profile Picture", () => {
     beforeEach(() => {
       cy.fixture("user").then((user) => {
-        //   user.data.attributes.profile_picture 
           cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
               ok: true,
               status: 200, 
@@ -23,17 +22,24 @@ describe("Change Profile Picture", () => {
         .contains("Upload Your Photo Here")
     })
 
-    it('Should be able to upload a photo and see the photo displayed in the preview pane', () => {
-        // const userPhoto = "images/william.png"
-        cy.fixture('images/user.png').then((william) => {
+    it('Should be able to upload a photo and see the photo displayed in the preview pane and in the profile sun', () => {
+        cy.fixture("william.png")
+        .then(file => Cypress.Blob.base64StringToBlob(file))
+        .then((fileContent) => {
             cy.get(".sun > img")
             .click()
             .get(".photo-upload")
-            .attachFile(william)
+            .attachFile({
+                fileContent: fileContent,
+                fileName: "william.png",
+                mimeType: "image/png"
+            })
             .get(".photo-edit-button")
             .click()
             .get(".user-image")
-            .contains(william)
+            .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+            .get(".sun > img")
+            .should("have.attr", "src").should("include", "blob:http://localhost:3000")
         })
     })
   
