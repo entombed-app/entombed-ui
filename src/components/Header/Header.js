@@ -5,7 +5,7 @@ import userPicture from '../../assets/user.png';
 
 const Header = ({profilePic}) => {
     let pic;
-    profilePic.length ? pic = userPicture : pic = userPicture;
+    profilePic.length ? pic = profilePic : pic = userPicture;
     return (
         <header className='header'>
             <Link to="/" style={{textDecoration: 'none'}}>
