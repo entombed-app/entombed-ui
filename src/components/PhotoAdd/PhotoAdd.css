@@ -46,6 +46,7 @@
     background-color: #2247A8;
     border: .3rem solid black;
     display: flex;
+    flex-direction: column;
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
     justify-content: center;    

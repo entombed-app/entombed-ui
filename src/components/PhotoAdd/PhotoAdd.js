@@ -4,12 +4,15 @@ import userPicture from '../../assets/user.png';
 
 const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
     const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
+    const [previewHeader, setPreviewHeader] = useState("Current Profile Picture")
 
     const handleSubmit = (e) => {
+        setPreviewHeader("Current Profile Picture")
         updateProfilePicture(photoFilePath)
         console.log(photoFilePath)
     }
     const handleInput = (e) => {
+        setPreviewHeader("Picture to Upload")
         setPhotoFilePath(URL.createObjectURL(e.target.files[0]))
     }
 
@@ -19,7 +22,9 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
         <div className="photo-title"><h2>Edit Profile Picture</h2></div>
         <div className="photo-small-square photo-corner2"></div>
         <div className="photo-rectangle side1"></div>
-        <div className="square1"><img className="user-image" src={photoFilePath}/></div>
+        <div className="square1">
+            <p>{previewHeader}</p>
+            <img className="user-image" src={photoFilePath} alt="User Profile Picture"/></div>
         <div className="square2"></div>
         <div className="photo-rectangle side2"></div>
         <div className="photo-rectangle"></div>
