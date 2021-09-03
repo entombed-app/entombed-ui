@@ -3,7 +3,7 @@ import "./GalleryPane.css"
 
 export const GalleryPane = props => {
   const [avail, setAvail] = useState(["9", "10", "14", "15", "16", "17", "20", "21", "22", "23", "26", "28"])
-  const [photos] = useState([])
+  const [photos] = useState(["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"])
   const [profile] = useState("")
 
   return (
@@ -29,15 +29,33 @@ export const GalleryPane = props => {
           <div className="gal-diamond g-6"></div>
           <div className="gal-diamond g-7"></div>
           <div className="gal-diamond g-8"></div>
-          <div className="gal-diamond g-9"></div>
-          <div className="gal-diamond g-10"></div>
+          <div className="gal-diamond g-9">
+            <img 
+                alt="User photo" 
+                className="gal-img"
+                src={photos[2]}
+              />
+          </div>
+          <div className="gal-diamond g-10">
+            <img 
+              alt="User photo" 
+              className="gal-img"
+              src={photos[1]}
+            />
+          </div>
           <div className="gal-diamond g-11"></div>
           <div className="gal-diamond g-12"></div>
           <div className="gal-diamond g-13"></div>
           <div className="gal-diamond g-14"></div>
           <div className="gal-diamond g-15"></div>
           <div className="gal-diamond g-16"></div>
-          <div className="gal-diamond g-17"></div>
+          <div className="gal-diamond g-17">
+            <img 
+              alt="User photo" 
+              className="gal-img"
+              src={photos[0]}
+            />
+          </div>
           <div className="gal-diamond g-18"></div>
           <div className="gal-diamond g-19"></div>
           <div className="gal-diamond g-20"></div>

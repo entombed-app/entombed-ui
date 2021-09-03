@@ -79,7 +79,6 @@
 }
 
 .gal-diamond {
-  font-size: 150%;
   background-color: #b9d6c2;
   object-fit: cover;
   overflow: hidden;
@@ -90,7 +89,7 @@
 
 .gal-img {
  transform: rotate(45deg);
- height: 20vh;
+ height: 22vh;
 }
 
 .gal-view {
