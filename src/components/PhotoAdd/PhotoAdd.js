@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './PhotoAdd.css'
-import userPicture from '../../assets/user.png';
 
 const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
     const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
@@ -11,6 +10,7 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
         updateProfilePicture(photoFilePath)
         console.log(photoFilePath)
     }
+
     const handleInput = (e) => {
         setPreviewHeader("Picture to Upload")
         setPhotoFilePath(URL.createObjectURL(e.target.files[0]))
