@@ -30,6 +30,12 @@ const App = () => {
   })
   const [error, setError] = useState("")
 
+  const updateProfilePicture = (photoFilePath) => {
+    let updatedUser = {...user}
+    updatedUser.attributes.profile_picture = photoFilePath
+    setUser(updatedUser)
+  }
+
   const getUser = async () => {
     const url = 'https://elegy-backend.herokuapp.com/api/v1/users/2'
     setError('')
