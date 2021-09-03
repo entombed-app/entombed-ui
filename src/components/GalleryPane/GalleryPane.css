@@ -58,21 +58,18 @@
 }
 
 .slideshow-header {
-/*   position: absolute; */
   margin-top: 0;
 }
 
 .gallery-panes {
   display: grid;
   grid-gap: 2vh;
-  grid-template-columns: repeat(4, 115px);
-/*    grid-template-rows: 40px repeat(4, 115px) 40px; */
-  grid-template-rows: repeat(8, 115px);
+  grid-template-columns: repeat(6, 16vh);
+  grid-template-rows: repeat(6, 16vh);
   transform: rotate(-45deg);
-  /* position: relative; */
-  /* margin-left: 47vh; */
-  /* margin-top: -16vh; */
+  margin-left: -12vh;
   z-index: -1;
+  margin-top: -10vh;
 }
 
 .gal-diamond {
@@ -91,7 +88,6 @@
 }
 
 .gal-view {
- /* position: absolute; */
  height: 91vh;
  width: 75vh;
  border: 1px solid black;
