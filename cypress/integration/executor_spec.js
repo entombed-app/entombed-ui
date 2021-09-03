@@ -13,7 +13,7 @@ describe('Executor', () => {
     cy.get(".executor-pane")
       .click()
     cy.url().should("include", "http://localhost:3000/executor")
-})
+  })
 
   it("Should display the executor page with the default executor details", () => {
     cy.get(".executor-pane")
