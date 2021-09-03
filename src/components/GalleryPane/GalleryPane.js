@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import "./GalleryPane.css"
 
 export const GalleryPane = props => {
-  const [avail] = useState([9, 10, 14, 15, 16, 17, 20, 21, 22, 23, 26, 28])
+  const [avail, setAvail] = useState(["9", "10", "14", "15", "16", "17", "20", "21", "22", "23", "26", "28"])
+  const [photos] = useState([])
+  const [profile] = useState("")
 
   return (
     <section className="gallery">
