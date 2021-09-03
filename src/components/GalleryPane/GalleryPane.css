@@ -3,39 +3,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 75%;
   height: 100%;
+  margin-left: 12%;
 }
 
 .profile-dome {
-  border: 1px solid black;
-  height: 25vh;
+  /* border: 2vh solid #0E1525; */
+  height: 35vh;
   width: 75vh;
   border-radius: 39vh 39vh 0vh 0vh;
   display: flex;
   justify-content: space-between;
   position: relative;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .left-dome {
   height: 100%;
   width: 30%;
-  border: 1px solid black;
+  border-left: 2vh solid #0E1525;
   z-index: 1;
   position: absolute;
-  margin-left: 53vh;
-  background-color: pink;
+  margin-left: 51vh;
+  background-color: #7F85BF;
   border-radius: 0vh 39vh 0vh 0vh;
 }
 
 .right-dome {
   height: 100%;
   width: 30%;
-  border: 1px solid black;
+  border-right: 2vh solid #0E1525;
   z-index: 1;
   position: absolute;
-  background-color: lightblue;
-    border-radius: 39vh 0vh 0vh 0vh;
+  background-color: #1590A7;
+  border-radius: 39vh 0vh 0vh 0vh;
 }
 
 .center-dome {
@@ -46,14 +49,15 @@
 }
 
 .slideshow {
-  border: 1px solid black;
+  border-top: 1vh solid #0E1525;
+  border-bottom: 1vh solid #0E1525;
   height: 10vh;
-  width: 75vh;
+  width: 74.5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #900C3f;
   z-index:1;
 }
 
@@ -74,7 +78,7 @@
 
 .gal-diamond {
   font-size: 150%;
-  background-color: yellow;
+  background-color: #b9d6c2;
   object-fit: cover;
   overflow: hidden;
   display: flex;
@@ -94,3 +98,15 @@
  object-fit: cover;
  overflow: hidden;
 }
+
+.add-gal-photo {
+  height: 3.5vh;
+  width: 15vh;
+  background-color: #0E1525;
+  outline: none;
+  border: 2px solid #AD9976;
+  color: #AD9976;
+  border-radius: .5vh;
+}
+
+

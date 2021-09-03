@@ -18,6 +18,8 @@ h1 {
     width: 100%;
     border-bottom: 2px solid black;
     margin-bottom: 3vh;
+    justify-content: flex-start;
+    margin-top: 3vh;
 }
 
 .title {

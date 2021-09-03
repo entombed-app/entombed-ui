@@ -9,52 +9,52 @@ export const GalleryPane = props => {
       <section className="profile-dome">
         <div className="left-dome"></div>
         <div className="center-dome">
-          <img src="https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__480.jpg" className="profile-dome"/>
+          <img className="" src="https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__480.jpg"/>
         </div>
         <div className="right-dome"></div>
       </section>
       <section className="slideshow">
-        <h4 className="slideshow-header">Slideshow</h4>
+        {/* <h4 className="slideshow-header">Slideshow</h4> */}
         <button className="add-gal-photo">Add a photo</button>
       </section>
       <section className="gal-view">
         <section className="gallery-panes">
-          <div className="gal-diamond 1"></div>
-          <div className="gal-diamond 2"></div>
-          <div className="gal-diamond 3"></div>
-          <div className="gal-diamond 4"></div>
-          <div className="gal-diamond 5"></div>
-          <div className="gal-diamond 6"></div>
-          <div className="gal-diamond 7"></div>
-          <div className="gal-diamond 8"></div>
-          <div className="gal-diamond 9"></div>
-          <div className="gal-diamond 10"></div>
-          <div className="gal-diamond 11"></div>
-          <div className="gal-diamond 12"></div>
-          <div className="gal-diamond 13"></div>
-          <div className="gal-diamond 14"></div>
-          <div className="gal-diamond 15"></div>
-          <div className="gal-diamond 16"></div>
-          <div className="gal-diamond 17"></div>
-          <div className="gal-diamond 18"></div>
-          <div className="gal-diamond 19"></div>
-          <div className="gal-diamond 20"></div>
-          <div className="gal-diamond 21"></div>
-          <div className="gal-diamond 22"></div>
-          <div className="gal-diamond 23"></div>
-          <div className="gal-diamond 24"></div>
-          <div className="gal-diamond 25"></div>
-          <div className="gal-diamond 26"></div>
-          <div className="gal-diamond 27"></div>
-          <div className="gal-diamond 28"></div>
-          <div className="gal-diamond 29"></div>
-          <div className="gal-diamond 30"></div>
-          <div className="gal-diamond 31"></div>
-          <div className="gal-diamond 32"></div>
-          <div className="gal-diamond 33"></div>
-          <div className="gal-diamond 34"></div>
-          <div className="gal-diamond 35"></div>
-          <div className="gal-diamond 36"></div>
+          <div className="gal-diamond g-1"></div>
+          <div className="gal-diamond g-2"></div>
+          <div className="gal-diamond g-3"></div>
+          <div className="gal-diamond g-4"></div>
+          <div className="gal-diamond g-5"></div>
+          <div className="gal-diamond g-6"></div>
+          <div className="gal-diamond g-7"></div>
+          <div className="gal-diamond g-8"></div>
+          <div className="gal-diamond g-9"></div>
+          <div className="gal-diamond g-10"></div>
+          <div className="gal-diamond g-11"></div>
+          <div className="gal-diamond g-12"></div>
+          <div className="gal-diamond g-13"></div>
+          <div className="gal-diamond g-14"></div>
+          <div className="gal-diamond g-15"></div>
+          <div className="gal-diamond g-16"></div>
+          <div className="gal-diamond g-17"></div>
+          <div className="gal-diamond g-18"></div>
+          <div className="gal-diamond g-19"></div>
+          <div className="gal-diamond g-20"></div>
+          <div className="gal-diamond g-21"></div>
+          <div className="gal-diamond g-22"></div>
+          <div className="gal-diamond g-23"></div>
+          <div className="gal-diamond g-24"></div>
+          <div className="gal-diamond g-25"></div>
+          <div className="gal-diamond g-26"></div>
+          <div className="gal-diamond g-27"></div>
+          <div className="gal-diamond g-28"></div>
+          <div className="gal-diamond g-29"></div>
+          <div className="gal-diamond g-30"></div>
+          <div className="gal-diamond g-31"></div>
+          <div className="gal-diamond g-32"></div>
+          <div className="gal-diamond g-33"></div>
+          <div className="gal-diamond g-34"></div>
+          <div className="gal-diamond g-35"></div>
+          <div className="gal-diamond g-36"></div>
         </section>
       </section>
     </section>
