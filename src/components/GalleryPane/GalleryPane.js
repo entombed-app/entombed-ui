@@ -9,7 +9,7 @@ export const GalleryPane = props => {
       <section className="profile-dome">
         <div className="left-dome"></div>
         <div className="center-dome">
-          <img className="" src="https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__480.jpg"/>
+          <img className="gal-prof" src="https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__480.jpg"/>
         </div>
         <div className="right-dome"></div>
       </section>
