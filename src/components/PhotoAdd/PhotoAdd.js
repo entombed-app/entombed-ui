@@ -29,11 +29,15 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
         <div className="photo-rectangle side2"></div>
         <div className="photo-rectangle"></div>
         <div className="square3"></div>
-        <article className="file-form"><input type='file' accept="image/png, image/jpeg" onInput={(e) => {handleInput(e)}}></input></article>
+        <article className="photo-form">
+            <p>Upload Your Photo Here</p>
+            <input className="photo-upload" type='file' accept="image/png, image/jpeg" onInput={(e) => {handleInput(e)}}></input>
+            <button className="photo-edit-button" onClick={(e) => handleSubmit(e)}>Submit</button>
+        </article>
         <div className="photo-rectangle"></div>
         <div className="photo-small-square photo-corner3"></div>
         <div className="photo-rectangle bottom-rectangle1"></div>
-        <button className='edit-button photo-rectangle bottom-rectangle2' onClick={(e) => handleSubmit(e)}>Submit</button>
+        <div className="photo-rectangle bottom-rectangle2"></div>
         <div className="photo-small-square photo-corner4"></div>
     </section>
     )

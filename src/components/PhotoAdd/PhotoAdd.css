@@ -96,16 +96,21 @@
     border: .3rem solid black;
 }
 
-.file-form {
+.photo-form {
     align-items: center;
     background-color: #900c3f;
     border: .3rem solid black;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
     color: white;
     grid-row: 3 / span 1;
     grid-column: 3 / span 1;
     word-wrap: break-word;
+}
+
+.photo-upload {
+    margin-left: 24%;
 }
 
 .obit-error {
@@ -120,7 +125,7 @@
     z-index: 1;
 }
 
-.edit-button {
+.photo-edit-button {
     padding: 0%;  
     text-align: center;
 }
