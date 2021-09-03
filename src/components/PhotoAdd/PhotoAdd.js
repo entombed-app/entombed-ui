@@ -17,7 +17,7 @@ const PhotoAdd = () => {
         <div className="photo-title"><h2>Edit Profile Picture</h2></div>
         <div className="photo-small-square photo-corner2"></div>
         <div className="photo-rectangle side1"></div>
-        <div className="square1"><img src={photoFilePath}/></div>
+        <div className="square1"><img className="user-image" src={photoFilePath}/></div>
         <div className="square2"></div>
         <div className="photo-rectangle side2"></div>
         <div className="photo-rectangle"></div>
