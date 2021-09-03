@@ -1,10 +1,13 @@
 describe("Change Profile Picture", () => {
     beforeEach(() => {
-      cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
-          ok: true,
-          status: 200, 
-          url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
-          fixture: 'user'
+      cy.fixture("user").then((user) => {
+        //   user.data.attributes.profile_picture 
+          cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
+              ok: true,
+              status: 200, 
+              url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
+              body: user
+          }).as("getUser")
       })
       cy.visit("http://localhost:3000/")
     })
@@ -21,10 +24,17 @@ describe("Change Profile Picture", () => {
     })
 
     it('Should be able to upload a photo and see the photo displayed in the preview pane', () => {
-        cy.get(".sun > img")
-        .click()
-        .get(".photo-upload")
-        .click()
+        // const userPhoto = "images/william.png"
+        cy.fixture('images/user.png').then((william) => {
+            cy.get(".sun > img")
+            .click()
+            .get(".photo-upload")
+            .attachFile(william)
+            .get(".photo-edit-button")
+            .click()
+            .get(".user-image")
+            .contains(william)
+        })
     })
   
   })
