@@ -7,7 +7,7 @@
             "name": "Elder Bobby",
             "date_of_birth": "1999-01-02",
             "obituary": "Tedious and my goodness I am done.",
-            "profile_picture": "http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bd1b0a02f40cd221a6d44fddacd18bc9fc9798ab/profile-picture.png",
+            "profile_picture": "./user.png",
             "etd": "2119-06-22"
         }
     }
