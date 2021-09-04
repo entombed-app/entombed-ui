@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
+import { Link } from "react-router-dom";
 import './PhotoAdd.css'
 
-const PhotoAdd = ({updateProfilePicture, currentProfilePic, type}) => {
+const PhotoAdd = ({updateProfilePicture, addGalleryPhoto, currentProfilePic, type}) => {
     const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
     const [previewHeader, setPreviewHeader] = useState("Current Profile Picture")
 
     const handleSubmit = (e) => {
-        setPreviewHeader("Current Profile Picture")
-        updateProfilePicture(photoFilePath)
+        type === "profile" ? updateProfilePicture(photoFilePath) && setPreviewHeader("Current Profile Picture") : addGalleryPhoto(photoFilePath)
     }
 
     const handleChange = (e) => {
@@ -37,7 +37,7 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic, type}) => {
         <article className="photo-form">
             <p>Upload Your Photo Here</p>
             <input className="photo-upload" type='file' accept="image/png, image/jpeg" onChange={(e) => {handleChange(e)}}></input>
-            <button className="photo-edit-button" onClick={(e) => handleSubmit(e)}>Submit</button>
+            <Link to={`/${type==="gallery" ? "gallery" : ""}`}><button className="photo-edit-button" onClick={(e) => handleSubmit(e)}>Submit</button></Link>
         </article>
         <div className="photo-rectangle"></div>
         <div className="photo-small-square photo-corner3"></div>
