@@ -12,6 +12,7 @@ import galleryImg from "../../assets/gallery.png"
 import { CountdownPane } from "../CountdownPane/CountdownPane";
 import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
+import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
@@ -32,7 +33,6 @@ const App = () => {
     try {
       const response = await fetch(url)
       const userData = await response.json()
-      console.log(userData)
       setUser(userData.data)
     } catch (err) {
       setError(err.message)
@@ -67,6 +67,7 @@ const App = () => {
           <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
           <Route exact path="/photoadd" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url}/>}/>
+          <Route exact path="/gallery" render={() => <GalleryPane photos={user.attributes.photos}/>}/>
         </Switch>
         </>
       }
