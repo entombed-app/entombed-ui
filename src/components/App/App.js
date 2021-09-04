@@ -23,10 +23,16 @@ const App = () => {
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState(["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"])
 
-  const updateProfilePicture = (photoFilePath) => {
-    let updatedUser = {...user}
-    updatedUser.attributes.profile_picture_url = photoFilePath
-    setUser(updatedUser)
+  const updateProfilePicture = async ({photoFilePath, photoFile}) => {
+    try {
+      let updatedUser = {...user}
+      console.log("Photo information", photoFilePath, photoFile)
+      updatedUser.attributes.profile_picture_url = photoFilePath
+      setUser(updatedUser)
+      updateUser({data: photoFile, type: "profile_picture", id: user.id})
+    } catch(err) {
+      setError(err.message)
+    }
   }
 
   const addGalleryPhoto = (photoFilePath) => {
