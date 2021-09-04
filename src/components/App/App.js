@@ -69,43 +69,43 @@ const App = () => {
       {!user.attributes || error
       ? <Message error={error} profilePic={""}/>
       : <>
-        <Header profilePic={user.attributes.profile_picture_url}/>
-        <Switch>
-          <Route exact from='/'>
-            <section className='window'>
-              <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
-              <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
-              <NavLink className='executor-pane' exact to='/executors'><img src={suit}/></NavLink>
-              <div className='placeholder-1'></div>
-              <NavLink className='obit-pane' exact to='/obituary'><img src={scrollImg}/></NavLink>
-              <NavLink className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></NavLink>
-              <NavLink className='recipient-pane' exact to='/recipients'><img src={familyTree}/></NavLink>
-              <NavLink className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></NavLink>
-              <div className='placeholder-2'></div>
-            </section>
-          </Route>
-          <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
-          <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
-          <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
-          <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
-          <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
-          <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
-          <Route exact path="/add-photo/:type" render={({ match }) => 
-            { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
-                                                                : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
-            }
-          }/>
-          <Route
-            exact
-            path='/page-not-found'
-            render={() => <Message error={'404 page not found. Click title above.'} />}
-          />
-          <Route
-            exact
-            path='/*/page-not-found'
-            render={() => <Message error={'404 page not found. Click title above.'} />}
-          />
-          <Redirect to="/page-not-found" />
+          <Header profilePic={user.attributes.profile_picture_url}/>
+          <Switch>
+            <Route exact from='/'>
+              <section className='window'>
+                <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
+                <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
+                <NavLink className='executor-pane' exact to='/executors'><img src={suit}/></NavLink>
+                <div className='placeholder-1'></div>
+                <NavLink className='obit-pane' exact to='/obituary'><img src={scrollImg}/></NavLink>
+                <NavLink className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></NavLink>
+                <NavLink className='recipient-pane' exact to='/recipients'><img src={familyTree}/></NavLink>
+                <NavLink className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></NavLink>
+                <div className='placeholder-2'></div>
+              </section>
+            </Route>
+            <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
+            <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
+            <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
+            <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
+            <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
+            <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
+            <Route exact path="/add-photo/:type" render={({ match }) => 
+              { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
+                                                                  : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
+              }
+            }/>
+            <Route
+              exact
+              path='/page-not-found'
+              render={() => <Message error={'404 page not found. Click title above.'} />}
+            />
+            <Route
+              exact
+              path='/*/page-not-found'
+              render={() => <Message error={'404 page not found. Click title above.'} />}
+            />
+            <Redirect to="/page-not-found" />
           </Switch>
         </>
       }
