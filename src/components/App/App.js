@@ -76,7 +76,6 @@ const App = () => {
 // { email: user_email,
 // password: user_password}
 // ```
-    
     setIsLoggedIn(true)
     setShowModal(false)
   }

@@ -38,3 +38,7 @@
 .modal-body {
   flex-direction: column;
 }
+
+.error {
+  color: red;
+}
