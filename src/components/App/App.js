@@ -22,7 +22,6 @@ const App = () => {
 
   const updateProfilePicture = (photoFilePath) => {
     let updatedUser = {...user}
-    console.log(updatedUser)
     updatedUser.attributes.profile_picture_url = photoFilePath
     setUser(updatedUser)
   }
