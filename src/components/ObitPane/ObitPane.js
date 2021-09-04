@@ -7,15 +7,18 @@ const ObitPane = ({obit, updateObituary}) => {
     const [usedChars, setUsedChars] = useState(obit.length);
     const [error, setError] = useState("");
     const [message, setMessage] = useState("");
+    const [timer, setTimer] = useState("");
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!usedChars) {
             setError("Please type something for your obituary. Click Edit below")
         } else {
             setError("")
         }
         setEditMode(false)
-        updateObituary(obituary)
+        const message = await updateObituary(obituary)
+        setMessage(message)
+        setTimer(setTimeout(() => setMessage(""), 2000))
     }
 
     const handleClickEdit = () => {
@@ -49,7 +52,7 @@ const ObitPane = ({obit, updateObituary}) => {
                     ? <button className='edit-button rectangle' onClick={() => handleSubmit()}>Submit</button>
                     : <button className='edit-button rectangle' onClick={() => handleClickEdit()}>Edit</button>
                 }
-                <div className='small-square middle4'></div>
+                <div className='small-square middle4'>{!!message && <div className="obit-message-container">{message}</div>}</div>
                 {editMode
                     ? <div className='rectangle'><p className='remaining'>Limit: {usedChars}/500</p></div> 
                     : <div className='rectangle'></div>
