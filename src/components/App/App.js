@@ -19,7 +19,7 @@ import { Switch, NavLink, Link, Route } from 'react-router-dom';
 const App = () => {
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
-  const [galleryPhotos, setGalleryPhotos] = useState([])
+  const [galleryPhotos, setGalleryPhotos] = useState(["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"])
 
   const updateProfilePicture = (photoFilePath) => {
     let updatedUser = {...user}
@@ -72,7 +72,7 @@ const App = () => {
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
           <Route exact path="/photoadd/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
           <Route exact path="/photoadd/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} type={"gallery"}/>}/> 
-          <Route exact path="/gallery" render={() => <GalleryPane photos={user.attributes.photos}/>}/>
+          <Route exact path="/gallery" render={() => <GalleryPane galPhotos={galleryPhotos}/>}/>
           <Route exact path="/photoadd/:type" render={({ match }) => 
             { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
                                                                 : <PhotoAdd addGalleryPhoto={addGalleryPhoto} type={"gallery"}/>

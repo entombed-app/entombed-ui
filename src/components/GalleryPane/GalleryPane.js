@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import "./GalleryPane.css"
 
-export const GalleryPane = props => {
-  const [photos] = useState(["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"])
+export const GalleryPane = ({ galPhotos }) => {
   const [profile] = useState("")
+  const [photos] = useState(galPhotos)
 
   return (
     <section className="gallery">
