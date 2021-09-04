@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Header from '../Header/Header';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Header from "../Header/Header";
 
 import sundial from "../../assets/sundial_icon.png";
 import preview from "../../assets/preview (2).png"
@@ -14,6 +14,7 @@ import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
+import Message from "../Messsage/Message";
 import { fetchUser, updateUser } from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
@@ -55,8 +56,8 @@ const App = () => {
 
   return (
     <main>
-      {!user.attributes 
-      ? <p className='loading-message'>Loading...</p>
+      {!user.attributes || !error
+      ? <Message error={error}/>
       : <>
         <Header profilePic={user.attributes.profile_picture_url}/>
         <Switch>
