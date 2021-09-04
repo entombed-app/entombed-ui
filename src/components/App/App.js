@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <main>
-      {!user.attributes || !error
+      {!user.attributes || error
       ? <Message error={error}/>
       : <>
         <Header profilePic={user.attributes.profile_picture_url}/>
