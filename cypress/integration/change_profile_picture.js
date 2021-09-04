@@ -36,6 +36,8 @@ describe("Change Profile Picture", () => {
             })
             .get(".photo-edit-button")
             .click()
+            cy.get(".sun > img")
+            .click()
             .get(".user-image")
             .should("have.attr", "src").should("include", "blob:http://localhost:3000")
             .get(".sun > img")
