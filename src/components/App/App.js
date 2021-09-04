@@ -39,7 +39,7 @@ const App = () => {
       updatedUser.attributes.obituary = newObit
       console.log(updatedUser)
       setUser(updatedUser)
-      const message = await updateUser(updatedUser)
+      const message = await updateUser({data: newObit, type: "obituary", id: user.id})
       return message;
     } catch(err) {
       setError(err.message)

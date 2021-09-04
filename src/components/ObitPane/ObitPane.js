@@ -16,9 +16,13 @@ const ObitPane = ({obit, updateObituary}) => {
             setError("")
         }
         setEditMode(false)
-        const message = await updateObituary(obituary)
-        setMessage(message)
-        setTimer(setTimeout(() => setMessage(""), 2000))
+        try {
+            const message = await updateObituary(obituary)
+            setMessage(message)
+            setTimer(setTimeout(() => setMessage(""), 2000))
+        } catch(err) {
+            setError("")
+        }
     }
 
     const handleClickEdit = () => {

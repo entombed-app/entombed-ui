@@ -1,12 +1,14 @@
-export const updateUser = async (user) => {
-    console.log(user)
+export const updateUser = async ({data, type, id}) => {
+    const updatedInfo = {}
+    updatedInfo[type] = data;
+    console.log(updatedInfo)
     try {
-        const response = await fetch(`https://elegy-backend.herokuapp.com/api/v1/users/${user.id}`, {
+        const response = await fetch(`https://elegy-backend.herokuapp.com/api/v1/users/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify({obituary: user.attributes.obituary})
+            body: JSON.stringify(updatedInfo)
         })
         if (!response.ok) {
             throw Error()
