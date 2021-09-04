@@ -17,7 +17,7 @@ export const GalleryPane = props => {
       </section>
       <section className="slideshow">
         {/* <h4 className="slideshow-header">Slideshow</h4> */}
-        <Link to="/photoadd"><button className="add-gal-photo">Add a photo</button></Link>
+        <Link to="/photoadd/gallery"><button className="add-gal-photo">Add a photo</button></Link>
       </section>
       <section className="gal-view">
         <section className="gallery-panes">

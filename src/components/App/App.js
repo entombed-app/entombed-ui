@@ -19,11 +19,16 @@ import { Switch, NavLink, Link, Route } from 'react-router-dom';
 const App = () => {
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
+  const [galleryPhotos, setGalleryPhotos] = useState([])
 
   const updateProfilePicture = (photoFilePath) => {
     let updatedUser = {...user}
     updatedUser.attributes.profile_picture_url = photoFilePath
     setUser(updatedUser)
+  }
+
+  const addGalleryPhoto = (photoFilePath) => {
+    setGalleryPhotos([...galleryPhotos, photoFilePath])
   }
 
   const getUser = async () => {
@@ -65,8 +70,14 @@ const App = () => {
           <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
           <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
-          <Route exact path="/photoadd" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url}/>}/>
+          <Route exact path="/photoadd/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
+          <Route exact path="/photoadd/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} type={"gallery"}/>}/> 
           <Route exact path="/gallery" render={() => <GalleryPane photos={user.attributes.photos}/>}/>
+          <Route exact path="/photoadd/:type" render={({ match }) => 
+            { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
+                                                                : <PhotoAdd addGalleryPhoto={addGalleryPhoto} type={"gallery"}/>
+            }
+          }/>
         </Switch>
         </>
       }
