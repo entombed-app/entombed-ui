@@ -48,7 +48,6 @@ const ObitPane = ({obit, updateObituary}) => {
                 <div className='rectangle'></div>
                 <div className='small-square middle2'></div>
                 <div className='small-square middle3'></div>
-                {!!message && <div className="obit-message-container">{message}</div>}
                 <div className='rectangle'></div>
                 <div className='rectangle'></div>
                 <div className='small-square corner3'></div>
