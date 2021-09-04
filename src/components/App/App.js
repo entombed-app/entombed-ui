@@ -20,6 +20,7 @@ import { fetchUser, updateUser } from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
+  const [showModal, setShowModal] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
@@ -68,6 +69,11 @@ const App = () => {
     }
   }
 
+  const logIn = () => {
+    setIsLoggedIn(true)
+    setShowModal(false)
+  }
+
   useEffect(() => {
     getUser()
   }, [])
@@ -78,6 +84,7 @@ const App = () => {
       ? <Message error={error} profilePic={""}/>
       : <>
           <Header profilePic={user.attributes.profile_picture_url}/>
+          <Login show={showModal} logIn={logIn}/>
           <Switch>
             <Route exact from='/'>
               <section className='window'>

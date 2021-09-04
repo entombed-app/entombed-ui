@@ -13,6 +13,7 @@ main, html {
   margin-left: 5%;
   margin-right: 5%;
   overflow: unset;
+  position: relative;
 }
 
 .preview-pane {
