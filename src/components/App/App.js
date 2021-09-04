@@ -14,7 +14,7 @@ import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
-import { updateUser } from "../../utilities/apiCalls"
+import { fetchUser, updateUser } from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
@@ -40,11 +40,9 @@ const App = () => {
   }
 
   const getUser = async () => {
-    const url = 'https://elegy-backend.herokuapp.com/api/v1/users/2'
     setError('')
     try {
-      const response = await fetch(url)
-      const userData = await response.json()
+      const userData = await fetchUser(2)
       setUser(userData.data)
     } catch (err) {
       setError(err.message)

@@ -19,3 +19,15 @@ export const updateUser = async (user) => {
         throw Error(err)
     }
 } 
+
+export const fetchUser = async (userID) => {
+    const url = `https://elegy-backend.herokuapp.com/api/v1/users/${userID}`
+    try {
+      const response = await fetch(url)
+      const userData = await response.json()
+      console.log(userData)
+      return userData
+    } catch (err) {
+        throw Error(err)
+    }
+  }
