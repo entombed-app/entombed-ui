@@ -16,22 +16,12 @@ import ObitPane from "../ObitPane/ObitPane";
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
-  const [user, setUser] = useState({
-      "id": "",
-      "type": "",
-      "attributes": {
-          "email": "",
-          "name": "",
-          "date_of_birth": "",
-          "obituary": "",
-          "profile_picture_url": "",
-          "etd": ""
-      }
-  })
+  const [user, setUser] = useState({})
   const [error, setError] = useState("")
 
   const updateProfilePicture = (photoFilePath) => {
     let updatedUser = {...user}
+    console.log(updatedUser)
     updatedUser.attributes.profile_picture_url = photoFilePath
     setUser(updatedUser)
   }
@@ -55,10 +45,11 @@ const App = () => {
 
   return (
     <main>
-      <Header profilePic={user.attributes.profile_picture_url}/>
       {!user.attributes 
       ? <p className='loading-message'>Loading...</p>
-      : <Switch>
+      : <>
+        <Header profilePic={user.attributes.profile_picture_url}/>
+        <Switch>
           <Route exact from='/'>
             <section className='window'>
               <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
@@ -77,6 +68,7 @@ const App = () => {
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
           <Route exact path="/photoadd" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url}/>}/>
         </Switch>
+        </>
       }
     </main>
   );
