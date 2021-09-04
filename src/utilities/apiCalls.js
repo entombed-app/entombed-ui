@@ -6,7 +6,7 @@ export const updateUser = async (user) => {
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify({obituary: user.attributes.obituary})
         })
         if (!response.ok) {
             throw Error()
