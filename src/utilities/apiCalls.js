@@ -23,7 +23,6 @@ export const updateUser = async ({data, type, id}) => {
             throw Error()
         } else {
             const parsed = await response.json()
-            console.log(parsed)
             return "Successfully Updated"
         }
     } catch (err) {
