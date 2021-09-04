@@ -1,4 +1,5 @@
 export const updateUser = async (user) => {
+    console.log(user)
     try {
         const response = await fetch(`https://elegy-backend.herokuapp.com/api/v1/users/${user.id}`, {
             method: "PATCH",
@@ -12,8 +13,9 @@ export const updateUser = async (user) => {
         } else {
             const parsed = await response.json()
             console.log(parsed)
+            return "Successfully Updated"
         }
-    } catch {
-
+    } catch (err) {
+        throw Error(err)
     }
 } 
