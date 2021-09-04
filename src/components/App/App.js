@@ -30,6 +30,10 @@ const App = () => {
   const addGalleryPhoto = (photoFilePath) => {
     setGalleryPhotos([...galleryPhotos, photoFilePath])
   }
+  const updateObituary = (newObit) => {
+    const updatedUser = {...user}
+    updatedUser.attributes.obituary = newObit
+    setUser(updatedUser)
 
   const getUser = async () => {
     const url = 'https://elegy-backend.herokuapp.com/api/v1/users/2'
