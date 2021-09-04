@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import './PhotoAdd.css'
 
-const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
+const PhotoAdd = ({updateProfilePicture, currentProfilePic, type}) => {
     const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
     const [previewHeader, setPreviewHeader] = useState("Current Profile Picture")
+    const [view] = useState(type)
 
     const handleSubmit = (e) => {
         setPreviewHeader("Current Profile Picture")
@@ -18,12 +19,18 @@ const PhotoAdd = ({updateProfilePicture, currentProfilePic}) => {
     return (
     <section className='photo-add'>
         <div className="photo-small-square photo-corner1"></div>
-        <div className="photo-title"><h2>Edit Profile Picture</h2></div>
+        {type=== "profile" && <div className="photo-title"><h2>Edit Profile Picture</h2></div>}
+        {type=== "gallery" && <div className="photo-title"><h2>Add a Photo to Gallery</h2></div>}
         <div className="photo-small-square photo-corner2"></div>
         <div className="photo-rectangle side1"></div>
         <div className="square1">
-            <p>{previewHeader}</p>
-            <img className="user-image" src={photoFilePath} alt="User Profile Picture"/></div>
+            {type==="profile" &&
+            <>
+                <p>{previewHeader}</p>
+                <img className="user-image" src={photoFilePath} alt="User Profile Picture"/>
+            </>
+            }
+        </div>
         <div className="square2"></div>
         <div className="photo-rectangle side2"></div>
         <div className="photo-rectangle"></div>

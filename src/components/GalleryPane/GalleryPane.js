@@ -1,8 +1,8 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import "./GalleryPane.css"
 
 export const GalleryPane = props => {
-  const [avail, setAvail] = useState(["9", "10", "14", "15", "16", "17", "20", "21", "22", "23", "26", "28"])
   const [photos] = useState(["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"])
   const [profile] = useState("")
 
@@ -17,7 +17,7 @@ export const GalleryPane = props => {
       </section>
       <section className="slideshow">
         {/* <h4 className="slideshow-header">Slideshow</h4> */}
-        <button className="add-gal-photo">Add a photo</button>
+        <Link to="/photoadd"><button className="add-gal-photo">Add a photo</button></Link>
       </section>
       <section className="gal-view">
         <section className="gallery-panes">
