@@ -19,8 +19,9 @@ export const updateUser = async ({data, type, id}) => {
     }
     try {
         const response = await fetch(URL, patchInfo)
+        console.log(response)
         if (!response.ok) {
-            throw Error()
+            throw Error("We could not update your data. Pleash refresh")
         } else {
             const parsed = await response.json()
             return "Successfully Updated"

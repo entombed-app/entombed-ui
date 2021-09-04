@@ -8,9 +8,7 @@ const PhotoAdd = ({updateProfilePicture, addGalleryPhoto, currentProfilePic, typ
     const [photoFile, setPhotoFile] = useState("")
 
     const handleSubmit = (e) => {
-        type === "profile" ? updateProfilePicture(photoFilePath) && setPreviewHeader("Current Profile Picture") : addGalleryPhoto(photoFilePath)
-        setPreviewHeader("Current Profile Picture")
-        updateProfilePicture({photoFilePath, photoFile})
+        type === "profile" ? updateProfilePicture({photoFilePath, photoFile}) && setPreviewHeader("Current Profile Picture") : addGalleryPhoto(photoFilePath)
     }
 
     const handleChange = (e) => {

@@ -28,7 +28,7 @@ const App = () => {
       let updatedUser = {...user}
       updatedUser.attributes.profile_picture_url = photoFilePath
       setUser(updatedUser)
-      updateUser({data: photoFile, type: "profile_picture", id: user.id})
+      await updateUser({data: photoFile, type: "profile_picture", id: user.id})
     } catch(err) {
       setError(err.message)
     }
