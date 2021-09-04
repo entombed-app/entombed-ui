@@ -14,6 +14,7 @@ import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
+import updateUser from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
@@ -33,7 +34,10 @@ const App = () => {
   const updateObituary = (newObit) => {
     const updatedUser = {...user}
     updatedUser.attributes.obituary = newObit
+    console.log(updatedUser)
     setUser(updatedUser)
+    updateUser(updatedUser)
+  }
 
   const getUser = async () => {
     const url = 'https://elegy-backend.herokuapp.com/api/v1/users/2'
