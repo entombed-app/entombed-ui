@@ -163,7 +163,7 @@ main, html {
   grid-row: 3 / span 5;
 }
 
-.loading-message {
+.loading-error-message {
   color: white;
   font-size: 2rem;
   text-align: center;
