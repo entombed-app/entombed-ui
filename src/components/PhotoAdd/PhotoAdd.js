@@ -5,14 +5,18 @@ import './PhotoAdd.css'
 const PhotoAdd = ({updateProfilePicture, addGalleryPhoto, currentProfilePic, type}) => {
     const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
     const [previewHeader, setPreviewHeader] = useState("Current Profile Picture")
+    const [photoFile, setPhotoFile] = useState("")
 
     const handleSubmit = (e) => {
         type === "profile" ? updateProfilePicture(photoFilePath) && setPreviewHeader("Current Profile Picture") : addGalleryPhoto(photoFilePath)
+        setPreviewHeader("Current Profile Picture")
+        updateProfilePicture({photoFilePath, photoFile})
     }
 
     const handleChange = (e) => {
         setPreviewHeader("Picture to Upload")
         setPhotoFilePath(URL.createObjectURL(e.target.files[0]))
+        setPhotoFile(e.target.files[0])
     }
 
     return (
