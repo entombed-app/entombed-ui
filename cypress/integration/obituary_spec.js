@@ -92,6 +92,8 @@ describe('Obituary', () => {
         .type("banana")
         .get(".edit-button")
         .click()
+        .get(".loading-error-message")
+        .contains("We could not update your data. Please refresh")
     })
   
   })
