@@ -1,5 +1,6 @@
 describe('Gallery', () => {
   beforeEach(() => {
+    //Add additional intercept here for photos
     cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
         ok: true,
         status: 200, 
@@ -65,6 +66,27 @@ describe('Gallery', () => {
       cy.get(".add-gal-photo")
       .click()
       cy.url().should("include", "http://localhost:3000/add-photo/gallery")
+  })
+
+  it("Should allow user to add photos to their gallery", () => {
+    cy.fixture("william.png")
+      .then(file => Cypress.Blob.base64StringToBlob(file))
+      .then((fileContent) => {
+        cy.get(".add-gal-photo")
+        .click()
+          .get(".photo-upload")
+          .attachFile({
+              fileContent: fileContent,
+              fileName: "william.png",
+              mimeType: "image/png"
+          })
+          .get(".photo-edit-button")
+          .click()
+        cy.get(".g-14")
+          .children("img")
+          .should("be.visible")
+          .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+      })
   })
 
   it('Should display the user photos in the panes of the window', () => {
