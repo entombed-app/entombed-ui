@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "./GalleryPane.css"
 
 export const GalleryPane = ({ galPhotos, profPhoto }) => {
+  console.log(profPhoto)
 
   return (
     <section className="gallery">
@@ -16,7 +17,7 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
       </section>
       <section className="slideshow">
         {/* <h4 className="slideshow-header">Slideshow</h4> */}
-        <Link to="/photoadd/gallery"><button className="add-gal-photo">Add a photo</button></Link>
+        <Link to="/add-photo/gallery"><button className="add-gal-photo">Add a photo</button></Link>
       </section>
       <section className="gal-view">
         <section className="gallery-panes">
