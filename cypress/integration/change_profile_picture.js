@@ -12,6 +12,7 @@ describe("Change Profile Picture", () => {
     })
   
     it('Should be able to load the edit profile picture page by clicking on profile picture', () => {
+        cy.wait(3000)
         cy.get(".sun > img")
         .click()
         .get("h2")
@@ -23,6 +24,12 @@ describe("Change Profile Picture", () => {
     })
 
     it('Should be able to upload a photo and see the photo displayed in the preview pane and in the profile sun', () => {
+        cy.intercept("PATCH", "https://elegy-backend.herokuapp.com/api/v1/users/2/profile_picture",{
+            ok: true,
+            status: 200,
+            body: {}
+          }).as("updateProfPic")
+        cy.wait(3000)
         cy.fixture("william.png")
         .then(file => Cypress.Blob.base64StringToBlob(file))
         .then((fileContent) => {
@@ -36,7 +43,7 @@ describe("Change Profile Picture", () => {
             })
             .get(".photo-edit-button")
             .click()
-            cy.get(".sun > img")
+            .get(".sun > img")
             .click()
             .get(".user-image")
             .should("have.attr", "src").should("include", "blob:http://localhost:3000")
