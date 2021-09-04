@@ -42,10 +42,10 @@
 .gallery-panes {
   display: grid;
   grid-gap: 2vh;
-  grid-template-columns: repeat(6, 14vh);
-  grid-template-rows: repeat(6, 14vh);
+  grid-template-columns: repeat(6, 15vh);
+  grid-template-rows: repeat(6, 15vh);
   transform: rotate(-45deg);
-  margin-left: -12vh;
+  margin-left: -16.5vh;
   z-index: -1;
   margin-top: -10vh;
 }
