@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Login.css';
 
-export const Login = () => {
+export const Login = ({showModal, logIn}) => {
   const [username] = useState("")
   const [password] = useState("")
 
