@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import './Header.css';
 import userPicture from '../../assets/user.png';
 
-const Header = ({profilePic}) => {
+const Header = ({profilePic, isLoggedIn}) => {
     let pic;
     profilePic ? pic = profilePic : pic = userPicture;
     return (
@@ -25,6 +25,7 @@ const Header = ({profilePic}) => {
                 </section>
             </Link>
             <Link to ="/add-photo/profile"className="sun"><img src={pic}/></Link>
+            {!isLoggedIn && <button className="login-button">Log In</button>}
         </header>
     )
 }
