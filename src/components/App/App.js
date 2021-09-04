@@ -32,12 +32,18 @@ const App = () => {
   const addGalleryPhoto = (photoFilePath) => {
     setGalleryPhotos([...galleryPhotos, photoFilePath])
   }
-  const updateObituary = (newObit) => {
-    const updatedUser = {...user}
-    updatedUser.attributes.obituary = newObit
-    console.log(updatedUser)
-    setUser(updatedUser)
-    updateUser(updatedUser)
+
+  const updateObituary = async(newObit) => {
+    try {
+      const updatedUser = {...user}
+      updatedUser.attributes.obituary = newObit
+      console.log(updatedUser)
+      setUser(updatedUser)
+      const message = await updateUser(updatedUser)
+      return message;
+    } catch(err) {
+      setError(err.message)
+    }
   }
 
   const getUser = async () => {
