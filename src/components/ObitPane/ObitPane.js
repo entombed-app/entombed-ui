@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './ObitPane.css';
 
-const ObitPane = ({obit}) => {
+const ObitPane = ({obit, updateObituary}) => {
     const [obituary, setObituary] = useState(obit);
     const [editMode, setEditMode] = useState(false);
     const [usedChars, setUsedChars] = useState(obit.length);
@@ -14,6 +14,7 @@ const ObitPane = ({obit}) => {
             setError("")
         }
         setEditMode(false)
+        updateObituary(obituary)
     }
 
     const handleClickEdit = () => {
