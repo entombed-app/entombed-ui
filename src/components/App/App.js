@@ -70,10 +70,10 @@ const App = () => {
           <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
           <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
-          <Route exact path="/photoadd/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
-          <Route exact path="/photoadd/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
-          <Route exact path="/gallery" render={() => <GalleryPane galPhotos={galleryPhotos}/>}/>
-          <Route exact path="/photoadd/:type" render={({ match }) => 
+          <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
+          <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
+          <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
+          <Route exact path="/add-photo/:type" render={({ match }) => 
             { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
                                                                 : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
             }

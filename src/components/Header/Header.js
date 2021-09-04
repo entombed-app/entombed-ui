@@ -24,7 +24,7 @@ const Header = ({profilePic}) => {
                     </div>
                 </section>
             </Link>
-            <Link to ="/photoadd/profile"className="sun"><img src={pic}/></Link>
+            <Link to ="/add-photo/profile"className="sun"><img src={pic}/></Link>
         </header>
     )
 }
