@@ -11,6 +11,7 @@ import familyTree from "../../assets/family-tree.png";
 import galleryImg from "../../assets/gallery.png"
 import { CountdownPane } from "../CountdownPane/CountdownPane";
 import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
+import { Login } from "../Login/Login";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
