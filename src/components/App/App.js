@@ -16,7 +16,7 @@ import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
 import Message from "../Messsage/Message";
 import { fetchUser, updateUser } from "../../utilities/apiCalls"
-import { Switch, NavLink, Link, Route } from 'react-router-dom';
+import { Switch, NavLink, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
   const [user, setUser] = useState({})
@@ -95,7 +95,18 @@ const App = () => {
                                                                 : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
             }
           }/>
-        </Switch>
+          <Route
+            exact
+            path='/page-not-found'
+            render={() => <Message error={'404 page not found. Click title above.'} />}
+          />
+          <Route
+            exact
+            path='/*/page-not-found'
+            render={() => <Message error={'404 page not found. Click title above.'} />}
+          />
+          <Redirect to="/page-not-found" />
+          </Switch>
         </>
       }
     </main>
