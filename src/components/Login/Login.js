@@ -9,7 +9,7 @@ export const Login = () => {
     <section className="overlay">
       <section className="modal">
         <div className="modal-header">
-          <h2>Welcome! Please sign in.</h2>
+          <h2 className="login-message">Welcome! Please sign in.</h2>
           <div className="close">X</div>
         </div>
         <div className="modal-body">
