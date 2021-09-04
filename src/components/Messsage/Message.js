@@ -6,7 +6,7 @@ const Message = ({error, profilePic}) => {
     !error ? message = "Loading..." : message = error 
     return (
         <>
-            <Header profilePic={profilePic}/> 
+            {error !== "404 page not found. Click title above." && <Header profilePic={profilePic}/>} 
             <p className='loading-message'>{message}</p>
         </>
     )
