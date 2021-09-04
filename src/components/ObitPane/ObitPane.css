@@ -45,29 +45,33 @@
 }
 
 .rectangle {
-    background-color: #126374;
-    border: .3rem solid black;
+    background-color: hsla(174, 86%, 57%, 0.3);
+    border: 1vh solid #0E1525;
+    outline: 1px solid #AD9976;
 }
 
 .small-square {
-    background-color: #900c3f;
-    border: .3rem solid black;
+    background-color: hsla(4, 70%, 62%, 0.3);
+    border: 1vh solid #0E1525;
+    outline: 1px solid #AD9976;
 }
 
 .obit-text {
     align-items: center;
-    background-color: #AD9976;
-    border: .3rem solid black;
+    background-color: #0E1525;
+    border: 1vh solid #0E1525;
+    outline: 1px solid #AD9976;
     color: white;
     grid-row: 2 / span 3;
     grid-column: 2 / span 3;
     word-wrap: break-word;
+    padding: 2vh;
 }
 
 .obit-error {
     background-color: #AD9976;
-    border: .3rem solid black;
-    color: black;
+    border: .3rem solid #0E1525;
+    color: #0E1525;
     display: flex;;
     grid-row: 2 / span 3;
     grid-column: 2 / span 3;
@@ -86,4 +90,12 @@
     grid-row: 4 / span 1;
     grid-column: 4 / span 1;
     text-align: center;
+}
+
+.obit-head {
+    color: #AD9976;
+    font-size: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
