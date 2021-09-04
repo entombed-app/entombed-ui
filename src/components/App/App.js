@@ -20,6 +20,7 @@ import { fetchUser, updateUser } from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
