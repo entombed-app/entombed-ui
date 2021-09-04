@@ -14,7 +14,7 @@ import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
-import updateUser from "../../utilities/apiCalls"
+import { updateUser } from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route } from 'react-router-dom';
 
 const App = () => {
@@ -76,7 +76,7 @@ const App = () => {
             </section>
           </Route>
           <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
-          <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary}/>}/>
+          <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
           <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
           <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
           <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
