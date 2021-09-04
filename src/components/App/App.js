@@ -69,7 +69,14 @@ const App = () => {
     }
   }
 
-  const logIn = () => {
+  const logIn = async () => {
+// Expose route `POST /api/v1/login` to create sessions.
+// To create a session send
+// ```
+// { email: user_email,
+// password: user_password}
+// ```
+    
     setIsLoggedIn(true)
     setShowModal(false)
   }
@@ -84,7 +91,7 @@ const App = () => {
       ? <Message error={error} profilePic={""}/>
       : <>
           <Header profilePic={user.attributes.profile_picture_url}/>
-          <Login show={showModal} logIn={logIn}/>
+          <Login show={showModal} logIn={logIn} err={error}/>
           <Switch>
             <Route exact from='/'>
               <section className='window'>

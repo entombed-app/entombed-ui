@@ -25,7 +25,7 @@ const Header = ({profilePic, isLoggedIn}) => {
                 </section>
             </Link>
             <Link to ="/add-photo/profile"className="sun"><img src={pic}/></Link>
-            {!isLoggedIn && <button className="login-button">Log In</button>}
+            {/* {!isLoggedIn && <button className="login-button">Log In</button>} */}
         </header>
     )
 }
