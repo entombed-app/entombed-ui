@@ -28,6 +28,7 @@ export const fetchUser = async (userID) => {
       console.log(userData)
       return userData
     } catch (err) {
-        throw Error(err)
+        console.log(err)
+        throw Error("Apologies for the error. Please try refreshing the page.")
     }
   }
