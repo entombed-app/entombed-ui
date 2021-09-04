@@ -30,43 +30,97 @@ export const GalleryPane = props => {
           <div className="gal-diamond g-7"></div>
           <div className="gal-diamond g-8"></div>
           <div className="gal-diamond g-9">
-            <img 
-                alt="User photo" 
-                className="gal-img"
-                src={photos[2]}
-              />
+            {photos[2] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={photos[2]}
+                          />}
           </div>
           <div className="gal-diamond g-10">
-            <img 
-              alt="User photo" 
-              className="gal-img"
-              src={photos[1]}
-            />
+            {photos[1] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={photos[1]}
+                          />}
           </div>
           <div className="gal-diamond g-11"></div>
           <div className="gal-diamond g-12"></div>
           <div className="gal-diamond g-13"></div>
-          <div className="gal-diamond g-14"></div>
-          <div className="gal-diamond g-15"></div>
-          <div className="gal-diamond g-16"></div>
+          <div className="gal-diamond g-14">
+          {photos[3] && <img 
+                          alt="User photo" 
+                          className="gal-img"
+                          src={photos[3]}
+                        />}
+          </div>
+          <div className="gal-diamond g-15">
+            {photos[4] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={photos[4]}
+                          />}
+          </div>
+          <div className="gal-diamond g-16">
+            {photos[5] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={photos[5]}
+                          />}
+          </div>
           <div className="gal-diamond g-17">
-            <img 
-              alt="User photo" 
-              className="gal-img"
-              src={photos[0]}
-            />
+            {photos[0] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={photos[0]}
+                          />}
           </div>
           <div className="gal-diamond g-18"></div>
           <div className="gal-diamond g-19"></div>
-          <div className="gal-diamond g-20"></div>
-          <div className="gal-diamond g-21"></div>
-          <div className="gal-diamond g-22"></div>
-          <div className="gal-diamond g-23"></div>
+          <div className="gal-diamond g-20">
+            {photos[6] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={photos[6]}
+                          />}
+          </div>
+          <div className="gal-diamond g-21">
+            {photos[7] && <img 
+                              alt="User photo" 
+                              className="gal-img"
+                              src={photos[7]}
+                            />}
+          </div>
+          <div className="gal-diamond g-22">
+            {photos[8] && <img 
+                              alt="User photo" 
+                              className="gal-img"
+                              src={photos[8]}
+                            />}
+          </div>
+          <div className="gal-diamond g-23">
+            {photos[9] && <img 
+                                alt="User photo" 
+                                className="gal-img"
+                                src={photos[9]}
+                              />}
+          </div>
           <div className="gal-diamond g-24"></div>
           <div className="gal-diamond g-25"></div>
-          <div className="gal-diamond g-26"></div>
+          <div className="gal-diamond g-26">
+            {photos[10] && <img 
+                                alt="User photo" 
+                                className="gal-img"
+                                src={photos[10]}
+                              />}
+          </div>
           <div className="gal-diamond g-27"></div>
-          <div className="gal-diamond g-28"></div>
+          <div className="gal-diamond g-28">
+            {photos[11] && <img 
+                                alt="User photo" 
+                                className="gal-img"
+                                src={photos[11]}
+                              />}
+          </div>
           <div className="gal-diamond g-29"></div>
           <div className="gal-diamond g-30"></div>
           <div className="gal-diamond g-31"></div>
