@@ -1,10 +1,14 @@
 import React from "react"
+import Header from "../Header/Header";
 
-const Message = ({error}) => {
+const Message = ({error, profilePic}) => {
     let message;
     !error ? message = "Loading..." : message = error 
     return (
-        <p className='loading-message'>{message}</p>
+        <>
+            <Header profilePic={profilePic}/> 
+            <p className='loading-message'>{message}</p>
+        </>
     )
 }
 
