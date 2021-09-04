@@ -4,7 +4,6 @@ import './PhotoAdd.css'
 const PhotoAdd = ({updateProfilePicture, currentProfilePic, type}) => {
     const [photoFilePath, setPhotoFilePath] = useState(currentProfilePic)
     const [previewHeader, setPreviewHeader] = useState("Current Profile Picture")
-    const [view] = useState(type)
 
     const handleSubmit = (e) => {
         setPreviewHeader("Current Profile Picture")
