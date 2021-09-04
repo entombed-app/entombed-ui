@@ -82,6 +82,14 @@
   border-radius: .5vh;
 }
 
+.gal-rule, .gal-head {
+  color: #AD9976;
+}
+
+.gal-head {
+  font-size: 4vh;
+  margin-bottom: 4vh;
+}
 
 /* Partial Top Panes */
 
