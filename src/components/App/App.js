@@ -26,7 +26,6 @@ const App = () => {
   const updateProfilePicture = async ({photoFilePath, photoFile}) => {
     try {
       let updatedUser = {...user}
-      console.log("Photo information", photoFilePath, photoFile)
       updatedUser.attributes.profile_picture_url = photoFilePath
       setUser(updatedUser)
       updateUser({data: photoFile, type: "profile_picture", id: user.id})
@@ -43,7 +42,6 @@ const App = () => {
     try {
       const updatedUser = {...user}
       updatedUser.attributes.obituary = newObit
-      console.log(updatedUser)
       setUser(updatedUser)
       const message = await updateUser({data: newObit, type: "obituary", id: user.id})
       return message;
