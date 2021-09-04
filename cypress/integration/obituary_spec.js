@@ -5,7 +5,7 @@ describe('Obituary', () => {
           status: 200, 
           url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
           fixture: 'user'
-      })
+      }).as("getUser")
       cy.visit("http://localhost:3000/obituary")
     })
   
@@ -32,6 +32,12 @@ describe('Obituary', () => {
     })
 
     it("Should show the newly typed obituary after clicking submit", () => {
+      cy.intercept("PATCH", "https://elegy-backend.herokuapp.com/api/v1/users/2/",{
+        ok: true,
+        status: 200,
+        body: {}
+      }).as("updateObit")
+
       cy.get(".edit-button")
         .click()
         .get(".obit-text")
@@ -55,7 +61,12 @@ describe('Obituary', () => {
 
     it("Should not allow the user to type more than 500 characters", () => {
       let moreThan500 = "as;dlkfja;lsdkjfa;lsdkjfal;ksdjf;alskdjfa;lskdfj;alskdfja;lsdkfj;alskdfja;lskdjf;alsdkfja;lsdkfja;lskdjf;alskdjf;alskdjf;laksdjf;laksdjf;alskdjflaksdjfhlaksjdfhqk3leryoiquwefhlkadjshfoiquewyfklasdjhfoqiuewyhflkasjdfhoqieuyfsdlkjfhoq8eiuyfsidjkfhoiweuyfdjfhoq843ieuyfskdjfhoi4q3uyfedjfho8i3u4eyfhaeiuedsfhqku34yewrfieudhfoqu34ewyhrfiedhfoqu3ewhfoisudhfqj3hwefiweuydfhgjq3h4efiuysrdiufhq34eiwuyfq3erwiuyfhoq3iu4weyfhvjshdfgoiuqy34ewhfiusdfhgoiu234ywefiuydshfoiuq234yrfiuyfqiwe4uyhrtoqi234urwyefd9siyuq2e"
- 
+      cy.intercept("PATCH", "https://elegy-backend.herokuapp.com/api/v1/users/2/",{
+        ok: true,
+        status: 200,
+        body: {}
+      }).as("updateObit")
+
       cy.get(".edit-button")
         .click()
         .get(".obit-text")
@@ -65,6 +76,22 @@ describe('Obituary', () => {
         .click()
         .get(".obit-text")
         .should("not.have.value", moreThan500)
+    })
+
+    it("Should show an error if the obituary update fails", () => {
+      cy.intercept("PATCH", "https://elegy-backend.herokuapp.com/api/v1/users/2/",{
+        ok: true,
+        status: 500,
+        body: {}
+      }).as("patchFail")
+
+      cy.get(".edit-button")
+        .click()
+        .get(".obit-text")
+        .clear()
+        .type("banana")
+        .get(".edit-button")
+        .click()
     })
   
   })
