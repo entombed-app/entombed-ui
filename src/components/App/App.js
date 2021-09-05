@@ -20,9 +20,7 @@ import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-  const [showModal, setShowModal] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [loginErr, setLoginErr] = useState("")
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
@@ -72,16 +70,14 @@ const App = () => {
 
   const logIn = async credentials => {
     setError("")
-    setLoginErr("")
     try {
       const response = await postCredentials(credentials)
       if (response.data) {
         await getUser()
         setIsLoggedIn(true)
-        setShowModal(false)  
       } 
     } catch (err) {
-      throw Error("mitchmatch")
+      throw Error("Email and password do not match.")
     }
 
   }
@@ -96,7 +92,7 @@ const App = () => {
       ? <Message error={error} profilePic={""}/>
       : <>
           <Header profilePic={user.attributes.profile_picture_url}/>
-          <Login show={showModal} isLoggedIn={isLoggedIn} logIn={logIn} err={loginErr}/>
+          <Login isLoggedIn={isLoggedIn} logIn={logIn}/>
           <Switch>
             <Route exact from='/'>
               <section className='window'>
