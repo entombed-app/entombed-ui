@@ -82,17 +82,13 @@ const App = () => {
 
   }
 
-  useEffect(() => {
-    getUser()
-  }, [])
-
   return (
     <main>
-      {!user.attributes || error
+      {!isLoggedIn && <Login isLoggedIn={isLoggedIn} logIn={logIn}/>}
+      {!user.attributes || error 
       ? <Message error={error} profilePic={""}/>
       : <>
           <Header profilePic={user.attributes.profile_picture_url}/>
-          <Login isLoggedIn={isLoggedIn} logIn={logIn}/>
           <Switch>
             <Route exact from='/'>
               <section className='window'>
