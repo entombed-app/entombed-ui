@@ -58,6 +58,7 @@ export const postCredentials = async (credentials) => {
         headers: { "Content-Type": "application/json" }
     })
     if (!response.ok) {
+        console.log(response)
         throw Error("Username and Password do not match.")
     } else {
         const data = await response.json()
