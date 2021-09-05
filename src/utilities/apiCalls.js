@@ -40,11 +40,16 @@ export const updateUser = async ({data, type, id}) => {
 } 
 
 export const fetchUser = async (userID) => {
-    const url = `https://elegy-backend.herokuapp.com/api/v1/users/${userID}`
+    const url = `${baseURL}users/${userID}`
     try {
       const response = await fetch(url)
       const userData = await response.json()
-      return userData
+
+      const execsRes = await fetch(`${url}/executors`)
+      const execData = await execsRes.json()
+      const allUserData = await Promise.all([userData, execData])
+      console.log(allUserData)
+      return allUserData
     } catch (err) {
         throw Error("Apologies for the error. Please try refreshing the page.")
     }
@@ -58,7 +63,6 @@ export const postCredentials = async (credentials) => {
         headers: { "Content-Type": "application/json" }
     })
     if (!response.ok) {
-        console.log(response)
         throw Error("Username and Password do not match.")
     } else {
         const data = await response.json()
