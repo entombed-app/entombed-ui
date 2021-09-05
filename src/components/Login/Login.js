@@ -55,6 +55,7 @@ export const Login = ({logIn, isLoggedIn}) => {
               <input 
                 required
                 className="login-input"
+                data-cy="email"
                 type="text" 
                 name="email" 
                 placeholder="email"
@@ -64,6 +65,7 @@ export const Login = ({logIn, isLoggedIn}) => {
               <input 
                 required
                 className="login-input"
+                data-cy="password"
                 type="text" 
                 name="password" 
                 placeholder="password"
