@@ -45,17 +45,17 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
                           />}
           </div>
           <div className="gal-diamond g-11"></div>
-          <div className="gal-diamond g-12"></div>
-          <div className="gal-diamond g-13"></div>
-          <div className="gal-diamond g-14">
-          </div>
-          <div className="gal-diamond g-15">
-            {galPhotos[4] && <img 
+          <div className="gal-diamond g-12">
+          {galPhotos[4] && <img 
                             alt="User photo" 
                             className="gal-img"
                             src={galPhotos[4]}
                           />}
           </div>
+          <div className="gal-diamond g-13"></div>
+          <div className="gal-diamond g-14">
+          </div>
+          <div className="gal-diamond g-15"></div>
           <div className="gal-diamond g-16">
             {galPhotos[5] && <img 
                             alt="User photo" 
