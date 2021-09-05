@@ -34,8 +34,13 @@ const App = () => {
     }
   }
 
-  const addGalleryPhoto = (photoFilePath) => {
-    setGalleryPhotos([...galleryPhotos, photoFilePath])
+  const addGalleryPhoto = async ({photoFilePath, photoFile}) => {
+    try {
+      setGalleryPhotos([...galleryPhotos, photoFilePath])
+      await updateUser({data: photoFile, type: "images", id: user.id})
+    } catch(err) {
+      setError(err.message)
+    }
   }
 
   const updateObituary = async(newObit) => {
