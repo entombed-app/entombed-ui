@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Login.css';
 
-export const Login = ({show, logIn, err, isLoggedIn}) => {
-  console.log(err)
+export const Login = ({logIn, isLoggedIn}) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
@@ -45,7 +44,7 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
 
   return (
     <>
-      {show || !isLoggedIn ?
+      {!isLoggedIn ?
         <section className="overlay">
           <section className="modal">
             <div className="modal-header">
@@ -54,6 +53,7 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
             </div>
             <div className="modal-body">
               <input 
+                required
                 className="login-input"
                 type="text" 
                 name="email" 
@@ -62,6 +62,7 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
                 onChange={(e) => handleUserChange(e)}
               />
               <input 
+                required
                 className="login-input"
                 type="text" 
                 name="password" 
