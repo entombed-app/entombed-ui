@@ -7,8 +7,11 @@
 }
 
 .photo-title {
+    align-items: center;
     background-color: #24CAFA;
     border: .3rem solid black;
+    display: flex;
+    justify-content: center;
     grid-row: 1 / span 1;
     grid-column: 2 / span 2;
     text-align: center;
