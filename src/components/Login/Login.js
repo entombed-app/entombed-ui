@@ -30,9 +30,10 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
   const submitCredentials = async e => {
     e.preventDefault()
     const creds =   { 
-      email: email,
-      password: password
+      email: email.trim(),
+      password: password.trim()
     }
+
     setError("")
     try {
       await logIn(creds)
@@ -50,10 +51,10 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
             <div className="modal-header">
               {!!error ? <h2 className="login-message error">Email and password do not match. Please try again!</h2>
                     : <h2 className="login-message">Welcome! Please sign in.</h2>}
-              <div className="close">X</div>
             </div>
             <div className="modal-body">
               <input 
+                className="login-input"
                 type="text" 
                 name="email" 
                 placeholder="email"
@@ -61,6 +62,7 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
                 onChange={(e) => handleUserChange(e)}
               />
               <input 
+                className="login-input"
                 type="text" 
                 name="password" 
                 placeholder="password"
@@ -69,7 +71,12 @@ export const Login = ({show, logIn, err, isLoggedIn}) => {
               />
             </div>
             <div className="modal-footer">
-              <button disabled={disabled} onClick={e => submitCredentials(e)}>Login</button>
+              <button 
+                className="submit-login"
+                disabled={disabled} 
+                onClick={e => submitCredentials(e)}>
+                  Login
+              </button>
             </div>
           </section>
         </section>
