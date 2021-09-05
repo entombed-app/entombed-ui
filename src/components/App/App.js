@@ -16,7 +16,7 @@ import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
 import Message from "../Messsage/Message";
-import { fetchUser, updateUser } from "../../utilities/apiCalls"
+import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls"
 import { Switch, NavLink, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -69,15 +69,18 @@ const App = () => {
     }
   }
 
-  const logIn = async () => {
-// Expose route `POST /api/v1/login` to create sessions.
-// To create a session send
-// ```
-// { email: user_email,
-// password: user_password}
-// ```
-    setIsLoggedIn(true)
-    setShowModal(false)
+  const logIn = async credentials => {
+    setError("")
+    try {
+      const userData = await postCredentials(credentials)
+      console.log(userData)
+      getUser()
+      setIsLoggedIn(true)
+      setShowModal(false)
+    } catch (err) {
+      setError(err.message)
+    }
+
   }
 
   useEffect(() => {
@@ -94,14 +97,14 @@ const App = () => {
           <Switch>
             <Route exact from='/'>
               <section className='window'>
-                <NavLink className='preview-pane' exact to='/preview'><img src={preview}/></NavLink>
-                <NavLink className='countdown-pane' exact to='/countdown'><img src={sundial}/></NavLink>
-                <NavLink className='executor-pane' exact to='/executors'><img src={suit}/></NavLink>
+                <Link className='preview-pane' exact to='/preview'><img src={preview}/></Link>
+                <Link className='countdown-pane' exact to='/countdown'><img src={sundial}/></Link>
+                <Link className='executor-pane' exact to='/executors'><img src={suit}/></Link>
                 <div className='placeholder-1'></div>
-                <NavLink className='obit-pane' exact to='/obituary'><img src={scrollImg}/></NavLink>
-                <NavLink className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></NavLink>
-                <NavLink className='recipient-pane' exact to='/recipients'><img src={familyTree}/></NavLink>
-                <NavLink className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></NavLink>
+                <Link className='obit-pane' exact to='/obituary'><img src={scrollImg}/></Link>
+                <Link className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></Link>
+                <Link className='recipient-pane' exact to='/recipients'><img src={familyTree}/></Link>
+                <Link className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></Link>
                 <div className='placeholder-2'></div>
               </section>
             </Route>

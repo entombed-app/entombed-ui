@@ -1,3 +1,5 @@
+const baseURL =   `https://elegy-backend.herokuapp.com/api/v1/`
+
 export const updateUser = async ({data, type, id}) => {
     let patchInfo = {
         method: "PATCH",
@@ -48,3 +50,23 @@ export const fetchUser = async (userID) => {
         throw Error("Apologies for the error. Please try refreshing the page.")
     }
   }
+
+export const postCredentials = async (credentials) => {
+    // Expose route `POST /api/v1/login` to create sessions.
+  // To create a session send
+  // ```
+//   { email: user_email,
+//   password: user_password}
+  // ```
+  try {
+    const response = await fetch(`${baseURL}login`, {
+        method: "POST",
+        body: JSON.stringify(credentials),
+        headers: { "Content-Type": "application/json" }
+    })
+    const data = await response.json()
+    return data
+  } catch (err) {
+      throw Error(err.message)
+  }
+}
