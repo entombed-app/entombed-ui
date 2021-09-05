@@ -7,8 +7,8 @@
 }
 
 .profile-dome {
-  height: 35vh;
-  width: 60vh;
+  height: 17vh;
+  width: 100%;
   border-radius: 39vh 39vh 0vh 0vh;
   overflow: hidden;
   border: 1px solid #ad9976;
@@ -18,13 +18,13 @@
 }
 
 .gal-border {
-  height: 70vh;
-  width: 70vh;
-  border: 1px solid #ad9976;
+  height: 100%;
+  width: 90vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-top: 7.5vh;
 }
 
 .center-dome {
@@ -35,8 +35,8 @@
 }
 
 .slideshow {
-  height: 10vh;
-  width: 60vh;
+  height: 8vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,10 +53,10 @@
 .gallery-panes {
   display: grid;
   grid-gap: 2vh;
-  grid-template-columns: repeat(6, 15vh);
-  grid-template-rows: repeat(6, 15vh);
+  grid-template-columns: repeat(6, 12vh);
+  grid-template-rows: repeat(6, 12vh);
   transform: rotate(-45deg);
-  margin-left: -16.5vh;
+  margin-left: -9.25vh;
   z-index: -1;
   margin-top: -10vh;
 }
@@ -76,8 +76,8 @@
 }
 
 .gal-view {
- height: 91vh;
- width: 60vh;
+ height: 56vh;
+ width: 100%;
  border: 1px solid #ad9976;
  object-fit: cover;
  overflow: hidden;
@@ -98,8 +98,15 @@
 }
 
 .gal-head {
-  font-size: 4vh;
-  margin-bottom: 4vh;
+  font-size: 2vh;
+  border: 1px solid #ad9976;
+  margin: 0;
+  padding: 1vh;
+  width: 20vh;
+  text-align: center;
+  border-radius: 1vh;
+  background-color: hsla(183, 9%, 32%, 0.3);
+  margin-bottom: 2vh;
 }
 
 .gal-prof {
@@ -161,4 +168,51 @@
 
 .g-19 {
   background-color: hsla(52, 97%, 64%, 0.3);
+}
+
+@media screen and (min-width: 600px)  {
+  .add-gal-photo {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (min-width: 700px)  {
+  .gallery-panes {
+    grid-template-columns: repeat(8, 14vh);
+    grid-template-rows: repeat(8, 14vh);
+  }
+}
+
+@media screen and (min-width: 800px)  {
+  .gallery-panes {
+    grid-template-columns: repeat(8, 16vh);
+    grid-template-rows: repeat(8, 16vh);
+  }
+}
+
+@media screen and (min-width: 900px)  {
+  .gallery-panes {
+    grid-template-columns: repeat(8, 18vh);
+    grid-template-rows: repeat(8, 18vh);
+  }
+
+  .gal-view {
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width: 1500px)  {
+  .gallery-panes {
+    margin-left: 5.75vh;
+    margin-top: -32vh;
+  }
+
+  .gal-view, .slideshow, .profile-dome {
+    width: 114vh;
+  }
+
+  .gal-view {
+    height: 80vh;
+    
+  }
 }

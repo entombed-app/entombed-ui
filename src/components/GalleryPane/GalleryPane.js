@@ -7,8 +7,8 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
 
   return (
     <section className="gallery">
-      {/* <h2 className="gal-head">Gallery</h2> */}
       <section className="gal-border">
+        <h2 className="gal-head">Gallery</h2>
       <section className="profile-dome">
         <div className="left-dome"></div>
         <div className="center-dome">
@@ -31,28 +31,23 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
           <div className="gal-diamond g-7"></div>
           <div className="gal-diamond g-8"></div>
           <div className="gal-diamond g-9">
-            {galPhotos[2] && <img 
+            {galPhotos[3] && <img 
                             alt="User photo" 
                             className="gal-img"
-                            src={galPhotos[2]}
+                            src={galPhotos[3]}
                           />}
           </div>
           <div className="gal-diamond g-10">
-            {galPhotos[1] && <img 
+            {galPhotos[6] && <img 
                             alt="User photo" 
                             className="gal-img"
-                            src={galPhotos[1]}
+                            src={galPhotos[6]}
                           />}
           </div>
           <div className="gal-diamond g-11"></div>
           <div className="gal-diamond g-12"></div>
           <div className="gal-diamond g-13"></div>
           <div className="gal-diamond g-14">
-          {galPhotos[3] && <img 
-                          alt="User photo" 
-                          className="gal-img"
-                          src={galPhotos[3]}
-                        />}
           </div>
           <div className="gal-diamond g-15">
             {galPhotos[4] && <img 
@@ -68,20 +63,20 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
                             src={galPhotos[5]}
                           />}
           </div>
-          <div className="gal-diamond g-17">
-            {galPhotos[0] && <img 
+          <div className="gal-diamond g-18">
+            {galPhotos[10] && <img 
                             alt="User photo" 
                             className="gal-img"
-                            src={galPhotos[0]}
+                            src={galPhotos[10]}
                           />}
           </div>
-          <div className="gal-diamond g-18"></div>
-          <div className="gal-diamond g-19"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond g-3"></div>
           <div className="gal-diamond g-20">
-            {galPhotos[6] && <img 
+            {galPhotos[2] && <img 
                             alt="User photo" 
                             className="gal-img"
-                            src={galPhotos[6]}
+                            src={galPhotos[2]}
                           />}
           </div>
           <div className="gal-diamond g-21">
@@ -107,29 +102,60 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
           </div>
           <div className="gal-diamond g-24"></div>
           <div className="gal-diamond g-25"></div>
-          <div className="gal-diamond g-26">
-            {galPhotos[10] && <img 
+          <div className="gal-diamond g-26"></div>
+          <div className="gal-diamond g-27">
+          {galPhotos[1] && <img 
                                 alt="User photo" 
                                 className="gal-img"
-                                src={galPhotos[10]}
+                                src={galPhotos[1]}
                               />}
           </div>
-          <div className="gal-diamond g-27"></div>
           <div className="gal-diamond g-28">
-            {galPhotos[11] && <img 
+            {galPhotos[0] && <img 
+                                alt="User photo" 
+                                className="gal-img"
+                                src={galPhotos[0]}
+                              />}
+          </div>
+          <div className="gal-diamond">
+          {galPhotos[11] && <img 
                                 alt="User photo" 
                                 className="gal-img"
                                 src={galPhotos[11]}
                               />}
           </div>
-          <div className="gal-diamond g-29"></div>
-          <div className="gal-diamond g-30"></div>
-          <div className="gal-diamond g-31"></div>
-          <div className="gal-diamond g-32"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond 9-18"></div>
+          <div className="gal-diamond 9-18"></div>
           <div className="gal-diamond g-33"></div>
           <div className="gal-diamond g-34"></div>
           <div className="gal-diamond g-35"></div>
-          <div className="gal-diamond g-36"></div>
+          <div className="gal-diamond g-36">
+            {galPhotos[3] && <img 
+                            alt="User photo" 
+                            className="gal-img"
+                            src={galPhotos[3]}
+                          />}
+          </div>
+          
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond g-18"></div>
+          <div className="gal-diamond g-11"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond g-13"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond g-4"></div>
+          <div className="gal-diamond g-13"></div>
+          <div className="gal-diamond 9-18"></div>
+          <div className="gal-diamond g-13"></div>
+
+          <div className="gal-diamond 9-18"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond"></div>
+          <div className="gal-diamond"></div>
         </section>
       </section>
       </section>
