@@ -7,6 +7,7 @@
             "name": "Elder Bobby",
             "date_of_birth": "1999-01-02",
             "obituary": "Tedious and my goodness I am done.",
+            "images_urls": ["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"],
             "profile_picture_url": "",
             "etd": "2119-06-22"
         }
