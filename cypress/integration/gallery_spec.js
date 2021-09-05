@@ -1,6 +1,5 @@
 describe('Gallery', () => {
   beforeEach(() => {
-    //Add additional intercept here for photos
     cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
         ok: true,
         status: 200, 
