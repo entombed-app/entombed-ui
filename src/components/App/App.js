@@ -63,8 +63,8 @@ const App = () => {
     try {
       const userData = await fetchUser(4)
       setUser(userData[0].data)
-      setExecs(userData[1])
-      if (user.attributes.images_urls) setGalleryPhotos([...userData[0].data.attributes.images_urls])
+      setExecs(userData[1].data)
+      if (userData[0].data.attributes.images_urls) setGalleryPhotos([...userData[0].data.attributes.images_urls])
     } catch (err) {
       setError(err.message)
     }
@@ -110,7 +110,7 @@ const App = () => {
             </Route>
             <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
             <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
-            <Route exact path="/executors" render={() => <ExecutorPane executors={user.relationships.executors}/>}/>
+            <Route exact path="/executors" render={() => <ExecutorPane executors={execs}/>}/>
             <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
             <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
             <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
