@@ -7,6 +7,7 @@ describe('Gallery', () => {
         fixture: 'user'
     })
     cy.visit("http://localhost:3000/")
+    cy.login()
     cy.get(".gallery-pane")
       .click()
   })
