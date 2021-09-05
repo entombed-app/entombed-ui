@@ -35,11 +35,9 @@ const PhotoAdd = ({updateProfilePicture, addGalleryPhoto, currentProfilePic, typ
             <div className="photo-small-square photo-corner2"></div>
             <div className="photo-rectangle side1"></div>
             <div className="square1">
-                {type ==="profile" && updatePreview()}
-                <>
-                    <p>{previewHeader}</p>
-                    <img className="user-image" src={photoFilePath} alt={previewHeader}/>
-                </>
+            {type ==="profile" && updatePreview()}
+            <p>{previewHeader}</p>
+            <img className="user-image" src={photoFilePath} alt={previewHeader}/>
             </div>
             <div className="square2"></div>
             <div className="photo-rectangle side2"></div>
