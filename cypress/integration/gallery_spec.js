@@ -109,4 +109,28 @@ describe('Gallery', () => {
       .children("img")
       .should("be.visible")
   })
+
+  it('Should show an error if the gallery post fails', () => {
+    cy.intercept("POST", "https://elegy-backend.herokuapp.com/api/v1/users/2/images",{
+      ok: false,
+      statusCode: 403,
+      body: {}
+    }).as("post photo fail")
+    cy.fixture("user.png")
+      .then(file => Cypress.Blob.base64StringToBlob(file))
+      .then((fileContent) => {
+        cy.get(".add-gal-photo")
+        .click()
+          .get(".photo-upload")
+          .attachFile({
+              fileContent: fileContent,
+              fileName: "william.png",
+              mimeType: "image/png"
+          })
+          .get(".photo-edit-button")
+          .click()
+        cy.get(".loading-error-message")
+          .should("be.visible")
+      })
+  })
 });
