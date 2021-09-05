@@ -31,14 +31,13 @@
 
 .big-circle {
   border: 1px solid #ad9976;
-  height: 50vh;
-  width: 50vh;
+  height: 51vh;
+  width: 51vh;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #0e1525;
-  margin: 3vh;
   position: absolute;
   z-index: 1;
 }
@@ -51,24 +50,16 @@
   left: 50%;
 }
 
-.mark, .wedge {
-  height: 20vh;
+.mark {
+  height: 21vh;
   width: 4vh;
   color: #ad9976;
   position: absolute;
-  bottom: 4.75vh; 
+  bottom: 3.75vh; 
   transform-origin: 2vh 25vh;
   text-align: center;
   border: 1px solid #ad9976;
   border-top: 0;
-}
-
-.wedge {
-  height: 0vh;
-  border-top: 20vh solid #ad9976;
-  background-color: #ad9976;
-  clip-path: polygon(0 0, 0 100%, 58% 0);
-  border-radius: 0;
 }
 
 .profile {
@@ -87,7 +78,7 @@
   object-fit: cover;
   overflow: hidden;
   border: 1px solid #bf381c;
-  background-color: #4d7880;
+  background-color: hsla(174, 86%, 57%, 0.3);
   z-index: 2;
 }
 
@@ -146,7 +137,12 @@
 .release-days {
   color: #ad9976;
   display: flex;
-  justify-content: center;;
+  justify-content: center;
+  margin-top: 5vh;
+  border-radius: 1vh;
+  background-color: hsla(183, 9%, 32%, 0.3);
+  border: 1px solid #ad9976;
+  width: 35vh;
 }
 
 .progress-outer {

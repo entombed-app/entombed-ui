@@ -59,7 +59,7 @@ export const CountdownPane = ({etd, err, dob}) => {
             value={percentage} 
             strokeWidth={2}
             styles={buildStyles({strokeLinecap: 'butt', 
-            pathColor: `#4d7880`, 
+            pathColor: `hsla(174, 86%, 57%, 0.3)`, 
             trailColor: "#0e1525"})}
           />;
             <div className="big-circle">
