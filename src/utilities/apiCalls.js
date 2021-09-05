@@ -13,10 +13,12 @@ export const updateUser = async ({data, type, id}) => {
         patchInfo.headers = {}
         patchInfo["body"] = formData
     } else if (type === "images") {
-        URL += new FormData();
+        URL += "images"
+        const formData = new FormData();
         formData.append("image", data);
         patchInfo.method = "POST"
         patchInfo.headers = {}
+        console.log(patchInfo, data)
         patchInfo["body"] = formData
     } else {
         let updatedInfo = {}
