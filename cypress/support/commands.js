@@ -1,3 +1,5 @@
+import 'cypress-file-upload'
+
 Cypress.Commands.add("login", () => {
   cy.get("[data-cy=email]")
   .type("ex@ample.com")
