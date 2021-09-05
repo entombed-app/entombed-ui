@@ -16,7 +16,6 @@ h1 {
 .header {
     height: 10vh;
     width: 100%;
-    border-bottom: 2px solid black;
     justify-content: flex-start;
     margin-top: 3vh;
 }
