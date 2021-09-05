@@ -1,10 +1,10 @@
 describe('Gallery', () => {
   beforeEach(() => {
     //Add additional intercept here for photos
-    cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
+    cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
         ok: true,
         status: 200, 
-        url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
+        url: "https://elegy-backend.herokuapp.com/api/v1/users/4",
         fixture: 'user'
     })
     cy.visit("http://localhost:3000/")
@@ -27,6 +27,11 @@ describe('Gallery', () => {
   })
 
   it('Should display the user profile photo in the center pane if there is one', () => {
+    cy.intercept("PATCH", "https://elegy-backend.herokuapp.com/api/v1/users/2/profile_picture",{
+      ok: true,
+      status: 200,
+      body: {}
+    }).as("updateProfPic")
     cy.get("h1")  
       .click()
     cy.fixture("william.png")
@@ -69,6 +74,11 @@ describe('Gallery', () => {
   })
 
   it("Should allow user to add photos to their gallery", () => {
+    cy.intercept("POST", "https://elegy-backend.herokuapp.com/api/v1/users/2/images",{
+      ok: true,
+      status: 200,
+      body: {}
+    }).as("post photo")
     cy.fixture("william.png")
       .then(file => Cypress.Blob.base64StringToBlob(file))
       .then((fileContent) => {
@@ -82,8 +92,7 @@ describe('Gallery', () => {
           })
           .get(".photo-edit-button")
           .click()
-        cy.get(".g-14")
-          .children("img")
+        cy.get(".g-14 > .gal-img")
           .should("be.visible")
           .should("have.attr", "src").should("include", "blob:http://localhost:3000")
       })
