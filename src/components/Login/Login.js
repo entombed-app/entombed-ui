@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import './Login.css';
 
 export const Login = ({show, logIn, err}) => {
-  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error] = useState(err)
 
   const handleUserChange = e => {
-    setUsername(e.target.value)
+    setEmail(e.target.value)
   }
 
   const handlePassChange = e => {
@@ -15,8 +15,18 @@ export const Login = ({show, logIn, err}) => {
   } 
 
   const clearInputs = () => {
-    setUsername("")
+    setEmail("")
     setPassword("")
+  }
+
+  const submitCredentials = e => {
+    e.preventDefault()
+    const creds =   { 
+      email: "user_email",
+      password: "user_password"
+    }
+    logIn(creds)
+    clearInputs()
   }
 
   return (
@@ -26,15 +36,15 @@ export const Login = ({show, logIn, err}) => {
       <section className="modal">
         <div className="modal-header">
           {!error ? <h2 className="login-message">Welcome! Please sign in.</h2>
-                  : <h2 className="login-message error">Username and password do not match. Please try again!</h2>}
+                  : <h2 className="login-message error">Email and password do not match. Please try again!</h2>}
           <div className="close">X</div>
         </div>
         <div className="modal-body">
           <input 
             type="text" 
-            name="username" 
-            placeholder="username"
-            value={username}
+            name="email" 
+            placeholder="email"
+            value={email}
             onChange={(e) => handleUserChange(e)}
           />
           <input 
@@ -46,7 +56,7 @@ export const Login = ({show, logIn, err}) => {
           />
         </div>
         <div className="modal-footer">
-          <button>Login</button>
+          <button onClick={e => submitCredentials(e)}>Login</button>
         </div>
       </section>
     </section>
