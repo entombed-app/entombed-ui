@@ -44,7 +44,6 @@ export const fetchUser = async (userID) => {
     try {
       const response = await fetch(url)
       const userData = await response.json()
-      console.log(userData)
       return userData
     } catch (err) {
         throw Error("Apologies for the error. Please try refreshing the page.")
@@ -52,20 +51,18 @@ export const fetchUser = async (userID) => {
   }
 
 export const postCredentials = async (credentials) => {
-    // Expose route `POST /api/v1/login` to create sessions.
-  // To create a session send
-  // ```
-//   { email: user_email,
-//   password: user_password}
-  // ```
   try {
     const response = await fetch(`${baseURL}login`, {
         method: "POST",
         body: JSON.stringify(credentials),
         headers: { "Content-Type": "application/json" }
     })
-    const data = await response.json()
-    return data
+    if (!response.ok) {
+        throw Error("Username and Password do not match.")
+    } else {
+        const data = await response.json()
+        return data
+    }
   } catch (err) {
       throw Error(err.message)
   }
