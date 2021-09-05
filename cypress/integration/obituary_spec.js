@@ -1,4 +1,4 @@
-describe.only('Obituary', () => {
+describe('Obituary', () => {
     beforeEach(() => {
       cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
           ok: true,
