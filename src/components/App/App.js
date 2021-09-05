@@ -21,7 +21,7 @@ import { Switch, NavLink, Link, Route, Redirect } from 'react-router-dom';
 const App = () => {
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
-  const [galleryPhotos, setGalleryPhotos] = useState(["http://c.files.bbci.co.uk/11382/production/_119803507_mediaitem119803506.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAmmgkZCiMVGYv9i0A82kdTe-I5JogeRNzog&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3xXj4Q8qHmazIiBUgmeB-qYugUaZrvN7Mw&usqp=CAU"])
+  const [galleryPhotos, setGalleryPhotos] = useState([])
 
   const updateProfilePicture = async ({photoFilePath, photoFile}) => {
     try {
@@ -58,8 +58,9 @@ const App = () => {
   const getUser = async () => {
     setError('')
     try {
-      const userData = await fetchUser(2)
+      const userData = await fetchUser(4)
       setUser(userData.data)
+      if (userData.data.attributes.images_urls) setGalleryPhotos([...userData.data.attributes.images_urls])
     } catch (err) {
       setError(err.message)
     }
