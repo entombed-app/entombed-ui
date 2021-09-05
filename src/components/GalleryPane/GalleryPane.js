@@ -7,7 +7,8 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
 
   return (
     <section className="gallery">
-      <h2 className="gal-head">Gallery</h2>
+      {/* <h2 className="gal-head">Gallery</h2> */}
+      <section className="gal-border">
       <section className="profile-dome">
         <div className="left-dome"></div>
         <div className="center-dome">
@@ -130,6 +131,7 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
           <div className="gal-diamond g-35"></div>
           <div className="gal-diamond g-36"></div>
         </section>
+      </section>
       </section>
     </section>
   )
