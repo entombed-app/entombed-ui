@@ -8,10 +8,16 @@ export const updateUser = async ({data, type, id}) => {
     let URL = `https://elegy-backend.herokuapp.com/api/v1/users/${id}/`
     if (type === "profile_picture") {
         URL += "profile_picture"
-        const formdata = new FormData();
-        formdata.append("profile_picture", data);
+        const formData = new FormData();
+        formData.append("profile_picture", data);
         patchInfo.headers = {}
-        patchInfo["body"] = formdata
+        patchInfo["body"] = formData
+    } else if (type === "images") {
+        URL += new FormData();
+        formData.append("image", data);
+        patchInfo.method = "POST"
+        patchInfo.headers = {}
+        patchInfo["body"] = formData
     } else {
         let updatedInfo = {}
         updatedInfo[type] = data;
