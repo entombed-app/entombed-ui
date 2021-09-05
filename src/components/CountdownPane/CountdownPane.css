@@ -78,7 +78,7 @@
   object-fit: cover;
   overflow: hidden;
   border: 1px solid #bf381c;
-  background-color: hsla(174, 86%, 57%, 0.3);
+  background-color: teal;
   z-index: 2;
 }
 
@@ -143,6 +143,7 @@
   background-color: hsla(183, 9%, 32%, 0.3);
   border: 1px solid #ad9976;
   width: 35vh;
+  text-align: center;
 }
 
 .progress-outer {
