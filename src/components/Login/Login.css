@@ -14,7 +14,7 @@
 }
 
 .modal {
-  background-color: dimgray;
+  background-color: hsla(0, 0%, 41%, 0.85);
   width: 50vh;
   height: 50vh;
   border-radius: 2vh;
@@ -24,11 +24,15 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
+
 }
 
 .login-message {
   color: white;
   font-size: 3vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  text-align: center;
 }
 
 .modal-header, .modal-body {
@@ -39,6 +43,29 @@
   flex-direction: column;
 }
 
+.login-input {
+  width: 20vh;
+  height: 3vh;
+  border-radius: 0.5vh;
+  outline: 0;
+  border: 1px solid #e3655b;
+  margin-top: 1.5vh;
+}
+
+.submit-login {
+  width: 10vh;
+  background-color: #0e1525;
+  color: white;
+  border: 1px solid #3891a6;
+  border-radius: 1vh;
+  height: 3vh;
+  margin-top: 3vh;
+}
+
 .error {
   color: red;
+}
+
+.submit-login:hover {
+  background-color: #3891a6
 }
