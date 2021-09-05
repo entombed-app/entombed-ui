@@ -37,7 +37,7 @@ const ObitPane = ({obit, updateObituary}) => {
     
     return (
         <>
-            <section className="obit-head"><h2>Obituary</h2></section>
+            <section className="obit-head"><h2 className="release-days obit-head">Obituary</h2></section>
             <section className='obit'>
                 <div className='small-square corner1'></div>
                 <div className='rectangle'></div>
