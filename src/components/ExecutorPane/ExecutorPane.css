@@ -6,15 +6,27 @@
   padding-top: 5vh;
 }
 
+.exec-border {
+  position: relative;
+  height: 60vh;
+  width: 55vh;
+  border: 1px solid #AD9976;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: hsla(183, 9%, 32%, 0.3);
+  color: white;
+}
+
 .exec-window {
-  border-top: 0.75em solid #0E1525;
   height: 50vh;
   width: 50vh;
   display: flex;
   justify-content: center;
   position: relative;
+  margin-bottom: 2.5vh;
 }
-
 
 .top, .bottom {
   height: 25vh;
