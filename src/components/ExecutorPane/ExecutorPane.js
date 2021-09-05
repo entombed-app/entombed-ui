@@ -21,7 +21,7 @@ export const ExecutorPane = ({executors}) => {
           </div>
           <section className="exec-details">
             <h2 className="exec-name">{executors[0].attributes.name}</h2>
-            <h3 data-cy="exec-phone">{executors[0].attributes.phone}</h3>
+            <h3 className="exec-phone" data-cy="exec-phone">{executors[0].attributes.phone}</h3>
             <h4 className="exec-email">{executors[0].attributes.email}</h4>
         </section>
         </section>

@@ -97,3 +97,41 @@
   text-transform: lowercase;
 }
 
+@media screen and (max-width: 600px) {
+  .exec-border {
+    height: 55vh;
+    width: 50vh;
+  }
+
+  .exec-window {
+    height: 40vh;
+    width: 40vh;
+  }
+
+  .top, .bottom {
+    height: 20vh;
+    width: 20vh;
+  }
+
+  .inner-diamond {
+    margin-top: 6vh;
+    height: 28vh;
+    width: 28vh;
+  }
+
+  .inner-circle {
+    margin-top: 7vh;
+    height: 26vh;
+    width: 26vh;
+  }
+
+  .exec-title {
+    font-size: 4vh;
+    margin-top: 0;
+  }
+
+  .exec-name, .exec-phone, .exec-email {
+    font-size: 2.5vh;
+    margin: 0;
+  }
+}
