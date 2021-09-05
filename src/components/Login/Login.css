@@ -10,13 +10,13 @@
   align-items: center;
   height: 111vh;
   width: 100vw;
-  z-index: 3;
+  z-index: 4;
 }
 
 .modal {
-  background-color: hsla(0, 0%, 41%, 0.85);
-  width: 50vh;
-  height: 50vh;
+  background-color: hsl(0, 0%, 41%);
+  width: 60vh;
+  height: 60vh;
   border-radius: 2vh;
   border: 1px solid #ad9976;
   display: flex;
