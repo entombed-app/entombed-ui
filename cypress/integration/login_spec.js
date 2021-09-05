@@ -1,4 +1,4 @@
-describe('Gallery', () => {
+describe('Login', () => {
   beforeEach(() => {
     //Add additional intercept here for photos
     cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
