@@ -18,7 +18,6 @@ export const updateUser = async ({data, type, id}) => {
         formData.append("image", data);
         patchInfo.method = "POST"
         patchInfo.headers = {}
-        console.log(patchInfo, data)
         patchInfo["body"] = formData
     } else {
         let updatedInfo = {}
@@ -27,7 +26,6 @@ export const updateUser = async ({data, type, id}) => {
     }
     try {
         const response = await fetch(URL, patchInfo)
-        console.log(response)
         if (!response.ok) {
             throw Error("We could not update your data. Pleash refresh")
         } else {
