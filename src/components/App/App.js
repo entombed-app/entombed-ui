@@ -20,10 +20,11 @@ import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
+  const [execs, setExecs] = useState([])
 
   const updateProfilePicture = async ({photoFilePath, photoFile}) => {
     try {
@@ -61,8 +62,9 @@ const App = () => {
     setError('')
     try {
       const userData = await fetchUser(4)
-      setUser(userData.data)
-      if (userData.data.attributes.images_urls) setGalleryPhotos([...userData.data.attributes.images_urls])
+      setUser(userData[0].data)
+      setExecs(userData[1])
+      if (user.attributes.images_urls) setGalleryPhotos([...userData[0].data.attributes.images_urls])
     } catch (err) {
       setError(err.message)
     }
@@ -79,8 +81,11 @@ const App = () => {
     } catch (err) {
       throw Error("Email and password do not match.")
     }
-
   }
+
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <main>
@@ -105,7 +110,7 @@ const App = () => {
             </Route>
             <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
             <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
-            <Route exact path="/executors" render={() => <ExecutorPane executor={user.attributes.executor}/>}/>
+            <Route exact path="/executors" render={() => <ExecutorPane executors={user.relationships.executors}/>}/>
             <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
             <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
             <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>

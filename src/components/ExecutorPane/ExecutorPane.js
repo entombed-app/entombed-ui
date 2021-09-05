@@ -1,11 +1,11 @@
 import React from "react"
 import "./ExecutorPane.css"
 
-export const ExecutorPane = () => {
+export const ExecutorPane = ({executors}) => {
   return (
     <section className="exec-pane">
       <section className="exec-border">
-        <h2 className="exec-title">Executor</h2>
+        {/* <h2 className="exec-title">Executor</h2> */}
         <div className="exec-window">
           <div className="shape one">
           </div>
