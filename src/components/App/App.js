@@ -17,11 +17,12 @@ import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
 import Message from "../Messsage/Message";
 import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls"
-import { Switch, NavLink, Link, Route, Redirect } from 'react-router-dom';
+import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
   const [showModal, setShowModal] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [loginErr, setLoginErr] = useState("")
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
@@ -71,14 +72,16 @@ const App = () => {
 
   const logIn = async credentials => {
     setError("")
+    setLoginErr("")
     try {
-      const userData = await postCredentials(credentials)
-      console.log(userData)
-      getUser()
-      setIsLoggedIn(true)
-      setShowModal(false)
+      const response = await postCredentials(credentials)
+      if (response.data) {
+        await getUser()
+        setIsLoggedIn(true)
+        setShowModal(false)  
+      } 
     } catch (err) {
-      setError(err.message)
+      throw Error("mitchmatch")
     }
 
   }
@@ -93,18 +96,18 @@ const App = () => {
       ? <Message error={error} profilePic={""}/>
       : <>
           <Header profilePic={user.attributes.profile_picture_url}/>
-          <Login show={showModal} logIn={logIn} err={error}/>
+          <Login show={showModal} isLoggedIn={isLoggedIn} logIn={logIn} err={loginErr}/>
           <Switch>
             <Route exact from='/'>
               <section className='window'>
-                <Link className='preview-pane' exact to='/preview'><img src={preview}/></Link>
-                <Link className='countdown-pane' exact to='/countdown'><img src={sundial}/></Link>
-                <Link className='executor-pane' exact to='/executors'><img src={suit}/></Link>
+                <Link className='preview-pane' to='/preview'><img src={preview}/></Link>
+                <Link className='countdown-pane' to='/countdown'><img src={sundial}/></Link>
+                <Link className='executor-pane' to='/executors'><img src={suit}/></Link>
                 <div className='placeholder-1'></div>
-                <Link className='obit-pane' exact to='/obituary'><img src={scrollImg}/></Link>
-                <Link className='timeline-pane' exact to='/timeline'><img src={timelineImg}/></Link>
-                <Link className='recipient-pane' exact to='/recipients'><img src={familyTree}/></Link>
-                <Link className='gallery-pane' exact to='/gallery'><img src={galleryImg}/></Link>
+                <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
+                <Link className='timeline-pane' to='/timeline'><img src={timelineImg}/></Link>
+                <Link className='recipient-pane' to='/recipients'><img src={familyTree}/></Link>
+                <Link className='gallery-pane' to='/gallery'><img src={galleryImg}/></Link>
                 <div className='placeholder-2'></div>
               </section>
             </Route>
