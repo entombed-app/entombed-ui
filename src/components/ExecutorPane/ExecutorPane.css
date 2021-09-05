@@ -1,4 +1,4 @@
-.exec-pane {
+/* .exec-pane {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,10 +13,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  justify-content: center;
   position: relative;
-}
+} */
 
-.exec-border {
+/* .exec-border {
   border: 0.5em solid #0E1525;
   position: relative;
   display: flex;
@@ -24,9 +26,9 @@
   justify-content: center;
   align-items: center;
   background-color: lightpink;
-}
+} */
 
-.shape {
+/* .shape {
   border: 1px solid #0E1525;
 }
 
@@ -125,29 +127,94 @@
   height: 0.75em;
   margin: 49% 2% 0 30%;
   width: 70%;
+} */
+
+
+/* New design below */
+.exec-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+}
+
+.exec-window {
+  border-top: 0.75em solid #0E1525;
+  height: 50vh;
+  width: 50vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+
+.top, .bottom {
+  height: 25vh;
+  width: 50vh;
+}
+
+.box {
+  border: 1px solid #AD9976;
+  height: 100%;
+  width: 100%;
+}
+
+.top-left {
+  background-color: hsla(52, 97%, 64%, 0.3);
+}
+
+.bottom-left {
+  background-color: hsla(354, 65%, 59%, 0.3);
+}
+
+.top-right {
+  background-color: hsla(191, 49%, 43%, 0.3);
+}
+
+.bottom-right {
+  background-color: hsla(174, 86%, 57%, 0.3);
+}
+
+.inner-diamond {
+  position: absolute;
+  z-index: 1;
+  margin-top: 7.5vh;
+  margin-left: .25vh;
+  height: 35vh;
+  width: 35vh;
+  background-color: #0E1525;
+  transform: rotate(45deg);
+  border: 1px solid #AD9976;
+}
+
+.inner-circle {
+  border: 1px solid #AD9976;
+  position: absolute;
+  z-index: 2;
+  height: 33vh;
+  width: 33vh;
+  border-radius: 50%;
+  margin-top: 8.25vh;
+  background-color: hsla(183, 9%, 32%, 0.3);
 }
 
 .exec-details {
   position: absolute;
   color: white;
-  margin-left: 20vh;
   margin-top: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 
 .exec-name {
-  margin-right: 5vh;
+  text-transform: capitalize;
 }
 
 .exec-email {
-  margin-right: 25vh;
-  margin-top: 0;
+  text-transform: lowercase;
 }
 
-.exec-title {
-  color: white;
-  font-size: 2em;
-}

@@ -6,8 +6,8 @@ export const ExecutorPane = ({executors}) => {
     <section className="exec-pane">
       <section className="exec-border">
         {/* <h2 className="exec-title">Executor</h2> */}
-        <div className="exec-window">
-          <div className="shape one">
+        <section className="exec-window">
+          {/* <div className="shape one">
           </div>
           <div className="line l-one">
           </div>
@@ -32,13 +32,30 @@ export const ExecutorPane = ({executors}) => {
           <div className="shape seven">
           </div>
           <div className="line l-six">
+          </div> */}
+          <div className="top">
+            <div className="top-left box"></div>
+            <div className="bottom-left box"></div>
           </div>
-        </div>
-        <section className="exec-details">
+          <div className="bottom">
+            <div className="top-right box"></div>
+            <div className="bottom-right box"></div>
+          </div>
+          <div className="inner-diamond">
+          </div>
+          <div className="inner-circle">
+          </div>
+          <section className="exec-details">
+            <h2 className="exec-name">{executors[0].attributes.name}</h2>
+            <h3 data-cy="exec-phone">{executors[0].attributes.phone}</h3>
+            <h4 className="exec-email">{executors[0].attributes.email}</h4>
+        </section>
+        </section>
+        {/* <section className="exec-details">
           <h2 className="exec-name">{executors[0].attributes.name}</h2>
           <h3 data-cy="exec-phone">{executors[0].attributes.phone}</h3>
           <h4 className="exec-email">{executors[0].attributes.email}</h4>
-        </section>
+        </section> */}
       </section>
     </section>
   )
