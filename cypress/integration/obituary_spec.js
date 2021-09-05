@@ -1,9 +1,9 @@
-describe('Obituary', () => {
+describe.only('Obituary', () => {
     beforeEach(() => {
-      cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
+      cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
           ok: true,
           status: 200, 
-          url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
+          url: "https://elegy-backend.herokuapp.com/api/v1/users/4",
           fixture: 'user'
       }).as("getUser")
       cy.visit("http://localhost:3000/obituary")
@@ -78,7 +78,7 @@ describe('Obituary', () => {
         .should("not.have.value", moreThan500)
     })
 
-    it.only("Should show an error if the obituary update fails", () => {
+    it("Should show an error if the obituary update fails", () => {
       cy.intercept("PATCH", "https://elegy-backend.herokuapp.com/api/v1/users/2/",{
         ok: false,
         statusCode: 500,
