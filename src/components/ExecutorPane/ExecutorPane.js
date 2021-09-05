@@ -5,7 +5,7 @@ export const ExecutorPane = ({executors}) => {
   return (
     <section className="exec-pane">
       <section className="exec-border">
-        {/* <h2 className="exec-title">Executor</h2> */}
+        <h2 className="exec-title">Executor</h2>
         <section className="exec-window">
           <div className="top">
             <div className="top-left box"></div>
