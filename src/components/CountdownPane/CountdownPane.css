@@ -172,3 +172,33 @@
   stroke: #FFFFFF;
   fill: red;
 }
+
+.email-sent {
+  position: absolute;
+  opacity: 1;
+  animation: slide2 10s;
+  border-radius: 5px;
+  padding: 0 1rem;
+  background: #900c3f;
+}
+
+@keyframes slide2 {
+  from {
+      transform: scale(0.1) translatex(-10px);
+      opacity: 0;
+    }
+
+    30% {
+      transform: scale(0.8) translatex(-100px);
+      opacity: 1;
+    }
+
+    70% {
+      transform: scale(0.8) translatex(-100px);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.8) translatex(-10px);
+      opacity: 0;
+    }
+}
