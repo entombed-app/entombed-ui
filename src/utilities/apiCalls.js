@@ -77,19 +77,19 @@ export const postCredentials = async (credentials) => {
   }
 }
 
-export const sendFinalEmail = async (user) => {
-    console.log("sending")
+export const sendFinalEmail = async (id) => {
+    console.log("This is the id",id)
     try {
-        const response = await fetch(`${baseURL}users/${user.id}/email`, {
+        const response = await fetch(`${baseURL}users/${id}/email`, {
             method: "POST",
-            body: JSON.stringify({user})
+            body: JSON.stringify({user_id: id})
+            // body: JSON.stringify({banana: id})
         })
+        console.log(response)
         if (!response.ok) {
-            throw Error("Could not send email")
+            throw Error("Could not send email, please refresh")
         } else {
-            const data = await response.json()
-            console.log(data)
-            return data
+            return "Email has been sent!"
         }
       } catch (err) {
           throw Error(err.message)
