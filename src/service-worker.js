@@ -51,6 +51,7 @@ registerRoute(
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  // ({ url }) => url.origin === self.location.origin, // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
     cacheName: 'images',
     plugins: [
@@ -61,6 +62,14 @@ registerRoute(
   })
 );
 
+registerRoute(
+  ({ url }) => url.hostname.includes("elegy-backend"),
+  // "https://elegy-backend.herokuapp.com/api/v1/users/4",
+  new StaleWhileRevalidate({
+    cacheName: "userInfo"
+  })
+)
+
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
 self.addEventListener('message', (event) => {
@@ -69,24 +78,24 @@ self.addEventListener('message', (event) => {
   }
 });
 
-self.addEventListener('fetch', (event) => {
-    console.log("Look here",event.request)
-    event.respondWith(
-      caches.open('elegy-cache')
-      .then((cache) => cache.match(event.request)
-      .then((response) => response || fetch(event.request)
-      // .then((response) => fetch(event.request)
-      .then((response) => {
-          console.log(event.request);
-          if (!(event.request.url.indexOf('http') === 0)) {
-            console.log("skipped today");
-            return;
-          } else {
-            cache.put(event.request, response.clone());
-            console.log("Taylor wins");
-            return response;
-          }
-        })))
-    );
-  });
+// self.addEventListener('fetch', (event) => {
+//     console.log("Look here",event.request)
+//     event.respondWith(
+//       caches.open('elegy-cache')
+//       .then((cache) => cache.match(event.request)
+//       .then((response) => response || fetch(event.request)
+//       // .then((response) => fetch(event.request)
+//       .then((response) => {
+//           console.log(event.request);
+//           if (!(event.request.url.indexOf('http') === 0)) {
+//             console.log("skipped today");
+//             return;
+//           } else {
+//             cache.put(event.request, response.clone());
+//             console.log("Taylor wins");
+//             return response;
+//           }
+//         })))
+//     );
+//   });
 // Any other custom service worker logic can go here.
