@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import "./GalleryPane.css"
 
 export const GalleryPane = ({ galPhotos, profPhoto }) => {
-  console.log(profPhoto)
 
   return (
     <section className="gallery">
