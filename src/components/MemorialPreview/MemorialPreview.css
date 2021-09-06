@@ -115,5 +115,22 @@
   text-align: center;
   font-size: 2vh;
   background-color: hsla(354, 65%, 59%, 0.3);
-  margin-right: 25vh;
+}
+
+.prev-exec {
+  color: #ad9976;
+
+  width: 25vh;
+  border: 1px solid #ad9976;
+  border-radius: 1vh;
+  text-align: center;
+  margin: 0;
+  font-size: 2vh;
+  margin-left: 2vh;
+  background-color: hsla(174, 86%, 57%, 0.3);
+}
+
+.text-facts {
+  display: flex;
+  justify-content: center;
 }

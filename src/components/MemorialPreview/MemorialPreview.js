@@ -22,13 +22,18 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
       <section className="prev-name">
         <h2 className="name">{name}</h2>
       </section>
-      <aside className="facts">
-        <p className="dob">Born: {dob}</p>
-        <p className="dob">Deceased: {etd}</p>
-      </aside>
-      <aside className="prev-exec">
-
-      </aside>
+      <div className="text-facts">
+        <aside className="facts">
+          <p>Born: {dob}</p>
+          <p>Deceased: {etd}</p>
+        </aside>
+        <aside className="prev-exec">
+          <h3>Executor</h3>
+          <p>{executors[0].attributes.name}</p>
+          <p>{executors[0].attributes.phone}</p>
+          <p>{executors[0].attributes.email}</p>
+        </aside>
+      </div>
       <article className="prev-obit">
 
       </article>
