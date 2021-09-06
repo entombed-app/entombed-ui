@@ -3,7 +3,7 @@ import './MemorialPreview.css';
 
 
 export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, profPhoto, galPhotos, }) => {
-  console.log(executors)
+
   const photoPanes = galPhotos.map((photo, index) => {
     return (
       <div className="square-phot">
