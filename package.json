@@ -27,6 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-dev": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
     "cypress": "^8.3.1",
     "cypress-file-upload": "^5.0.8"
   }
