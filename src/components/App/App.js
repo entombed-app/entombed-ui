@@ -87,7 +87,7 @@ const App = () => {
   }
 
   const determineSendEmail = async(daysLeft) => {
-    daysLeft = 0
+    // daysLeft = 0
     if (!daysLeft) {
       try {
         const response = await sendFinalEmail (user.id)
