@@ -12,9 +12,11 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
           <div className="ray ray4"></div>
           <div className="ray ray5"></div>
           <div className="ray ray6"></div>
+          <div className="ray ray7"></div>
+          <div className="ray ray8"></div>
         </div>
         <div className="mem-photo">
-          {/* <img src={profPhoto}/> */}
+          <img className="center-sun" src={profPhoto}/>
         </div>
       </section>
       <aside className="prev-exec">
