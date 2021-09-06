@@ -10,6 +10,8 @@ export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
   const [timeLeft, setTimeLeft] = useState(0)
   const [percentage, setPercentage] = useState(0)
   const [error, setError] = useState(err)
+  const [message, setMessage] = useState("")
+  const [timer, setTimer] = useState("");
 
   useEffect(() => {
     calculateTimeLeft()
@@ -36,7 +38,11 @@ export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
         seconds: Math.floor((difference / 1000) % 60)
       }
       try {
-        await determineSendEmail(updatedTimeLeft.days)
+        const response = await determineSendEmail(updatedTimeLeft.days)
+        if (response.includes("sent")) {
+          setMessage("Email successfully sent. R.I.P")
+          setTimer(setTimeout(() => setMessage(""), 7000))
+        }
       } catch(err) {
         setError(`Error: ${err.message}`)
       }
@@ -60,6 +66,7 @@ export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
     <section className="sundial-display">
       <section className="release-days">
           {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
+          {!!message && <div className="email-sent">{message}</div>}
       </section>
       <section className="sundial">
           <CircularProgressbar 
