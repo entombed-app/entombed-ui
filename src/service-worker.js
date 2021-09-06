@@ -69,4 +69,24 @@ self.addEventListener('message', (event) => {
   }
 });
 
+self.addEventListener('fetch', (event) => {
+    console.log("Look here",event.request)
+    event.respondWith(
+      caches.open('elegy-cache')
+      .then((cache) => cache.match(event.request)
+      .then((response) => response || fetch(event.request)
+      // .then((response) => fetch(event.request)
+      .then((response) => {
+          console.log(event.request);
+          if (!(event.request.url.indexOf('http') === 0)) {
+            console.log("skipped today");
+            return;
+          } else {
+            cache.put(event.request, response.clone());
+            console.log("Taylor wins");
+            return response;
+          }
+        })))
+    );
+  });
 // Any other custom service worker logic can go here.
