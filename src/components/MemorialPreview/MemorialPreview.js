@@ -5,8 +5,8 @@ export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executor
   if (isVisitor) isLoggedIn = true;
   const photoPanes = galPhotos.map((photo, index) => {
     return (
-      <div className="square-phot">
-        <img className="prev-img" alt="Memorial Photo" key={index} src={photo}/>
+      <div className="square-phot" key={index}>
+        <img className="prev-img" alt="Memorial Photo" src={photo}/>
       </div>
     )
   })
