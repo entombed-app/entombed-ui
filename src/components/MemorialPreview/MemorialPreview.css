@@ -108,13 +108,13 @@
 
 .facts {
   color: #ad9976;
-  height: 10vh;
   width: 25vh;
   border: 1px solid #ad9976;
   border-radius: 1vh;
   text-align: center;
   font-size: 2vh;
   background-color: hsla(52, 97%, 64%, 0.3);
+  
 }
 
 .prev-exec {
@@ -143,4 +143,25 @@
   text-align: center;
   margin-top: 2vh;
   background-color: hsla(354, 65%, 59%, 0.3);
+}
+
+.prev-gal {
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.square-phot {
+  margin-top: 2vh;
+  border: 1px solid #ad9976;
+  border-radius: 1vh;
+  width: 50vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.prev-img {
+  width: 100%;
 }

@@ -3,8 +3,19 @@ import './MemorialPreview.css';
 
 
 export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, profPhoto, galPhotos, }) => {
+  console.log(executors)
+  const photoPanes = galPhotos.map((photo, index) => {
+    return (
+      <div className="square-phot">
+        <img className="prev-img" key={index} src={photo}/>
+      </div>
+    )
+  })
+  
   return (
-    <section className="preview">
+    <>
+    {isLoggedIn ?
+      <section className="preview">
       <section className="prev-head">
         <div className="rays">
           <div className="ray ray2"></div>
@@ -37,9 +48,10 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
       <article className="prev-obit">
         <p>{obit}</p>
       </article>
-      <section className="">
-
+      <section className="prev-gal">
+        {photoPanes}
       </section>
-    </section>
+    </section> : <h2>Please log in to see this future</h2>}
+    </>
   )
 }
