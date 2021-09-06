@@ -1,7 +1,7 @@
 import './MemorialPreview.css';
 
 
-export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executors, obit, profPhoto, galPhotos, }) => {
+export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executors, obit, profPhoto, galPhotos }) => {
   if (isVisitor) isLoggedIn = true;
   const photoPanes = galPhotos.map((photo, index) => {
     return (
