@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-export const CountdownPane = ({etd, err, dob}) => {
+export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
   const [etdeath, setEtd] = useState(etd)
   const [dobirth] = useState(dob)
   const [timeLeft, setTimeLeft] = useState(0)
@@ -34,7 +34,9 @@ export const CountdownPane = ({etd, err, dob}) => {
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60)
       }
+      determineSendEmail(updatedTimeLeft.days)
     }
+    
     setTimeLeft(updatedTimeLeft)
   }
 
