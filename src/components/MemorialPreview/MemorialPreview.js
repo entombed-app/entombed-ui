@@ -52,7 +52,7 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
         <section className="prev-gal">
           {photoPanes}
         </section>
-      </section> : <h2>Please log in to see this future</h2>}
+      </section> : <h2>Please log in to see this feature</h2>}
     </>
   )
 }
