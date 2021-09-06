@@ -21,7 +21,7 @@ import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
@@ -84,9 +84,9 @@ const App = () => {
     }
   }
 
-  useEffect(() => {
-    getUser()
-  }, [])
+  // useEffect(() => {
+  //   getUser()
+  // }, [])
 
   return (
     <main>
