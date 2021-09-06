@@ -22,27 +22,8 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 precacheAndRoute(self.__WB_MANIFEST);
 
-const displayNotification = async () => {
-  try {
-    const permission = await Notification.requestPermission();
-    console.log(permission);
-    const options = {
-      body: "body",
-      icon:
-        "https://www.iconninja.com/files/926/373/306/link-chain-url-web-permalink-web-address-icon.png"
-    };
-    const n = new Notification("Successfully posted", options);
-    console.log(n)
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const bgSyncPlugin = new BackgroundSyncPlugin('queue', {
-    maxRetentionTime: 24 * 60,
-    callbacks: {
-      queueDidReplay: displayNotification
-    } // Retry for max of 24 Hours (specified in minutes)
+    maxRetentionTime: 24 * 60
 });
 
 registerRoute(
