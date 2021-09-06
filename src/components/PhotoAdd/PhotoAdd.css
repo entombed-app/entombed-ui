@@ -4,17 +4,20 @@
     grid-template-columns: 10% 40% 40% 10% ;
     height: 87vh;
     width: 99vw;
+    margin-top: 6vh;
 }
 
 .photo-title {
     align-items: center;
-    background-color: #24CAFA;
-    border: .3rem solid black;
+    background-color: hsla(183, 9%, 32%, 0.3);
+    border: 1vh solid #0e1525;;
+    outline: 1px solid #AD9976;
     display: flex;
     justify-content: center;
     grid-row: 1 / span 1;
     grid-column: 2 / span 2;
     text-align: center;
+    color: #AD9976;
 }
 
 .photo-title > h2 {
@@ -39,32 +42,37 @@
 }
 
 .user-image {
-    border: 2px solid black;
+    border: 2px solid #0e1525;
+    outline: 1px solid #AD9976;
     height: 6rem;
     width: 6rem;
 }
 
 .square1 {
     align-items: center;
-    background-color: #2247A8;
-    border: .3rem solid black;
+    background-color: hsla(223, 66%, 39%, 0.3);
+    border: 1vh solid #0e1525;
+    outline: 1px solid #AD9976;
     display: flex;
     flex-direction: column;
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
     justify-content: center;    
+    color: white;
 }
 
 .square2 {
-    background-color: #478CE7;
-    border: .3rem solid black;
+    background-color: hsla(214, 76%, 59%, 0.3);
+    border: 1vh solid #0e1525;
+    outline: 1px solid #AD9976;
     grid-row: 2 / span 1;
     grid-column: 3 / span 1;    
 }
 
 .square3 {
-    background-color: #2896FE;
-    border: .3rem solid black;
+    background-color: hsla(209, 99%, 57%, 0.3);
+    border: 1vh solid #0e1525;
+    outline: 1px solid #AD9976;
     grid-row: 3 / span 1;
     grid-column: 2 / span 1;    
 }
@@ -90,19 +98,22 @@
 }
 
 .photo-rectangle {
-    background-color: #24CAFA;
-    border: .3rem solid black;
+    background-color: hsla(193, 95%, 56%, 0.3);
+    border: .3rem solid #0e1525;
+    outline: 1px solid #AD9976;
 }
 
 .photo-small-square {
-    background-color: #0406E7;
-    border: .3rem solid black;
+    background-color: hsla(239, 96%, 46%, 0.3);
+    border: 1vh solid #0e1525;
+    outline: 1px solid #AD9976;
 }
 
 .photo-form {
     align-items: center;
-    background-color: #900c3f;
-    border: .3rem solid black;
+    background-color: hsla(354, 65%, 59%, 0.3);
+    border: 1vh solid #0e1525;
+    outline: 1px solid #AD9976;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -113,12 +124,13 @@
 }
 
 .photo-upload {
-    margin-left: 24%;
+    margin-left: 20%;
 }
 
 .obit-error {
     background-color: #AD9976;
-    border: .3rem solid black;
+    border: 1vh solid #0e1525;
+    outline: 1px solid #AD9976;
     color: black;
     display: flex;;
     grid-row: 2 / span 3;
@@ -131,4 +143,5 @@
 .photo-edit-button {
     padding: 0%;  
     text-align: center;
+    width: 7vh;
 }
