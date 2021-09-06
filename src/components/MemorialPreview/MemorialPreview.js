@@ -35,7 +35,7 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
         </aside>
       </div>
       <article className="prev-obit">
-
+        <p>{obit}</p>
       </article>
       <section className="">
 
