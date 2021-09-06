@@ -19,10 +19,14 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
           <img className="center-sun" src={profPhoto}/>
         </div>
       </section>
+      <section className="prev-name">
+        <h2 className="name">{name}</h2>
+      </section>
+      <aside className="facts">
+        <p className=""></p>
+      </aside>
       <aside className="prev-exec">
 
-      </aside>
-      <aside className="facts">
       </aside>
       <article className="prev-obit">
 
