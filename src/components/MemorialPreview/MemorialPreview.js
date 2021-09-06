@@ -7,7 +7,7 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
   const photoPanes = galPhotos.map((photo, index) => {
     return (
       <div className="square-phot">
-        <img className="prev-img" key={index} src={photo}/>
+        <img className="prev-img" alt="Memorial Photo" key={index} src={photo}/>
       </div>
     )
   })
@@ -27,7 +27,7 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
             <div className="ray ray8"></div>
           </div>
           <div className="mem-photo">
-            <img className="center-sun" src={profPhoto}/>
+            <img className="center-sun" alt="Memorial Profile Photo" src={profPhoto}/>
           </div>
         </section>
         <section className="prev-name">

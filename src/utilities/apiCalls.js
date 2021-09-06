@@ -48,7 +48,6 @@ export const fetchUser = async (userID) => {
       const execsRes = await fetch(`${url}/executors`)
       const execData = await execsRes.json()
       const allUserData = await Promise.all([userData, execData])
-      console.log(allUserData)
       return allUserData
     } catch (err) {
         throw Error("Apologies for the error. Please try refreshing the page.")
