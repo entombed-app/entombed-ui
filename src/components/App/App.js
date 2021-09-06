@@ -99,6 +99,7 @@ const App = () => {
             ? <Message error={error} profilePic={""}/>
             : <MemorialPreview 
                 isLoggedIn={isLoggedIn} 
+                isVisitor={true}
                 executors={execs} 
                 obit={user.attributes.obituary} 
                 galPhotos={galleryPhotos} 
