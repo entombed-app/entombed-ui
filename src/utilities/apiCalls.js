@@ -47,7 +47,12 @@ export const fetchUser = async (userID) => {
 
       const execsRes = await fetch(`${url}/executors`)
       const execData = await execsRes.json()
-      const allUserData = await Promise.all([userData, execData])
+
+      const recipsRes = await fetch(`${url}/recipients`)
+      const recipsData = await recipsRes.json()
+      
+      const allUserData = await Promise.all([userData, execData, recipsData])
+      console.log(allUserData)
       return allUserData
     } catch (err) {
         throw Error("Apologies for the error. Please try refreshing the page.")
@@ -70,4 +75,23 @@ export const postCredentials = async (credentials) => {
   } catch (err) {
       throw Error(err.message)
   }
+}
+
+export const sendFinalEmail = async (user) => {
+    console.log("sending")
+    try {
+        const response = await fetch(`${baseURL}users/${user.id}/email`, {
+            method: "POST",
+            body: JSON.stringify({user})
+        })
+        if (!response.ok) {
+            throw Error("Could not send email")
+        } else {
+            const data = await response.json()
+            console.log(data)
+            return data
+        }
+      } catch (err) {
+          throw Error(err.message)
+      }
 }
