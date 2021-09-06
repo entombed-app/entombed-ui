@@ -14,6 +14,10 @@
   border-radius: 39vh 39vh 0vh 0vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .rays {
@@ -25,7 +29,7 @@
 }
 
 .ray {
-  height: 24vh;
+  height: 25vh;
   width: 4vh;
   position: absolute;
   bottom: -11vh; 
@@ -71,13 +75,10 @@
   z-index: 2;
   border: 1px solid #ad9976;
   border-radius: 39vh 39vh 0vh 0vh;
-  left: 12.5vh;
-  top: 10vh;
   width: 25vh;
   height: 15vh;
   background-color: #0e1525;
   overflow: hidden;
-  /* object-fit: cover; */
   display: flex;
   align-items: flex-start;
 }
@@ -89,7 +90,7 @@
 
 
 .prev-name {
-  width: 50vh;
+  width: 75vw;
   height: 10vh;
   margin: 2vh;
   border: 1px solid #ad9976;
@@ -108,7 +109,7 @@
 
 .facts {
   color: #ad9976;
-  width: 25vh;
+  width: 49%;
   border: 1px solid #ad9976;
   border-radius: 1vh;
   text-align: center;
@@ -122,7 +123,7 @@
 
 .prev-exec {
   color: #ad9976;
-  width: 25vh;
+  width: 49%;
   border: 1px solid #ad9976;
   border-radius: 1vh;
   text-align: center;
@@ -135,12 +136,12 @@
 .text-facts {
   display: flex;
   justify-content: center;
+  width: 75vw;
 }
 
 .prev-obit {
-  width: 25vh;
+  width: 75vw;
   color: #ad9976;
-  width: 50vh;
   border: 1px solid #ad9976;
   border-radius: 1vh;
   text-align: center;
@@ -149,7 +150,7 @@
 }
 
 .prev-gal {
-  width: 50vh;
+  width: 75vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,7 +161,6 @@
   margin-top: 2vh;
   border: 1px solid #ad9976;
   border-radius: 1vh;
-  width: 50vh;
   object-fit: cover;
   overflow: hidden;
 }
