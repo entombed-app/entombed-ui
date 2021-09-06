@@ -3,8 +3,9 @@ import sunface from "../../assets/sunface.png"
 import React, { useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { sendFinalEmail } from "../../utilities/apiCalls";
 
-export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
+export const CountdownPane = ({etd, err, dob, id}) => {
   const [etdeath, setEtd] = useState(etd)
   const [dobirth] = useState(dob)
   const [timeLeft, setTimeLeft] = useState(0)
@@ -37,8 +38,10 @@ export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60)
       }
+    }
+    if (!updatedTimeLeft.days) {
       try {
-        const response = await determineSendEmail(updatedTimeLeft.days)
+        const response = await sendFinalEmail(id)
         if (response.includes("sent")) {
           setMessage("Email successfully sent. R.I.P")
           setTimer(setTimeout(() => setMessage(""), 7000))
