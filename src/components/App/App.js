@@ -86,18 +86,6 @@ const App = () => {
     }
   }
 
-  const determineSendEmail = async(daysLeft) => {
-    // daysLeft = 0
-    if (!daysLeft) {
-      try {
-        const response = await sendFinalEmail (user.id)
-        return response
-      } catch(err) {
-        throw Error(err.message)
-      }
-    } 
-  }
-
   useEffect(() => {
     getUser()
   }, [])
@@ -148,7 +136,7 @@ const App = () => {
                     <div className='placeholder-2'></div>
                   </section>
                 </Route>
-                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} determineSendEmail={determineSendEmail}/>}/>
+                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id}/>}/>
                 <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
                 <Route exact path="/executors" render={() => <ExecutorPane executors={execs}/>}/>
                 <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
