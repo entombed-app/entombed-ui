@@ -12,6 +12,7 @@ import galleryImg from "../../assets/gallery.png"
 import { CountdownPane } from "../CountdownPane/CountdownPane";
 import { ExecutorPane } from "../ExecutorPane/ExecutorPane";
 import { Login } from "../Login/Login";
+import { MemorialPreview } from "../MemorialPreview/MemorialPreview";
 import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
@@ -20,7 +21,7 @@ import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
@@ -83,9 +84,9 @@ const App = () => {
     }
   }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <main>
@@ -114,6 +115,8 @@ const App = () => {
             <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
             <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
             <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
+            <Route exact path="/preview" render={() => <MemorialPreview executors={execs} obit={user.attributes.obituary} galPhotos={galleryPhotos} profPhoto={user.attributes.profile_picture_url} name={user.attributes.name} dob={user.attributes.date_of_birth} etd={user.attributes.etd}/>}/>
+            <Route exact path="/memorial" render={() => <MemorialPreview />}/>
             <Route exact path="/add-photo/:type" render={({ match }) => 
               { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
                                                                   : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
