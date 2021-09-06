@@ -114,12 +114,11 @@
   border-radius: 1vh;
   text-align: center;
   font-size: 2vh;
-  background-color: hsla(354, 65%, 59%, 0.3);
+  background-color: hsla(52, 97%, 64%, 0.3);
 }
 
 .prev-exec {
   color: #ad9976;
-
   width: 25vh;
   border: 1px solid #ad9976;
   border-radius: 1vh;
@@ -133,4 +132,15 @@
 .text-facts {
   display: flex;
   justify-content: center;
+}
+
+.prev-obit {
+  width: 25vh;
+  color: #ad9976;
+  width: 50vh;
+  border: 1px solid #ad9976;
+  border-radius: 1vh;
+  text-align: center;
+  margin-top: 2vh;
+  background-color: hsla(354, 65%, 59%, 0.3);
 }
