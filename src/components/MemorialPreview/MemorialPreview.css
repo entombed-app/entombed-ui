@@ -105,3 +105,15 @@
   margin: 0;
   margin-top: 2vh;
 }
+
+.facts {
+  color: #ad9976;
+  height: 10vh;
+  width: 25vh;
+  border: 1px solid #ad9976;
+  border-radius: 1vh;
+  text-align: center;
+  font-size: 2vh;
+  background-color: hsla(354, 65%, 59%, 0.3);
+  margin-right: 25vh;
+}
