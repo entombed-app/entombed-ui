@@ -21,7 +21,7 @@ import { fetchUser, updateUser, postCredentials, sendFinalEmail } from "../../ut
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
@@ -67,7 +67,6 @@ const App = () => {
       setUser(userData[0].data)
       setExecs(userData[1].data)
       setRecipients(userData[2].data)
-      // console.log(recipients)
       if (userData[0].data.attributes.images_urls) setGalleryPhotos([...userData[0].data.attributes.images_urls])
     } catch (err) {
       setError(err.message)
@@ -87,19 +86,21 @@ const App = () => {
     }
   }
 
-  const determineSendEmail = (daysLeft) => {
+  const determineSendEmail = async(daysLeft) => {
     daysLeft = 0
-    // user
     if (!daysLeft) {
-      console.log("Should be sending", user)
-      // user.relationships.recipients.data[0]
-      sendFinalEmail(user)
+      try {
+        const response = await sendFinalEmail (user.id)
+        console.log("good response", response)
+      } catch(err) {
+        throw Error(err.message)
+      }
     } 
   }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <Switch>
