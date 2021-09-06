@@ -38,6 +38,7 @@ export const CountdownPane = ({etd, err, dob, id}) => {
         seconds: Math.floor((difference / 1000) % 60)
       }
     }
+    // updatedTimeLeft.days = 0;
     if (!updatedTimeLeft.days) {
       try {
         const response = await sendFinalEmail(id)

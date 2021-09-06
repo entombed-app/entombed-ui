@@ -81,7 +81,7 @@ export const sendFinalEmail = async (id) => {
     try {
         const response = await fetch(`${baseURL}users/${id}/email`, {
             method: "POST",
-            body: JSON.stringify({user_id: id})
+            body: JSON.stringify({user_url: "http://localhost:3000/4/memorial"})
         })
         console.log(response)
         if (!response.ok) {
