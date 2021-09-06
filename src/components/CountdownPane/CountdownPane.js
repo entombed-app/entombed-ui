@@ -22,10 +22,9 @@ export const CountdownPane = ({etd, err, dob, id}) => {
     let newEtd;
     setError("")
     const splitEtd = etd.split("-")
-
-      newEtd = `${splitEtd[1]}/${splitEtd[2]}/${splitEtd[0]}`
-      setEtd(newEtd)
-      calculateProgress()
+    newEtd = `${splitEtd[1]}/${splitEtd[2]}/${splitEtd[0]}`
+    setEtd(newEtd)
+    calculateProgress()
 
     const difference = +new Date(`${newEtd}`) - +new Date()
 
