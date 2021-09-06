@@ -11,7 +11,8 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { StaleWhileRevalidate, NetworkOnly } from 'workbox-strategies';
+import { BackgroundSyncPlugin } from 'workbox-background-sync';
 
 clientsClaim();
 
@@ -20,6 +21,37 @@ clientsClaim();
 // This variable must be present somewhere in your service worker file,
 // even if you decide not to use precaching. See https://cra.link/PWA
 precacheAndRoute(self.__WB_MANIFEST);
+
+const displayNotification = async () => {
+  try {
+    const permission = await Notification.requestPermission();
+    console.log(permission);
+    const options = {
+      body: "body",
+      icon:
+        "https://www.iconninja.com/files/926/373/306/link-chain-url-web-permalink-web-address-icon.png"
+    };
+    const n = new Notification("Successfully posted", options);
+    console.log(n)
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const bgSyncPlugin = new BackgroundSyncPlugin('queue', {
+    maxRetentionTime: 24 * 60,
+    callbacks: {
+      queueDidReplay: displayNotification
+    } // Retry for max of 24 Hours (specified in minutes)
+});
+
+registerRoute(
+  "https://elegy-backend.herokuapp.com/api/v1/users/4/images",
+  new NetworkOnly({
+    plugins: [bgSyncPlugin]
+  }),
+  'POST'
+);
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
@@ -64,7 +96,6 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.hostname.includes("elegy-backend"),
-  // "https://elegy-backend.herokuapp.com/api/v1/users/4",
   new StaleWhileRevalidate({
     cacheName: "userInfo"
   })
@@ -78,24 +109,3 @@ self.addEventListener('message', (event) => {
   }
 });
 
-// self.addEventListener('fetch', (event) => {
-//     console.log("Look here",event.request)
-//     event.respondWith(
-//       caches.open('elegy-cache')
-//       .then((cache) => cache.match(event.request)
-//       .then((response) => response || fetch(event.request)
-//       // .then((response) => fetch(event.request)
-//       .then((response) => {
-//           console.log(event.request);
-//           if (!(event.request.url.indexOf('http') === 0)) {
-//             console.log("skipped today");
-//             return;
-//           } else {
-//             cache.put(event.request, response.clone());
-//             console.log("Taylor wins");
-//             return response;
-//           }
-//         })))
-//     );
-//   });
-// Any other custom service worker logic can go here.
