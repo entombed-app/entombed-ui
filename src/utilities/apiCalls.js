@@ -78,12 +78,10 @@ export const postCredentials = async (credentials) => {
 }
 
 export const sendFinalEmail = async (id) => {
-    console.log("This is the id",id)
     try {
         const response = await fetch(`${baseURL}users/${id}/email`, {
             method: "POST",
             body: JSON.stringify({user_id: id})
-            // body: JSON.stringify({banana: id})
         })
         console.log(response)
         if (!response.ok) {
