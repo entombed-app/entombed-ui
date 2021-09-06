@@ -1,8 +1,8 @@
 import './MemorialPreview.css';
 
 
-export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, profPhoto, galPhotos, }) => {
-
+export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executors, obit, profPhoto, galPhotos, }) => {
+  if (isVisitor) isLoggedIn = true;
   const photoPanes = galPhotos.map((photo, index) => {
     return (
       <div className="square-phot">
@@ -52,7 +52,8 @@ export const MemorialPreview = ({name, isLoggedIn, dob, etd, executors, obit, pr
         <section className="prev-gal">
           {photoPanes}
         </section>
-      </section> : <h2>Please log in to see this feature</h2>}
+      </section> 
+      : <h2>Please log in to see this feature</h2>} 
     </>
   )
 }
