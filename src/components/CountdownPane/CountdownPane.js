@@ -9,14 +9,15 @@ export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
   const [dobirth] = useState(dob)
   const [timeLeft, setTimeLeft] = useState(0)
   const [percentage, setPercentage] = useState(0)
-  const [error] = useState(err)
+  const [error, setError] = useState(err)
 
   useEffect(() => {
     calculateTimeLeft()
   }, [])
 
-  const calculateTimeLeft = () => {
-    let newEtd
+  const calculateTimeLeft = async() => {
+    let newEtd;
+    setError("")
     const splitEtd = etd.split("-")
 
       newEtd = `${splitEtd[1]}/${splitEtd[2]}/${splitEtd[0]}`
@@ -34,7 +35,11 @@ export const CountdownPane = ({etd, err, dob, determineSendEmail}) => {
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60)
       }
-      determineSendEmail(updatedTimeLeft.days)
+      try {
+        await determineSendEmail(updatedTimeLeft.days)
+      } catch(err) {
+        setError(`Error: ${err.message}`)
+      }
     }
     
     setTimeLeft(updatedTimeLeft)
