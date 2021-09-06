@@ -91,7 +91,7 @@ const App = () => {
     if (!daysLeft) {
       try {
         const response = await sendFinalEmail (user.id)
-        console.log("good response", response)
+        return response
       } catch(err) {
         throw Error(err.message)
       }
