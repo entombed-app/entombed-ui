@@ -17,7 +17,7 @@ import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
 import Message from "../Messsage/Message";
-import { fetchUser, updateUser, postCredentials } from "../../utilities/apiCalls"
+import { fetchUser, updateUser, postCredentials, sendFinalEmail } from "../../utilities/apiCalls"
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -26,6 +26,7 @@ const App = () => {
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
   const [execs, setExecs] = useState([])
+  const [recipients, setRecipients] = useState([])
 
   const updateProfilePicture = async ({photoFilePath, photoFile}) => {
     try {
@@ -65,6 +66,8 @@ const App = () => {
       const userData = await fetchUser(4)
       setUser(userData[0].data)
       setExecs(userData[1].data)
+      setRecipients(userData[2].data)
+      // console.log(recipients)
       if (userData[0].data.attributes.images_urls) setGalleryPhotos([...userData[0].data.attributes.images_urls])
     } catch (err) {
       setError(err.message)
@@ -82,6 +85,16 @@ const App = () => {
     } catch (err) {
       throw Error("Email and password do not match.")
     }
+  }
+
+  const determineSendEmail = (daysLeft) => {
+    daysLeft = 0
+    // user
+    if (!daysLeft) {
+      console.log("Should be sending", user)
+      // user.relationships.recipients.data[0]
+      sendFinalEmail(user)
+    } 
   }
 
   // useEffect(() => {
@@ -134,7 +147,7 @@ const App = () => {
                     <div className='placeholder-2'></div>
                   </section>
                 </Route>
-                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth}/>}/>
+                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} determineSendEmail={determineSendEmail}/>}/>
                 <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
                 <Route exact path="/executors" render={() => <ExecutorPane executors={execs}/>}/>
                 <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
