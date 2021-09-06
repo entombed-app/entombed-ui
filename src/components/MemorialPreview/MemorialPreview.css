@@ -1,0 +1,59 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.prev-head {
+  height: 20vh;
+  width: 35vh;
+  border: 1px solid #ad9976;
+  margin-top: 6vh;
+  border-radius: 39vh 39vh 0vh 0vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.rays {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.ray {
+  height: 21vh;
+  width: 4vh;
+  position: absolute;
+  bottom: -11vh; 
+  transform-origin: 2vh 25vh;
+  text-align: center;
+  border: 1px solid #ad9976;
+  border-top: 0;
+}
+
+.ray2 {
+  transform: translateX(-2vh) rotate(30deg);
+  color: pink;
+}
+
+.ray3 {
+  transform: translateX(-2vh) rotate(60deg);
+  color: white;
+}
+
+.ray4 {
+  transform: translateX(-2vh) rotate(300deg);
+}
+
+.ray5 {
+  transform: translateX(-2vh) rotate(330deg);
+}
+
+.ray6 {
+  transform: translateX(-2vh) rotate(360deg);
+}

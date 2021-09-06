@@ -115,7 +115,7 @@ const App = () => {
             <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
             <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
             <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
-            <Route exact path="/preview" render={() => <MemorialPreview executors={execs} obit={user.attributes.obituary} galPhotos={galleryPhotos} profPhoto={user.attributes.profile_picture_url} name={user.attributes.name} dob={user.attributes.date_of_birth} etd={user.attributes.etd}/>}/>
+            <Route exact path="/preview" render={() => <MemorialPreview isLoggedIn={isLoggedIn}executors={execs} obit={user.attributes.obituary} galPhotos={galleryPhotos} profPhoto={user.attributes.profile_picture_url} name={user.attributes.name} dob={user.attributes.date_of_birth} etd={user.attributes.etd}/>}/>
             <Route exact path="/memorial" render={() => <MemorialPreview />}/>
             <Route exact path="/add-photo/:type" render={({ match }) => 
               { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
