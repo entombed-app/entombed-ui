@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "recipient",
+            "attributes": {
+                "email": "unclebobby@test.com",
+                "name": "Uncle bobby"
+            }
+        },
+        {
+            "id": "2",
+            "type": "recipient",
+            "attributes": {
+                "email": "auntybobby@test.com",
+                "name": "Aunty bobby"
+            }
+        },
+        {
+            "id": "3",
+            "type": "recipient",
+            "attributes": {
+                "email": "garybobby@test.com",
+                "name": "Gary bobby"
+            }
+        },
+        {
+            "id": "4",
+            "type": "recipient",
+            "attributes": {
+                "email": "Jerrybobby@test.com",
+                "name": "Jerry bobby"
+            }
+        },
+        {
+            "id": "5",
+            "type": "recipient",
+            "attributes": {
+                "email": "Cousinbobby@test.com",
+                "name": "Cousin bobby"
+            }
+        },
+        {
+            "id": "7",
+            "type": "recipient",
+            "attributes": {
+                "email": "galloway.taylor@gmail.com",
+                "name": "Taylor"
+            }
+        }
+    ]
+}
