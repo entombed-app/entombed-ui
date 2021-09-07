@@ -93,7 +93,6 @@ const App = () => {
   return (
     <Switch>
       <Route exact path="/:id/memorial" render={({ match }) => {
-        console.log(match.params)
         if (!user.attributes && !error) getUser(match.params.id)
         return (
           <>

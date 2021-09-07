@@ -52,7 +52,6 @@ export const fetchUser = async (userID) => {
       const recipsData = await recipsRes.json()
       
       const allUserData = await Promise.all([userData, execData, recipsData])
-      console.log(allUserData)
       return allUserData
     } catch (err) {
         throw Error("Apologies for the error. Please try refreshing the page.")
@@ -83,7 +82,6 @@ export const sendFinalEmail = async (id) => {
             method: "POST",
             body: JSON.stringify({user_url: "http://localhost:3000/4/memorial"})
         })
-        console.log(response)
         if (!response.ok) {
             throw Error("Could not send email, please refresh")
         } else {
