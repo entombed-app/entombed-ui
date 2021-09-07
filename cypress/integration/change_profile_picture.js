@@ -2,10 +2,10 @@ describe("Change Profile Picture", () => {
     beforeEach(() => {
         cy.interceptGets()
         cy.visit("http://localhost:3000/")
-        cy.login()
     })
   
     it('Should be able to load the edit profile picture page by clicking on profile picture', () => {
+        cy.login()
         cy.wait(3000)
         cy.get(".sun > img")
         .click()

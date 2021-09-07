@@ -2,7 +2,6 @@ describe('Obituary', () => {
     beforeEach(() => {
       cy.interceptGets()
       cy.visit("http://localhost:3000/obituary")
-      cy.login()
     })
   
     it('Should be able to visit the obituary by typing in the path in the url', () => {

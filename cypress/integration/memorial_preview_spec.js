@@ -5,7 +5,6 @@ describe('Memorial Preview', () => {
 
     it('Should be able to visit the memorial preview page by typing in the path in the url', () => {
         cy.visit("http://localhost:3000/")
-        cy.login()
         .get(".preview-pane")
         .click()
         cy.url().should("include", "http://localhost:3000/preview")
@@ -13,7 +12,6 @@ describe('Memorial Preview', () => {
   
     it("Should display a memorial preview", () => {
         cy.visit("http://localhost:3000/")
-        cy.login()
         .get(".preview-pane")
         .click()
         cy.get(".name")
@@ -58,17 +56,17 @@ describe('Memorial Preview', () => {
 
     it("Should not be able to navigate to the home page by clicking the header", () => {
         cy.visit("http://localhost:3000/4/memorial")
-        .wait(3000)
-        .get(".title")
-        .click()
-        .get(".title")
-        .should("not.have.value", "Elegy")
+            .wait(3000)
+            .get(".title")
+            .click()
+            .get(".title")
+            .should("not.have.value", "Elegy")
     })
 
     it("Should show an error if the fetch does not work for memorial preview", () => {
         cy.interceptFails()
         .visit("http://localhost:3000/preview")
-        .login()
+        // .login()
         .get(".loading-error-message")
         .contains("Apologies for the error. Please try refreshing the page.")
     })

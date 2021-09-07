@@ -88,7 +88,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    // window.sessionStorage.clear()
     if (window.sessionStorage.getItem("isLoggedIn")) {
       setIsLoggedIn(true)
       getUser()

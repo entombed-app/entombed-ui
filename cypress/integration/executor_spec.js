@@ -2,7 +2,6 @@ describe('Executor', () => {
   beforeEach(() => {
     cy.interceptGets()
     cy.visit("http://localhost:3000/")
-    cy.login()
   })
 
   it('Should be able to visit the executor page by typing in the path in the url', () => {
