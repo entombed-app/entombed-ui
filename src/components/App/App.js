@@ -127,43 +127,44 @@ const App = () => {
                   <section className='window'>
                     <div className="window-pane corner"></div>
                     <Link className='preview-pane' to='/preview'><img src={preview}/></Link>
-                    <div className="window-pane"></div>
+                    <div className="window-pane center4"></div>
                     <Link className='executor-pane' to='/executors'><img src={suit}/></Link>
                     <div className="window-pane corner"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
+                    <div className="window-pane border1"></div>
+                    <div className="window-pane center3"></div>
+                    <div className="window-pane center2"></div>
                     <Link className='countdown-pane' to='/countdown'><img src={sundial}/></Link>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
+                    <div className="window-pane center6"></div>
+                    <div className="window-pane center7"></div>
+                    <div className="window-pane lightest"></div>
+                    <div className="window-pane border3"></div>
+                    <div className="window-pane border3"></div>
+                    <div className="window-pane lightest"></div>
+                    <div className="window-pane center6"></div>
+                    <div className="window-pane center1"></div>
+                    <div className="window-pane center2"></div>
+                    <div className="window-pane center3"></div>
+                    <div className="window-pane border2"></div>
+                    <div className="window-pane border1"></div>
+                    <div className="window-pane center7"></div>
                     <Link className='gallery-pane' to='/gallery'><img src={galleryImg}/></Link>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
+                    <div className="window-pane center5"></div>
+                    <div className="window-pane center1"></div>
                     <Link className='recipient-pane' to='/recipients'><img src={familyTree}/></Link>
                     <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
+                    <div className="window-pane border2"></div>
+                    <div className="window-pane center2"></div>
+                    <div className="window-pane lightest"></div>
+                    <div className="window-pane border1"></div>
+                    <div className="window-pane center1"></div>
+                    <div className="window-pane center5"></div>
+                    <div className="window-pane border3"></div>
                     <div className="window-pane corner"></div>
-                    <div className="window-pane"></div>
-                    <div className="window-pane"></div>
+                    <div className="window-pane center1"></div>
                     {/* <div className='timeline-pane' to='/timeline'></div> */}
-                    <div className='window-pane'></div>
-                    <div className='window-pane'></div>
+                    <div className='window-pane center4'></div>
+                    <div className='window-pane center5'></div>
+                    <div className='window-pane center3'></div>
                     <div className='window-pane corner'></div>
                   </section>
                 </Route>
