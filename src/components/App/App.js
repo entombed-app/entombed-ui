@@ -6,7 +6,6 @@ import sundial from "../../assets/sundial_icon.png";
 import preview from "../../assets/preview (2).png"
 import suit from "../../assets/suit (1).png"
 import scrollImg from "../../assets/scroll.png";
-import timelineImg from "../../assets/timeline.png";
 import familyTree from "../../assets/family-tree.png";
 import galleryImg from "../../assets/gallery.png"
 import { CountdownPane } from "../CountdownPane/CountdownPane";
@@ -88,8 +87,10 @@ const App = () => {
   }
 
   const logOut = () => {
-    window.sessionStorage.clear()
-    setIsLoggedIn(false)
+    if (isLoggedIn && window.sessionStorage.getItem("isLoggedIn")) {
+      window.sessionStorage.clear()
+      return setIsLoggedIn(false)
+    }
   }
 
   useEffect(() => {

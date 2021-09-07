@@ -90,6 +90,7 @@ describe('Obituary', () => {
         .wait("@patchFail")
         .get(".loading-error-message")
         .contains("We could not update your data. Please refresh")
-    })
+        cy.logout()
+      })
   
   })

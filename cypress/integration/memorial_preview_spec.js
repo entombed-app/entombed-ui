@@ -77,6 +77,7 @@ describe('Memorial Preview', () => {
         .visit("http://localhost:3000/4/memorial")
         .get(".loading-error-message")
         .contains("Apologies for the error. Please try refreshing the page.")
+        cy.logout()
     })
   
   })
