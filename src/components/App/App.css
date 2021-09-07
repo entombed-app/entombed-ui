@@ -1,5 +1,8 @@
 main, html {
+  align-items: center;
   background-color: #0e1525;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   font-family: 'Raleway', sans-serif;
@@ -7,27 +10,34 @@ main, html {
 
 .window {
   display: grid;
-  height: 85vh;
+  height: 80vh;
+  width: 80vw;
   grid-template-rows: 18% 7% 12% 20% 11% 9% 24%;
   grid-template-columns: 6% 13% 20% 24% 18% 15% 7%;
+  margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
   overflow: unset;
   position: relative;
 }
 
+.window > * {
+  border: 1px solid #ad9976;
+}
+
 .preview-pane {
   align-items: center;
   background-color: #900C3F;
   display: flex;
-  clip-path: polygon(7% 44%, 69% 5%, 74% 67%, 15% 99%);
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 2;
+  /* clip-path: polygon(7% 44%, 69% 5%, 74% 67%, 15% 99%); */
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+  justify-content: center;
   position: relative;
 }
 
 .preview-pane > img {
-  margin-left: 17%;
+  /* margin-left: 17%; */
   color: white;
   height: 5rem;
   width: 5rem;
@@ -38,17 +48,18 @@ main, html {
   align-items: center;
   background-color: #126374;
   display: flex;
-  clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%);
-  grid-column: 3 / span 3;
-  grid-row: 1 / span 3;
+  /* clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%); */
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 2;
+  justify-content: center;
   position: relative;
 }
 
 .countdown-pane > img {
-  margin-left: 30%;
+  /* margin-left: 30%; */
   color: white;
-  height: 12rem;
-  width: 64%;
+  height: 8rem;
+  width: 8rem;
   position: absolute;
 }
 
@@ -56,21 +67,22 @@ main, html {
   align-items: center;
   background-color: #AD9976;
   display: flex;
-  clip-path: polygon(45% 1%, 99% 17%, 73% 93%, 32% 82%);
+  /* clip-path: polygon(45% 1%, 99% 17%, 73% 93%, 32% 82%); */
   display: flex;
-  align-items: center;
-  grid-column: 5 / span 3;
-  grid-row: 1 / span 4;
+  /* align-items: center; */
+  grid-column: 5 / span 2;
+  grid-row: 1 / span 1;
+  justify-content: center;
   position: relative;
 }
 
 .executor-pane > img {
-  margin-left: 30%;
+  /* margin-left: 30%; */
   color: white;
-  height: 7rem;
-  width: 59%;
+  height: 6rem;
+  width: 7rem;
   position: absolute;
-  margin-left: 35%;
+  /* margin-left: 35%; */
 }
 
 .placeholder-1 {
@@ -86,17 +98,18 @@ main, html {
   align-items: center;
   background-color: #900C3F;
   display: flex;
-  clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%);
+  /* clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%); */
   grid-column: 2 / span 2;
-  grid-row: 3 / span 4;
+  grid-row: 5 / span 2;
+  justify-content: center;
   position: relative;
 }
 
 .recipient-pane > img {
-  margin-left: 10%;
+  /* margin-left: 10%; */
   color: white;
-  height: 8rem;
-  width: 82%;
+  height: 6rem;
+  /* width: 82%; */
   position: absolute;
 }
 
@@ -104,17 +117,18 @@ main, html {
   align-items: center;
   background-color: #126374;
   display: flex;
-  clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%);
-  font-size: 50px;
-  grid-column: 4 / span 2;
-  grid-row: 4 / span 4;
+  /* clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%); */
+  /* font-size: 50px; */
+  grid-column: 4 / span 1;
+  grid-row: 5 / span 3;
+  justify-content: center;
   position: relative;
 }
 
 .obit-pane > img {
-  margin-left: 10%;
+  /* margin-left: 10%; */
   color: white;
-  height: 8rem;
+  height: 6rem;
   width: 6rem;
   position: absolute;
 }
@@ -141,14 +155,15 @@ main, html {
   align-items: center;
   background-color: #AD9976;
   display: flex;
-  clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%);
+  /* clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%); */
   grid-column: 5 / span 2;
-  grid-row: 5 / span 3;
+  grid-row: 4 / span 2;
+  justify-content: center;
   position: relative;
 }
 
 .gallery-pane > img {
-  margin-left: 26%;
+  /* margin-left: 26%; */
   color: white;
   height: 6rem;
   width: 6rem;
@@ -171,7 +186,7 @@ main, html {
   margin-top: 50vh;
 }
 
-@media screen and (min-width: 603px) {
+/* @media screen and (min-width: 603px) {
   .countdown-pane > img {
     height: 18rem;
     width: 53%;
@@ -259,4 +274,4 @@ main, html {
   .timeline-pane > img {
     margin-left: 21%;
   }
-}
+} */
