@@ -59,5 +59,19 @@ describe('Countdown', () => {
     cy.logout()
   })
 
+  it("Should send out an email when the countdown ends", () => {
+    cy.intercept("POST", "https://elegy-backend.herokuapp.com/api/v1/users/2/email", {
+        ok: true,
+        statusCode: 201,
+        body: {}
+    }).as("postEmail")
+    const now = new Date(2119, 6, 22)
 
+    cy.clock(now)
+    cy.get(".countdown-pane")
+      .click()
+      .get(".email-sent")
+      .contains("Email successfully sent. R.I.P")
+      .should("be.visible")
+  })
 })
