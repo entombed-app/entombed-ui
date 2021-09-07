@@ -77,7 +77,6 @@ main, html {
   align-items: center;
   background-color: #00A3D5;
   display: flex;
-  /* clip-path: polygon(7% 44%, 69% 5%, 74% 67%, 15% 99%); */
   grid-column: 2 / span 2;
   grid-row: 1 / span 1;
   justify-content: center;
@@ -85,7 +84,6 @@ main, html {
 }
 
 .preview-pane > img {
-  /* margin-left: 17%; */
   color: white;
   height: 5rem;
   width: 5rem;
@@ -96,7 +94,6 @@ main, html {
   align-items: center;
   background-color: #900C3F;
   display: flex;
-  /* clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%); */
   grid-column: 4 / span 1;
   grid-row: 4 / span 1;
   justify-content: center;
@@ -104,7 +101,6 @@ main, html {
 }
 
 .countdown-pane > img {
-  /* margin-left: 30%; */
   color: white;
   height: 9rem;
   width: 7rem;
@@ -115,8 +111,6 @@ main, html {
   align-items: center;
   background-color: hsl(214deg 100% 66%);
   display: flex;
-  /* clip-path: polygon(45% 1%, 99% 17%, 73% 93%, 32% 82%); */
-  /* align-items: center; */
   grid-column: 5 / span 2;
   grid-row: 1 / span 1;
   justify-content: center;
@@ -124,28 +118,16 @@ main, html {
 }
 
 .executor-pane > img {
-  /* margin-left: 30%; */
   color: white;
   height: 6rem;
   width: 7rem;
   position: absolute;
-  /* margin-left: 35%; */
-}
-
-.placeholder-1 {
-  align-items: center;
-  background-color: #ffff0085;
-  display: flex;
-  /* clip-path: polygon(0 0, 0% 100%, 100% 100%);
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 8; */
 }
 
 .recipient-pane {
   align-items: center;
   background-color: #5C3477;
   display: flex;
-  /* clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%); */
   grid-column: 2 / span 2;
   grid-row: 5 / span 2;
   justify-content: center;
@@ -153,10 +135,8 @@ main, html {
 }
 
 .recipient-pane > img {
-  /* margin-left: 10%; */
   color: white;
   height: 6rem;
-  /* width: 82%; */
   position: absolute;
 }
 
@@ -164,8 +144,6 @@ main, html {
   align-items: center;
   background-color: #0066ff;
   display: flex;
-  /* clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%); */
-  /* font-size: 50px; */
   grid-column: 4 / span 1;
   grid-row: 6 / span 2;
   justify-content: center;
@@ -173,28 +151,9 @@ main, html {
 }
 
 .obit-pane > img {
-  /* margin-left: 10%; */
   color: white;
   height: 5rem;
   width: 5rem;
-  position: absolute;
-}
-
-.timeline-pane {
-  align-items: center;
-  background-color: #900C3F;
-  display: flex;
-  clip-path: polygon(7% 0%, 45% 25%, 50% 98%, 16% 73%);
-  grid-column: 3 / span 2;
-  grid-row: 7 / span 8;
-  position: relative;
-}
-
-.timeline-pane > img {
-  margin-left: 7%;
-  color: white;
-  height: 6rem;
-  width: 6rem;
   position: absolute;
 }
 
@@ -202,7 +161,6 @@ main, html {
   align-items: center;
   background-color: #5affffc4;
   display: flex;
-  /* clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%); */
   grid-column: 6 / span 2;
   grid-row: 4 / span 2;
   justify-content: center;
@@ -210,20 +168,10 @@ main, html {
 }
 
 .gallery-pane > img {
-  /* margin-left: 26%; */
   color: white;
   height: 6rem;
   width: 6rem;
   position: absolute;
-}
-
-.placeholder-2 {
-  align-items: center;
-  background-color: #db7093b8;
-  display: flex;
-  /* clip-path: polygon(100% 0, 20% 100%, 100% 100%);
-  grid-column: 6 / span 2;
-  grid-row: 3 / span 5; */
 }
 
 .loading-error-message {
@@ -233,121 +181,11 @@ main, html {
   margin-top: 50vh;
 }
 
-/* @media screen and (min-width: 603px) {
-  .countdown-pane > img {
-    height: 18rem;
-    width: 53%;
-  }
-
-  .obit-pane > img {
-    margin-left: 13%;
-    height: 9rem;
-    width: 47%;
-  }
-
-  .preview-pane > img {
-    margin-left: 25%;
-  }
-} */
-
-/* @media screen and (min-width: 800px) {
-  .countdown-pane > img {
-    height: 18rem;
-    margin-left: 36%;
-    width: 45%;
-  }
-
-  .executor-pane > img {
-    margin-left: 35%;
-    width: 50%;
-  }
-
-  .obit-pane > img {
-    margin-left: 16%;
-    height: 9rem;
-    width: 42%;
-  }
-
-  .preview-pane > img {
-    margin-left: 25%;
-    height: 6rem;
-    width: 6rem;
-  }
-
-  .recipient-pane > img {
-    margin-left: 18%;
-    width: 69%;
-  }
-} */
-
-/* @media screen and (max-width: 1020px) {
-  .countdown-pane > img {
-    height: 21rem;
-    margin-left: 43%;
-    margin-top: 3%;
-    width: 28%;
-  }
-
-  .executor-pane > img {
-    margin-left: 43%;
-    height: 11rem;
-    width: 39%;
-  }
-
-  .gallery-pane > img {
-    margin-left: 30%;
-    height: 9rem;
-    width: 9rem;
-  }
-
-  .obit-pane > img {
-    margin-left: 20%;
-    height: 12rem;
-    width: 36%;
-  }
-
-  .preview-pane > img {
-    margin-top: 4%;
-    margin-left: 30%;
-    height: 6rem;
-    width: 6rem;
-  }
-
-  .recipient-pane > img {
-    margin-left: 34%;
-    width: 47%;
-  }
-
-  .timeline-pane > img {
-    margin-left: 21%;
-  }
-} */
-
 @media screen and (max-width: 1020px) {
   .window {
     margin-top: 6%;
   }
 }
-
-/* @media screen and (max-width: 693px) {
-  .window {
-    margin-top: 8%;
-  }
-
-  .window > * {
-    border: .7vh solid #0e1525;
-  }
-
-  .countdown-pane > img {
-    height: 7rem;
-    width: 5rem;
-  }
-
-  .executor-pane > img {
-    height: 5rem;
-    width: 6rem;
-  }
-} */
 
 @media screen and (max-width: 720px) {
   .window {
