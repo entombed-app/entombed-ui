@@ -1,15 +1,8 @@
 describe("Change Profile Picture", () => {
     beforeEach(() => {
-      cy.fixture("user").then((user) => {
-          cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
-              ok: true,
-              status: 200, 
-              url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
-              body: user
-          }).as("getUser")
-      })
-      cy.visit("http://localhost:3000/")
-      cy.login()
+        cy.interceptGets()
+        cy.visit("http://localhost:3000/")
+        cy.login()
     })
   
     it('Should be able to load the edit profile picture page by clicking on profile picture', () => {
