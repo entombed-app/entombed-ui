@@ -23,12 +23,61 @@ main, html {
 
 .window > * {
   background-color: white;
-  border: 1px solid #ad9976;
+  border: 1vh solid #0e1525;
+  outline: 1px solid #ad9976;
+}
+
+.corner {
+  background-color: hsla(239, 96%, 46%, 0.3);
+}
+
+.lightest {
+  background-color: hsl(223deg 66% 44% / 64%);
+}
+
+.border1 {
+  background-color: #85C9DF;
+}
+
+.border2 {
+  background-color: #0000EE;
+}
+
+.border3 {
+  background-color: #14A8C0;
+}
+
+.center1 {
+  background-color: #7F9DF0;
+}
+
+.center2 {
+  background-color: #0AB7E0;
+}
+
+.center3 {
+  background-color: #08039B;
+}
+
+.center4 {
+  background-color: #00b0ff7a;
+}
+
+.center5 {
+  background-color: #355FA4;
+}
+
+.center6 {
+  background-color: #0399F0;
+}
+
+.center7 {
+  background-color: #25ECEE;
 }
 
 .preview-pane {
   align-items: center;
-  background-color: #900C3F;
+  background-color: #00A3D5;
   display: flex;
   /* clip-path: polygon(7% 44%, 69% 5%, 74% 67%, 15% 99%); */
   grid-column: 2 / span 2;
@@ -47,11 +96,11 @@ main, html {
 
 .countdown-pane {
   align-items: center;
-  background-color: #126374;
+  background-color: #900C3F;
   display: flex;
   /* clip-path: polygon(27% 38%, 83% 0%, 81% 76%, 32% 100%); */
   grid-column: 4 / span 1;
-  grid-row: 2 / span 2;
+  grid-row: 4 / span 1;
   justify-content: center;
   position: relative;
 }
@@ -66,10 +115,9 @@ main, html {
 
 .executor-pane {
   align-items: center;
-  background-color: #AD9976;
+  background-color: hsl(214deg 100% 66%);
   display: flex;
   /* clip-path: polygon(45% 1%, 99% 17%, 73% 93%, 32% 82%); */
-  display: flex;
   /* align-items: center; */
   grid-column: 5 / span 2;
   grid-row: 1 / span 1;
@@ -97,7 +145,7 @@ main, html {
 
 .recipient-pane {
   align-items: center;
-  background-color: #900C3F;
+  background-color: #5C3477;
   display: flex;
   /* clip-path: polygon(14% 21%, 76% 2%, 99% 98%, 42% 86%); */
   grid-column: 2 / span 2;
@@ -116,7 +164,7 @@ main, html {
 
 .obit-pane {
   align-items: center;
-  background-color: #126374;
+  background-color: #0066ff;
   display: flex;
   /* clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%); */
   /* font-size: 50px; */
@@ -154,7 +202,7 @@ main, html {
 
 .gallery-pane {
   align-items: center;
-  background-color: #AD9976;
+  background-color: #5AFFFF;
   display: flex;
   /* clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%); */
   grid-column: 6 / span 2;
