@@ -5,7 +5,8 @@ describe('Obituary', () => {
     })
   
     it('Should be able to visit the obituary by typing in the path in the url', () => {
-        cy.url().should("include", "http://localhost:3000/obituary")
+      cy.login()  
+      cy.url().should("include", "http://localhost:3000/obituary")
     })
   
     it("Should display the obituary page with the default obituary", () => {

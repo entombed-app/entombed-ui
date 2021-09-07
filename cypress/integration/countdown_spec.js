@@ -6,6 +6,7 @@ describe('Countdown', () => {
 
   it('Should be able to visit the countdown by typing in the path in the url', () => {
       cy.visit('http://localhost:3000/countdown')
+      cy.login()
       cy.url().should("include", "http://localhost:3000/countdown")
   })
 

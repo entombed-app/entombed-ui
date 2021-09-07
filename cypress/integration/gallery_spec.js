@@ -1,12 +1,11 @@
 describe('Gallery', () => {
   beforeEach(() => {
     cy.interceptGets()
-    cy.visit("http://localhost:3000/")
-    cy.get(".gallery-pane")
-      .click()
+    cy.visit("http://localhost:3000/gallery")
   })
 
   it('Should be able to visit the gallery page by typing in the path in the url', () => {
+    cy.login()
     cy.url().should("include", "http://localhost:3000/gallery")
   })
 

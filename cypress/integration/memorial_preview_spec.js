@@ -5,6 +5,7 @@ describe('Memorial Preview', () => {
 
     it('Should be able to visit the memorial preview page by typing in the path in the url', () => {
         cy.visit("http://localhost:3000/")
+        cy.login()
         .get(".preview-pane")
         .click()
         cy.url().should("include", "http://localhost:3000/preview")
