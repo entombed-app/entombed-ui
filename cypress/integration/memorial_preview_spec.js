@@ -16,9 +16,7 @@ describe('Memorial Preview', () => {
         cy.login()
         .get(".preview-pane")
         .click()
-        cy.get(".center-sun")
-        .should("have.attr", "src").should("include", "http://elegy-backend.herokuapp.com/")
-        .get(".name")
+        cy.get(".name")
         .contains("Elder Bobby")
         .get(".facts")
         .contains("Born")
@@ -39,8 +37,6 @@ describe('Memorial Preview', () => {
 
     it("Should be able to navigate to the memorial link without logging in", () => {
         cy.visit("http://localhost:3000/4/memorial")
-        .get(".center-sun")
-        .should("have.attr", "src").should("include", "http://elegy-backend.herokuapp.com/")
         .get(".name")
         .contains("Elder Bobby")
         .get(".facts")
