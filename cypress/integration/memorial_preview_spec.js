@@ -69,10 +69,17 @@ describe('Memorial Preview', () => {
         .should("not.have.value", "Elegy")
     })
 
-    it("Should show an error if the fetch does not work", () => {
+    it("Should show an error if the fetch does not work for memorial preview", () => {
         cy.interceptFails()
         .visit("http://localhost:3000/preview")
         .login()
+        .get(".loading-error-message")
+        .contains("Apologies for the error. Please try refreshing the page.")
+    })
+
+    it("Should show an error if the fetch does not work for visitor", () => {
+        cy.interceptFails()
+        .visit("http://localhost:3000/4/memorial")
         .get(".loading-error-message")
         .contains("Apologies for the error. Please try refreshing the page.")
     })
