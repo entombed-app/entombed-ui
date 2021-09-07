@@ -5,7 +5,7 @@ describe("Change Profile Picture", () => {
     })
   
     it('Should be able to load the edit profile picture page by clicking on profile picture', () => {
-        cy.login()
+        // cy.login()
         cy.wait(3000)
         cy.get(".sun > img")
         .click()
