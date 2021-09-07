@@ -17,6 +17,7 @@ describe('Gallery', () => {
   })
 
   it('Should direct the user to add a profile photo if there is none', () => {
+    cy.wait(3000)
     cy.get(".gal-rule")
     .should("contain", "Please add a Profile Photo")
   })
