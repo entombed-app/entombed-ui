@@ -1,12 +1,6 @@
 describe('Login', () => {
   beforeEach(() => {
-    //Add additional intercept here for photos
-    cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/2", {
-        ok: true,
-        status: 200, 
-        url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
-        fixture: 'user'
-    })
+    cy.interceptGets()
     cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/users/2', 
     {
       ok: true,
