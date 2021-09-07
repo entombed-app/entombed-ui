@@ -31,4 +31,16 @@ Cypress.Commands.add("interceptGets", () => {
     fixture: 'recipients'
   }).as("getRecipients")
 
+  cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/login', 
+  {
+    ok: true,
+    statusCode: 201,
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
+    body: {
+      data: {
+        fixture: 'user'
+      }
+    }
+  }).as("loginPost")
+
 })
