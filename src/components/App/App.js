@@ -80,15 +80,20 @@ const App = () => {
       if (response.data) {
         await getUser()
         setIsLoggedIn(true)
+        window.sessionStorage.setItem("isLoggedIn", "true")
       } 
     } catch (err) {
       throw Error("Email and password do not match.")
     }
   }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    // window.sessionStorage.clear()
+    if (window.sessionStorage.getItem("isLoggedIn")) {
+      setIsLoggedIn(true)
+      getUser()
+    }
+  }, [])
 
   return (
     <Switch>
