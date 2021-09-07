@@ -21,7 +21,7 @@ import { fetchUser, updateUser, postCredentials, sendFinalEmail } from "../../ut
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [user, setUser] = useState({})
   const [error, setError] = useState("")
   const [galleryPhotos, setGalleryPhotos] = useState([])
@@ -86,9 +86,9 @@ const App = () => {
     }
   }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <Switch>
@@ -125,15 +125,46 @@ const App = () => {
               <Switch>
                 <Route exact from='/'>
                   <section className='window'>
+                    <div className="window-pane corner"></div>
                     <Link className='preview-pane' to='/preview'><img src={preview}/></Link>
-                    <Link className='countdown-pane' to='/countdown'><img src={sundial}/></Link>
+                    <div className="window-pane"></div>
                     <Link className='executor-pane' to='/executors'><img src={suit}/></Link>
-                    <div className='placeholder-1'></div>
-                    <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
-                    <Link className='timeline-pane' to='/timeline'><img src={timelineImg}/></Link>
-                    <Link className='recipient-pane' to='/recipients'><img src={familyTree}/></Link>
+                    <div className="window-pane corner"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <Link className='countdown-pane' to='/countdown'><img src={sundial}/></Link>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
                     <Link className='gallery-pane' to='/gallery'><img src={galleryImg}/></Link>
-                    <div className='placeholder-2'></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <Link className='recipient-pane' to='/recipients'><img src={familyTree}/></Link>
+                    <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane corner"></div>
+                    <div className="window-pane"></div>
+                    <div className="window-pane"></div>
+                    {/* <div className='timeline-pane' to='/timeline'></div> */}
+                    <div className='window-pane'></div>
+                    <div className='window-pane'></div>
+                    <div className='window-pane corner'></div>
                   </section>
                 </Route>
                 <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id}/>}/>
