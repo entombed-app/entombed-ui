@@ -1,3 +1,5 @@
+//Cypress.config()
+
 describe('Login', () => {
   beforeEach(() => {
     cy.interceptGets()
@@ -97,4 +99,8 @@ describe('Login', () => {
       .children("h2")
       .contains("Email and password do not match. Please try again!")
   })
+
+  // it("Should prompt user to log in if the session is terminated", () => {
+
+  // })
 })
