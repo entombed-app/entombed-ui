@@ -22,6 +22,7 @@ main, html {
 }
 
 .window > * {
+  background-color: white;
   border: 1px solid #ad9976;
 }
 
@@ -89,9 +90,9 @@ main, html {
   align-items: center;
   background-color: #ffff0085;
   display: flex;
-  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  /* clip-path: polygon(0 0, 0% 100%, 100% 100%);
   grid-column: 1 / span 2;
-  grid-row: 2 / span 8;
+  grid-row: 2 / span 8; */
 }
 
 .recipient-pane {
@@ -120,7 +121,7 @@ main, html {
   /* clip-path: polygon(1% 13%, 70% 0%, 54% 94%, 27% 100%); */
   /* font-size: 50px; */
   grid-column: 4 / span 1;
-  grid-row: 5 / span 3;
+  grid-row: 6 / span 2;
   justify-content: center;
   position: relative;
 }
@@ -128,8 +129,8 @@ main, html {
 .obit-pane > img {
   /* margin-left: 10%; */
   color: white;
-  height: 6rem;
-  width: 6rem;
+  height: 5rem;
+  width: 5rem;
   position: absolute;
 }
 
@@ -156,7 +157,7 @@ main, html {
   background-color: #AD9976;
   display: flex;
   /* clip-path: polygon(34% 0%, 81% 13%, 51% 100%, 16% 81%); */
-  grid-column: 5 / span 2;
+  grid-column: 6 / span 2;
   grid-row: 4 / span 2;
   justify-content: center;
   position: relative;
@@ -174,9 +175,9 @@ main, html {
   align-items: center;
   background-color: #db7093b8;
   display: flex;
-  clip-path: polygon(100% 0, 20% 100%, 100% 100%);
+  /* clip-path: polygon(100% 0, 20% 100%, 100% 100%);
   grid-column: 6 / span 2;
-  grid-row: 3 / span 5;
+  grid-row: 3 / span 5; */
 }
 
 .loading-error-message {
