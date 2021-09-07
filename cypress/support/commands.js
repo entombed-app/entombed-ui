@@ -9,6 +9,11 @@ Cypress.Commands.add("login", () => {
   .click()
 })
 
+Cypress.Commands.add("logout", () => {
+  cy.get(".logout")
+    .click()
+})
+
 Cypress.Commands.add("interceptGets", () => {
   cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
     ok: true,

@@ -125,6 +125,7 @@ describe('Gallery', () => {
           .click()
         cy.get(".loading-error-message")
           .should("be.visible")
+        cy.logout()
       })
   })
 });

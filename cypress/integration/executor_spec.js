@@ -24,6 +24,7 @@ describe('Executor', () => {
       .contains("888-999-1111")
       .get(".exec-email")
       .contains("bob@bee.com")
+    cy.logout()
   })
 
 })

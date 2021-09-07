@@ -43,6 +43,7 @@ describe("Change Profile Picture", () => {
             .should("have.attr", "src").should("include", "blob:http://localhost:3000")
             .get(".sun > img")
             .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+        cy.logout()
         })
     })
   

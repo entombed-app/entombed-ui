@@ -56,6 +56,7 @@ describe('Countdown', () => {
     cy.get("svg")
       .children("path")
       .should("be.visible")
+    cy.logout()
   })
 
 

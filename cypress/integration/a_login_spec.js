@@ -104,4 +104,8 @@ describe('Login', () => {
     cy.get(".modal")
       .should("not.exist")
   })
+
+  it("Should be able to log out once logged in", () => {
+    cy.logout()
+  })
 })

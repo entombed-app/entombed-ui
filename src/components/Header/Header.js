@@ -25,9 +25,7 @@ const Header = ({profilePic, logOut}) => {
                 </section>
             </Link>
             <Link to ="/add-photo/profile"className="sun"><img src={pic}/></Link>
-            <button className="logout" onClick={() => {
-                        logOut()
-                    }}>Log Out</button>
+            <button className="logout" onClick={() => logOut()}>Log Out</button>
         </header>
     )
 }
