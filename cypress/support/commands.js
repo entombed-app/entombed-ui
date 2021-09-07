@@ -9,7 +9,7 @@ Cypress.Commands.add("login", () => {
   .click()
 })
 
-Cypress.Commands.add("interceptFetch", () => {
+Cypress.Commands.add("interceptGets", () => {
   cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
     ok: true,
     status: 200, 
@@ -24,7 +24,7 @@ Cypress.Commands.add("interceptFetch", () => {
     fixture: 'executors'
   }).as("getExecutors")
 
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4/recipients", {
     ok: true,
     status: 200, 
     url: "https://elegy-backend.herokuapp.com/api/v1/users/4/recipients",
