@@ -106,6 +106,9 @@ describe('Login', () => {
   })
 
   it("Should be able to log out once logged in", () => {
-    cy.logout()
+    cy.wait(2000)
+      .logout()
+      .get(".modal")
+      .should("be.visible")
   })
 })
