@@ -56,7 +56,6 @@ describe('Countdown', () => {
     cy.get("svg")
       .children("path")
       .should("be.visible")
-    cy.logout()
   })
 
   it("Should send out an email when the countdown ends", () => {
@@ -73,5 +72,6 @@ describe('Countdown', () => {
       .get(".email-sent")
       .contains("Email successfully sent. R.I.P")
       .should("be.visible")
+      cy.logout()
   })
 })
