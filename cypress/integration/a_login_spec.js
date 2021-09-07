@@ -66,17 +66,6 @@ describe('Login', () => {
       .should("be.enabled")
   })
 
-  it("Modal should disappear after a successful login attempt", () => {
-    cy.get("[data-cy=email]")
-      .type("ex@ample.com")
-    cy.get("[data-cy=password]")
-      .type("password")
-    cy.get(".submit-login")
-      .click()
-    cy.get(".modal")
-      .should("not.exist")
-  })
-
   it("Error message should appear on modal after unsuccessful login attempt", () => {
     cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/login', 
     {
@@ -100,7 +89,14 @@ describe('Login', () => {
       .contains("Email and password do not match. Please try again!")
   })
 
-  // it("Should prompt user to log in if the session is terminated", () => {
-
-  // })
+  it("Modal should disappear after a successful login attempt", () => {
+    cy.get("[data-cy=email]")
+      .type("ex@ample.com")
+    cy.get("[data-cy=password]")
+      .type("password")
+    cy.get(".submit-login")
+      .click()
+    cy.get(".modal")
+      .should("not.exist")
+  })
 })
