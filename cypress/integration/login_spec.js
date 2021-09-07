@@ -76,7 +76,7 @@ describe('Login', () => {
   })
 
   it("Error message should appear on modal after unsuccessful login attempt", () => {
-    cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/users/2', 
+    cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/login', 
     {
       ok: false,
       statusCode: 403,
