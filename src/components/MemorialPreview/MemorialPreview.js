@@ -10,6 +10,12 @@ export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executor
       </div>
     )
   })
+
+  const restructureDate = (originalDate) => {
+    let separateDates = originalDate.split('-');
+    let [year, month, day] = separateDates;
+    return `${month}-${day}-${year}`;
+  }
   
   return (
     <>
@@ -41,8 +47,8 @@ export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executor
             <div className="text-facts">
               <aside className="facts">
                 <h3>Life Span</h3>
-                <p>Born: {dob}</p>
-                <p>Deceased: {etd}</p>
+                <p>Born: {restructureDate(dob)}</p>
+                <p>Deceased: {restructureDate(etd)}</p>
               </aside>
               <aside className="prev-exec">
                 <h3>Executor</h3>
