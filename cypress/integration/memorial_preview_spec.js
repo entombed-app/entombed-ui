@@ -62,11 +62,19 @@ describe('Memorial Preview', () => {
 
     it("Should not be able to navigate to the home page by clicking the header", () => {
         cy.visit("http://localhost:3000/4/memorial")
-        .wait(["@getUser", "@getExecutors", "@getRecipients"])
+        .wait(3000)
         .get(".title")
         .click()
         .get(".title")
         .should("not.have.value", "Elegy")
+    })
+
+    it("Should show an error if the fetch does not work", () => {
+        cy.interceptFails()
+        .visit("http://localhost:3000/preview")
+        .login()
+        .get(".loading-error-message")
+        .contains("Apologies for the error. Please try refreshing the page.")
     })
   
   })
