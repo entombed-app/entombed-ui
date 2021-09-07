@@ -99,4 +99,9 @@ describe('Login', () => {
     cy.get(".modal")
       .should("not.exist")
   })
+
+  it("Should stay logged in via session storage after a successful attempt", () => {
+    cy.get(".modal")
+      .should("not.exist")
+  })
 })

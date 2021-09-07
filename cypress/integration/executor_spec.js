@@ -5,6 +5,7 @@ describe('Executor', () => {
   })
 
   it('Should be able to visit the executor page by typing in the path in the url', () => {
+    cy.login()
     cy.get(".executor-pane")
       .click()
     cy.url().should("include", "http://localhost:3000/executor")
