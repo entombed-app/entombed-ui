@@ -89,7 +89,7 @@ const App = () => {
   const logOut = () => {
     if (isLoggedIn && window.sessionStorage.getItem("isLoggedIn")) {
       window.sessionStorage.clear()
-      return setIsLoggedIn(false)
+      setIsLoggedIn(false)
     }
   }
 
