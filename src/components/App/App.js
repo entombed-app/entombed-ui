@@ -87,6 +87,11 @@ const App = () => {
     }
   }
 
+  const logOut = () => {
+    window.sessionStorage.clear()
+    setIsLoggedIn(false)
+  }
+
   useEffect(() => {
     if (window.sessionStorage.getItem("isLoggedIn")) {
       setIsLoggedIn(true)
@@ -124,7 +129,7 @@ const App = () => {
           {!user.attributes || error 
           ? <Message error={error} profilePic={""}/>
           : <>
-              <Header profilePic={user.attributes.profile_picture_url}/>
+              <Header profilePic={user.attributes.profile_picture_url} logOut={logOut}/>
               <Switch>
                 <Route exact from='/'>
                   <section className='window'>
