@@ -2,8 +2,8 @@
     display: grid;
     grid-template-rows: 10% 45% 45% 10%;
     grid-template-columns: 10% 40% 40% 10% ;
-    height: 87vh;
-    width: 99vw;
+    height: 69vh;
+    width: 86vw;
     margin-top: 6vh;
 }
 
