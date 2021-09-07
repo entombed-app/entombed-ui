@@ -1,4 +1,4 @@
-const baseURL =   `https://elegy-backend.herokuapp.com/api/v1/`
+const baseURL = "https://elegy-backend.herokuapp.com/api/v1/"
 
 export const updateUser = async ({data, type, id}) => {
     let patchInfo = {
@@ -77,10 +77,14 @@ export const postCredentials = async (credentials) => {
 }
 
 export const sendFinalEmail = async (id) => {
+    const memorialLink = `https://elegy-app.herokuapp.com/${id}/memorial`
     try {
         const response = await fetch(`${baseURL}users/${id}/email`, {
             method: "POST",
-            body: JSON.stringify({user_url: "http://localhost:3000/4/memorial"})
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({user_url: memorialLink})
         })
         if (!response.ok) {
             throw Error("Could not send email, please refresh")
