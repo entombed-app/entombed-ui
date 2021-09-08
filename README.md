@@ -1,13 +1,15 @@
-# [Elegy](https://elegy-app.herokuapp.com/)
-## Deployed Link: [https://elegy-app.herokuapp.com/](https://elegy-app.herokuapp.com/)
-## Deployment Status: [![CircleCI](https://circleci.com/gh/entombed-app/entombed-ui/tree/main.svg?style=svg)](https://circleci.com/gh/entombed-app/entombed-ui/tree/main)
+# Elegy
+### Deployed Link: [https://elegy-app.herokuapp.com/](https://elegy-app.herokuapp.com/)
+### Deployment Status: [![CircleCI](https://circleci.com/gh/entombed-app/entombed-ui/tree/main.svg?style=svg)](https://circleci.com/gh/entombed-app/entombed-ui/tree/main)
+### Link to Back-End Repo: [https://github.com/entombed-app/entombed_api](https://github.com/entombed-app/entombed_api)
 
 ### Table of Contents
 - [Overview](#overview)
 - [Installation & Viewing](#installation-and-viewing)
 - [Technologies Used](#technologies-used)
+- [Features](#features)
 - [Sample Profile](#sample-profile-screenshots-and-gifs)
-- [Functionality](#functionality)
+- [Wireframes](#wireframes)
 - [Future Additions](#future-additions)
 - [Authors](#authors)
 
@@ -38,6 +40,28 @@ To view this application on your local device:
     <img alt="Cypress Badge" src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" />
 </p>
 
+## Features
+
+-  Users can login and update their own memorial page by:
+
+   -  Adding photo highlights of their life to their gallery
+   -  Updating or editing their obituary
+   -  Changing their profile picture 
+
+-  Users can view:
+
+   -  Their chosen executor who will manage their memorial page upon the user's death
+   -  A preview of what their memorial page will look like to visitors
+   -  A countdown clock which estimates the longest amount of time the user might live
+
+-  An email will be sent out to a user's recipients containing a link to their memorial page when the countdown expires
+
+-  Elegy is also a progressive web app which gives users the ability to:
+   -  Download the application to their phone or desktop
+   -  View all of their most recently updated content before going offline
+   -  Save updates to their application like changing their profile picture which will be completed when going online again  
+
+---
 ## Sample Profile Screenshots and GIFs
   
   ![Dashboard](https://user-images.githubusercontent.com/77019930/132437538-ef6afaf3-08c5-417c-ba76-974f5d692ff9.png)
@@ -59,20 +83,43 @@ To view this application on your local device:
 
 ---
 
-## Functionality
+## Wireframes
 
-
+-  All Wireframes: [https://miro.com/app/board/o9J_l0-HNPM=/](https://miro.com/app/board/o9J_l0-HNPM=/)
+-  Initial Dashboard wireframe: 
+<img width="304" alt="Dashboard" src="https://user-images.githubusercontent.com/77019930/132558251-ef26f88c-3173-494d-9954-0db5178d6bc5.png">
+-  Countdown Wireframe:
+<img width="304" alt="Countdown" src="https://user-images.githubusercontent.com/77019930/132558533-551410e2-926b-4099-88cd-cf9c46cd8c23.png">
 
 
 ## Future Additions
   * Add user creation page
-  * Add sessions library to manage login status
   * Add recipients creation/management view
+  * Add executors creation/mangement view
+  * Add more functions to background sync
+  * Add delete gallery photos function
+  * Enhance styling and add more information to obituary page
+  * Add ability to change countdown 
+  * Add ability to manually send memorial email
+  * Add ability to send email to executor when countdown ends with user login information
 
 
 ### Authors
-- [Taylor Galloway](https://github.com/tylrs)
+#### Front-End Team
+- Taylor Galloway
+  - GitHub: [https://github.com/tylrs](https://github.com/tylrs)
+  - LinkedIn: [https://www.linkedin.com/in/taylor-galloway/](https://www.linkedin.com/in/taylor-galloway/)
+- Ashley O'Brien
+  - GitHub: [https://github.com/AshleyOh-bit](https://github.com/AshleyOh-bit)
+  - LinkedIn: [https://www.linkedin.com/in/ashley-o-brien-30456a51/](https://www.linkedin.com/in/ashley-o-brien-30456a51/)
 
+#### Back-End Team
+- Noah Zinter
+  - GitHub: [https://github.com/NoahZinter](https://github.com/NoahZinter)
+  - LinkedIn: [https://www.linkedin.com/in/noahzinter/](https://www.linkedin.com/in/noahzinter/)
+- Jermaine Braumuller
+  - GitHub: [https://github.com/Jaybraum](https://github.com/Jaybraum)
+  - LinkedIn: [https://www.linkedin.com/in/j-braum/](https://www.linkedin.com/in/j-braum/)
 **************************************************************************
 
 **[Back to top](#table-of-contents)**
