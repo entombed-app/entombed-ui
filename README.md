@@ -39,11 +39,12 @@ To view this application on your local device:
 </p>
 
 ## Sample Profile Screenshots and GIFs
+  
+  ![Dashboard](https://user-images.githubusercontent.com/77019930/132437538-ef6afaf3-08c5-417c-ba76-974f5d692ff9.png)
+
   ![Dashboard Navigation](https://media.giphy.com/media/XU0E2IuJgZlJquwp9c/giphy.gif?cid=790b76112599be0028edf2c8126347647b23b7a3a9ac34ec&rid=giphy.gif&ct=g)
   
   ![Editing Obituary](https://media.giphy.com/media/WFlWPkLONdzbMXNZjI/giphy.gif?cid=790b7611b0beef9b065fa60fc8e49c1eb785e0396c414dc6&rid=giphy.gif&ct=g)
-
-  ![Dashboard](photos/homepage.png)
 
   ![Clock](photos/clock.png)
 
