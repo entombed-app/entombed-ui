@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Installation & Viewing](#installation-and-viewing)
 - [Technologies Used](#technologies-used)
-- [Sample Profile](#sample-profile)
+- [Sample Profile](#sample-profile-screenshots-and-gifs)
 - [Functionality](#functionality)
 - [Future Additions](#future-additions)
 - [Authors](#authors)
@@ -37,8 +37,12 @@ To view this application on your local device:
     <img alt="Cypress Badge" src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" />
 </p>
 
-## Sample Profile 
-  ![Home Page](photos/homepage.png)
+## Sample Profile Screenshots and GIFs
+  ![Dashboard Navigation](https://media.giphy.com/media/XU0E2IuJgZlJquwp9c/giphy.gif?cid=790b76112599be0028edf2c8126347647b23b7a3a9ac34ec&rid=giphy.gif&ct=g)
+  
+  ![Editing Obituary](https://media.giphy.com/media/WFlWPkLONdzbMXNZjI/giphy.gif?cid=790b7611b0beef9b065fa60fc8e49c1eb785e0396c414dc6&rid=giphy.gif&ct=g)
+
+  ![Dashboard](photos/homepage.png)
 
   ![Clock](photos/clock.png)
 
