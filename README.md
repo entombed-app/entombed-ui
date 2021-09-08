@@ -9,7 +9,7 @@
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Sample Profile](#sample-profile-screenshots-and-gifs)
-- [Wire Frames](#wireframes)
+- [Wireframes](#wireframes)
 - [Future Additions](#future-additions)
 - [Authors](#authors)
 
