@@ -43,30 +43,37 @@
 }
 
 .ray2 {
+  background-color: hsla(354, 65%, 59%, 0.3);
   transform: translateX(-2vh) rotate(30deg);
 }
 
 .ray3 {
+  background-color: hsla(174, 86%, 57%, 0.3);
   transform: translateX(-2vh) rotate(60deg);
 }
 
 .ray4 {
+  background-color: hsla(183, 9%, 32%, 0.3);
   transform: translateX(-2vh) rotate(90deg);
 }
 
 .ray5 {
+  background-color: hsla(183, 9%, 32%, 0.3);
   transform: translateX(-2vh) rotate(270deg);
 }
 
 .ray6 {
+  background-color: hsla(174, 86%, 57%, 0.3);
   transform: translateX(-2vh) rotate(300deg);
 }
 
 .ray7 {
+  background-color: hsla(354, 65%, 59%, 0.3);
   transform: translateX(-2vh) rotate(330deg);
 }
 
 .ray8 {
+  background-color: hsla(174, 86%, 57%, 0.3);
   transform: translateX(-2vh) rotate(0deg);
 }
 
