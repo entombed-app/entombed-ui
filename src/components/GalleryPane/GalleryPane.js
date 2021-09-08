@@ -16,7 +16,6 @@ export const GalleryPane = ({ galPhotos, profPhoto }) => {
         <div className="right-dome"></div>
       </section>
       <section className="slideshow">
-        {/* <h4 className="slideshow-header">Slideshow</h4> */}
         <Link to="/add-photo/gallery"><button className="add-gal-photo">Add a photo</button></Link>
       </section>
       <section className="gal-view">

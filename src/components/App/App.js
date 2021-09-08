@@ -170,7 +170,6 @@ const App = () => {
                     <div className="window-pane border3"></div>
                     <div className="window-pane corner"></div>
                     <div className="window-pane center1"></div>
-                    {/* <div className='timeline-pane' to='/timeline'></div> */}
                     <div className='window-pane center4'></div>
                     <div className='window-pane center5'></div>
                     <div className='window-pane center3'></div>

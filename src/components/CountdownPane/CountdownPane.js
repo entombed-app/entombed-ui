@@ -6,8 +6,6 @@ import 'react-circular-progressbar/dist/styles.css';
 import { sendFinalEmail } from "../../utilities/apiCalls";
 
 export const CountdownPane = ({etd, err, dob, id}) => {
-  const [etdeath, setEtd] = useState(etd)
-  const [dobirth] = useState(dob)
   const [timeLeft, setTimeLeft] = useState(0)
   const [percentage, setPercentage] = useState(0)
   const [error, setError] = useState(err)
@@ -23,7 +21,6 @@ export const CountdownPane = ({etd, err, dob, id}) => {
     setError("")
     const splitEtd = etd.split("-")
     newEtd = `${splitEtd[1]}/${splitEtd[2]}/${splitEtd[0]}`
-    setEtd(newEtd)
     calculateProgress()
 
     const difference = +new Date(`${newEtd}`) - +new Date()
@@ -38,7 +35,7 @@ export const CountdownPane = ({etd, err, dob, id}) => {
         seconds: Math.floor((difference / 1000) % 60)
       }
     }
-    // updatedTimeLeft.days = 0;
+
     if (!updatedTimeLeft.days) {
       try {
         const response = await sendFinalEmail(id)
