@@ -1,4 +1,5 @@
 # [Elegy](https://elegy-app.herokuapp.com/)
+## Deployed Link: [https://elegy-app.herokuapp.com/](https://elegy-app.herokuapp.com/)
 ## Deployment Status: [![CircleCI](https://circleci.com/gh/entombed-app/entombed-ui/tree/main.svg?style=svg)](https://circleci.com/gh/entombed-app/entombed-ui/tree/main)
 
 ### Table of Contents
