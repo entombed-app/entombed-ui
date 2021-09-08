@@ -53,11 +53,13 @@ export function register(config) {
 }
 
 function registerValidSW(swUrl, config) {
+  console.log("Service worker URL>>>>", swUrl)
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
+        console.log("installing worker>>>", installingWorker)
         if (installingWorker == null) {
           return;
         }
@@ -98,6 +100,7 @@ function registerValidSW(swUrl, config) {
 
 function checkValidServiceWorker(swUrl, config) {
   // Check if the service worker can be found. If it can't reload the page.
+  console.log("Checking if service worker can be found")
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
   })
