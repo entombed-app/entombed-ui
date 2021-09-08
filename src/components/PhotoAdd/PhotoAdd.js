@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './PhotoAdd.css'
 import galleryIcon from "../../assets/gallery.png"

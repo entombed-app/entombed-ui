@@ -13,7 +13,6 @@ const Header = ({profilePic, logOut}) => {
                     <section className="title-diamond">
                         <div className="header-diamond left"></div>
                         <div className="header-diamond center"></div>
-                    {/* <div class="header-stone center"></div> */}
                         <div className="header-diamond right"></div>
                         <h1 className="title">Elegy</h1>
                     </section>
