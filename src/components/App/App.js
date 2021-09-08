@@ -107,7 +107,7 @@ const App = () => {
         return (
           <>
             {!user.attributes || !execs[0] || error
-            ? <Message error={error} profilePic={""}/>
+            ? <Message error={error} profilePic={""} logOut={logOut}/>
             : <MemorialPreview 
                 isLoggedIn={isLoggedIn} 
                 isVisitor={true}
@@ -128,7 +128,7 @@ const App = () => {
         <main>
           {!isLoggedIn && <Login isLoggedIn={isLoggedIn} logIn={logIn}/>}
           {!user.attributes || error 
-          ? <Message error={error} profilePic={""}/>
+          ? <Message error={error} profilePic={""} logOut={logOut}/>
           : <>
               <Header profilePic={user.attributes.profile_picture_url} logOut={logOut}/>
               <Switch>
