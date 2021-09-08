@@ -102,3 +102,8 @@ h1 {
     margin-left: 70%;
     padding: .4rem;
 }
+
+.logout:hover {
+    background-color: rgba(114, 125, 126, 0.3);
+    cursor: pointer;
+}
