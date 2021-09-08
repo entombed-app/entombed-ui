@@ -9,7 +9,7 @@
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Sample Profile](#sample-profile-screenshots-and-gifs)
-- [Wire Frames](#wire-frames)
+- [Wire Frames](#wireframes)
 - [Future Additions](#future-additions)
 - [Authors](#authors)
 
@@ -83,7 +83,7 @@ To view this application on your local device:
 
 ---
 
-## Wire Frames
+## Wireframes
 
 -  All Wireframes: [https://miro.com/app/board/o9J_l0-HNPM=/](https://miro.com/app/board/o9J_l0-HNPM=/)
 -  Initial Dashboard wireframe: 
