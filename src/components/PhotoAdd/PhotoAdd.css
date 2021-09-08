@@ -128,8 +128,8 @@
     border: 1px solid #ad9976;
     border-radius: 1vh;
     color: white;
-    margin-left: 15%;
-    padding: .4rem;
+    margin-left: .3rem;
+    padding: .6rem;
 }
 
 .photo-upload::-webkit-file-upload-button:hover {
@@ -162,4 +162,16 @@
 .photo-edit-button:hover {
     background-color: rgba(114, 125, 126, 0.3);
     cursor: pointer;
+}
+
+@media screen and (max-width: 740px) {
+    .photo-upload {
+        font-size: .6rem;
+    }
+
+    .photo-upload::-webkit-file-upload-button {
+        font-size: .6rem;
+        margin-left: 2rem;
+        padding: .3rem;
+    }
 }
