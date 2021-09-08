@@ -126,7 +126,7 @@ main, html {
 
 .recipient-pane {
   align-items: center;
-  background-color: #5C3477;
+  background-color: #0039d58f;
   display: flex;
   grid-column: 2 / span 2;
   grid-row: 5 / span 2;
@@ -135,6 +135,7 @@ main, html {
 }
 
 .recipient-pane > img {
+  display: none;
   color: white;
   height: 6rem;
   position: absolute;
