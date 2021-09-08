@@ -86,11 +86,16 @@
 .add-gal-photo {
   height: 3.5vh;
   width: 15vh;
-  background-color: #0E1525;
+  background-color: #0e1525;
   outline: none;
   border: 2px solid #AD9976;
   color: #AD9976;
   border-radius: .5vh;
+}
+
+.add-gal-photo:hover {
+  cursor: pointer;
+  background-color: hsl(222, 24%, 22%);
 }
 
 .gal-rule, .gal-head {

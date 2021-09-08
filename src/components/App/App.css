@@ -83,6 +83,10 @@ main, html {
   position: relative;
 }
 
+.preview-pane:hover {
+  background-color: #20c3f5;
+}
+
 .preview-pane > img {
   color: white;
   height: 5rem;
@@ -100,6 +104,10 @@ main, html {
   position: relative;
 }
 
+.countdown-pane:hover {
+  background-color: #c32260;
+}
+
 .countdown-pane > img {
   color: white;
   height: 9rem;
@@ -115,6 +123,11 @@ main, html {
   grid-row: 1 / span 1;
   justify-content: center;
   position: relative;
+}
+
+.executor-pane:hover {
+  background-color:  hsl(214deg 100% 78%);
+  cursor: pointer;
 }
 
 .executor-pane > img {
@@ -144,6 +157,10 @@ main, html {
   position: relative;
 }
 
+.obit-pane:hover {
+  background-color: #599bff;
+}
+
 .obit-pane > img {
   color: white;
   height: 5rem;
@@ -159,6 +176,10 @@ main, html {
   grid-row: 4 / span 2;
   justify-content: center;
   position: relative;
+}
+
+.gallery-pane:hover {
+  background-color: hsla(180, 100%, 80%, 0.851);
 }
 
 .gallery-pane > img {
