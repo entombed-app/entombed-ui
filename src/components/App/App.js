@@ -62,7 +62,7 @@ const App = () => {
   const getUser = async () => {
     setError('')
     try {
-      const userData = await fetchUser(5)
+      const userData = await fetchUser(6)
       setUser(userData[0].data)
       setExecs(userData[1].data)
       setRecipients(userData[2].data)
