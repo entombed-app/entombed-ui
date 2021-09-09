@@ -3,17 +3,6 @@
 describe('Login', () => {
   beforeEach(() => {
     cy.interceptGets()
-    cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/users/2', 
-    {
-      ok: true,
-      statusCode: 201,
-      url: "https://elegy-backend.herokuapp.com/api/v1/users/2",
-      body: {
-        data: {
-          fixture: 'user'
-        }
-      }
-    })
     cy.visit("http://localhost:3000/")
   })
 

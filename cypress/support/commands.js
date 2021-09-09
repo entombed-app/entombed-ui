@@ -15,24 +15,24 @@ Cypress.Commands.add("logout", () => {
 })
 
 Cypress.Commands.add("interceptGets", () => {
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/**", {
     ok: true,
     statusCode: 200, 
-    url: "https://elegy-backend.herokuapp.com/api/v1/users/4",
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/**",
     fixture: 'user'
   }).as("getUser")
 
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4/executors", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/**/executors", {
     ok: true,
     statusCode: 200, 
-    url: "https://elegy-backend.herokuapp.com/api/v1/users/4",
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/**",
     fixture: 'executors'
   }).as("getExecutors")
 
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4/recipients", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/**/recipients", {
     ok: true,
     statusCode: 200, 
-    url: "https://elegy-backend.herokuapp.com/api/v1/users/4/recipients",
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/**/recipients",
     fixture: 'recipients'
   }).as("getRecipients")
 
@@ -50,22 +50,22 @@ Cypress.Commands.add("interceptGets", () => {
 })
 
 Cypress.Commands.add("interceptFails", () => {
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/**", {
     ok: false,
     statusCode: 404, 
-    url: "https://elegy-backend.herokuapp.com/api/v1/users/4",
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/**",
   }).as("getUserFail")
 
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4/executors", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/**/executors", {
     ok: false,
     statusCode: 404, 
-    url: "https://elegy-backend.herokuapp.com/api/v1/users/4",
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/**",
   }).as("getExecutorsFail")
 
-  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/4/recipients", {
+  cy.intercept("GET", "https://elegy-backend.herokuapp.com/api/v1/users/**/recipients", {
     ok: false,
     statusCode: 404, 
-    url: "https://elegy-backend.herokuapp.com/api/v1/users/4/recipients",
+    url: "https://elegy-backend.herokuapp.com/api/v1/users/**/recipients",
   }).as("getRecipientsFail")
 
   cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/login', 
