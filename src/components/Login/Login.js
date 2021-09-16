@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import './Login.css';
 
 export const Login = ({logIn, isLoggedIn}) => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("ex@ample.com")
+  const [password, setPassword] = useState("password")
   const [error, setError] = useState("")
-  const [disabled, setDisabled] = useState(true)
+  const [disabled, setDisabled] = useState(false)
 
   const handleUserChange = e => {
     setEmail(e.target.value)
-    if (password && email) {
-      setDisabled(false)
-    }
+    // if (password && email) {
+    //   setDisabled(false)
+    // }
   }
 
   const handlePassChange = e => {
     setPassword(e.target.value)
-    if (password && email) {
-      setDisabled(false)
-    }
+    // if (password && email) {
+    //   setDisabled(false)
+    // }
   } 
 
   const clearInputs = () => {
