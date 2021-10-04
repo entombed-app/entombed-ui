@@ -63,6 +63,7 @@ const App = () => {
     setError('')
     try {
       const userData = await fetchUser(6)
+      console.log(userData)
       setUser(userData[0].data)
       setExecs(userData[1].data)
       setRecipients(userData[2].data)
@@ -178,7 +179,7 @@ const App = () => {
                 </Route>
                 <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id}/>}/>
                 <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
-                <Route exact path="/executors" render={() => <ExecutorPane executors={execs}/>}/>
+                <Route exact path="/executors" render={() => <ExecutorPane person={execs}/>}/>
                 <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
                 <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
                 <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
