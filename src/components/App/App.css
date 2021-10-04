@@ -154,6 +154,10 @@ main, html {
   position: absolute;
 }
 
+.recipient-pane:hover {
+  background-color: #0044ffb8;
+}
+
 .obit-pane {
   align-items: center;
   background-color: #0066ff;
