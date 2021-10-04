@@ -161,7 +161,7 @@ const App = () => {
                     <Link className='gallery-pane' to='/gallery'><img src={galleryImg}/></Link>
                     <div className="window-pane center5"></div>
                     <div className="window-pane center1"></div>
-                    <div className='recipient-pane'></div>
+                    <Link className="recipient-pane" to='recipients'><img src={familyTree}/></Link>
                     <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
                     <div className="window-pane border2"></div>
                     <div className="window-pane center2"></div>

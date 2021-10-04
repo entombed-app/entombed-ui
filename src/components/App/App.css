@@ -147,6 +147,13 @@ main, html {
   position: relative;
 }
 
+.recipient-pane > img {
+  color: white;
+  height: 6rem;
+  width: 6rem;
+  position: absolute;
+}
+
 .obit-pane {
   align-items: center;
   background-color: #0066ff;
