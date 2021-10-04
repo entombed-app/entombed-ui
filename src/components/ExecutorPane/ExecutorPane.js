@@ -3,7 +3,7 @@ import "./ExecutorPane.css"
 
 export const ExecutorPane = ({person, type}) => {
   let details;
-  if (type) {
+  if (!type) {
     details = 
       <section className="exec-details">
         <h2 className="exec-name">{person[0].attributes.name}</h2>
