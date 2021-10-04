@@ -18,6 +18,7 @@ import ObitPane from "../ObitPane/ObitPane";
 import Message from "../Messsage/Message";
 import { fetchUser, updateUser, postCredentials, sendFinalEmail } from "../../utilities/apiCalls"
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
+import RecipientsPane from "../RecipientsPane/RecipientsPane";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -180,6 +181,7 @@ const App = () => {
                 <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id}/>}/>
                 <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
                 <Route exact path="/executors" render={() => <ExecutorPane person={execs}/>}/>
+                <Route exact path="/recipients" render={() => <RecipientsPane recipients={recipients}/>}/>
                 <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
                 <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
                 <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
