@@ -95,3 +95,18 @@ export const sendFinalEmail = async (id) => {
           throw Error(err.message)
       }
 }
+
+export const deleteRecipient = async (userid, recipientid) => {
+    const url = `${baseURL}/users/${userid}/${recipientid}`
+    try {
+        const response = await fetch(url)
+        if (!response.ok) {
+            throw Error("Delete was unsuccessful. Please Try Again")
+        } else {
+            return "Recipient delete was successful"
+
+        }
+    } catch (err) {
+        throw Error(err.message)
+    }
+}
