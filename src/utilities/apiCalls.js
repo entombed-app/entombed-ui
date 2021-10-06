@@ -112,3 +112,27 @@ export const deleteRecipient = async (userid, recipientid) => {
         throw Error(err.message)
     }
 }
+
+export const createRecipient = async (userid, recipientInfo) => {
+    const url = `${baseURL}users/${userid}/recipients`
+    const newRecipient = {
+        email: recipientInfo.email,
+        name: recipientInfo.name
+    }
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newRecipient)
+        })
+        if (!response.ok) {
+            throw Error("New recipient was not created, please try again")
+        } else {
+            return response.json()
+        }
+    } catch (err) {
+        throw Error(err.message)
+    }
+}
