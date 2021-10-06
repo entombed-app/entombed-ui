@@ -21,7 +21,10 @@ export const ExecutorPane = ({person, type}) => {
   return (
     <section className="exec-pane">
       <section className="exec-border">
-        <h2 className="exec-title">{type ? 'Recipient' : 'Executor'}</h2>
+        <div className="recipient-title-container">
+          {!!type && <button className="delete-recipient">Delete</button>}
+          <h2 className="exec-title">{type ? 'Recipient' : 'Executor'}</h2>
+        </div>
         <section className="exec-window">
           <div className="top">
             <div className="top-left box"></div>
@@ -36,11 +39,6 @@ export const ExecutorPane = ({person, type}) => {
           <div className="inner-circle">
           </div>
           {details}
-          {/* <section className="exec-details">
-            <h2 className="exec-name">{person[0].attributes.name}</h2>
-            <h3 className="exec-phone" data-cy="exec-phone">{person[0].attributes.phone}</h3>
-            <h4 className="exec-email">{person[0].attributes.email}</h4>
-          </section> */}
         </section>
       </section>
     </section>
