@@ -33,12 +33,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  width: 90%;
+  width: 100%;
 }
 
 .delete-recipient {
+  background-color: rgba(74,88,89,.3);
+  border: 1px solid #ad9976;
+  border-radius: 1vh;
+  color: white;
+  padding: .4rem;
+  justify-self: center;
   height: 50%;
   width: 60%;
+}
+
+.delete-recipient:hover {
+  background-color: rgba(114, 125, 126, 0.3);
+  cursor: pointer;
 }
 
 .top, .bottom {

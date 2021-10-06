@@ -22,8 +22,9 @@ export const ExecutorPane = ({person, type}) => {
     <section className="exec-pane">
       <section className="exec-border">
         <div className="recipient-title-container">
-          {!!type && <button className="delete-recipient">Delete</button>}
+          <div></div>
           <h2 className="exec-title">{type ? 'Recipient' : 'Executor'}</h2>
+          {!!type && <button className="delete-recipient">Delete</button>}
         </div>
         <section className="exec-window">
           <div className="top">
