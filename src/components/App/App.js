@@ -98,9 +98,10 @@ const App = () => {
   const handleDeleteRecipient = async (recipientid) => {
     try {
       const response = await deleteRecipient(user.id, recipientid)
-      console.log(response)
+      const filtered = recipients.filter(recipient => recipient.id !== recipientid)
+      setRecipients(filtered)
     } catch(err) {
-      console.log(err)
+      throw Error(err.message)
     }
   }
 
