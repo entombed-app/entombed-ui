@@ -1,7 +1,7 @@
 import React from "react"
 import "./ExecutorPane.css"
 
-export const ExecutorPane = ({person, type}) => {
+export const ExecutorPane = ({person, id, type, handleDeleteRecipient}) => {
   let details;
   if (!type) {
     details = 
@@ -18,13 +18,17 @@ export const ExecutorPane = ({person, type}) => {
       </section>  
   }
 
+  const handleClick = () => {
+    handleDeleteRecipient(id)
+  }
+
   return (
     <section className="exec-pane">
       <section className="exec-border">
         <div className="recipient-title-container">
           <div></div>
           <h2 className="exec-title">{type ? 'Recipient' : 'Executor'}</h2>
-          {!!type && <button className="delete-recipient">Delete</button>}
+          {!!type && <button className="delete-recipient" onClick={() => handleClick()}>Delete</button>}
         </div>
         <section className="exec-window">
           <div className="top">
