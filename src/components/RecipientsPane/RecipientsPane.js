@@ -1,8 +1,8 @@
 import React from 'react';
 import { ExecutorPane } from '../ExecutorPane/ExecutorPane';
 
-const RecipientsPane = ({recipients}) => {
-    const allRecipients = recipients.map(recipient => <ExecutorPane person={recipient.attributes} type='recipient'/>)
+const RecipientsPane = ({recipients, handleDeleteRecipient}) => {
+    const allRecipients = recipients.map(recipient => <ExecutorPane person={recipient.attributes} id={recipient.id} type='recipient' handleDeleteRecipient={handleDeleteRecipient}/>)
 
     return (
         <section className='recipients-pane'>
