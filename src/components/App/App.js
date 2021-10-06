@@ -116,6 +116,18 @@ const App = () => {
     }
   }
 
+  const updateETD = async (newDate) => {
+    try {
+      const updatedUser = {...user}
+      updatedUser.attributes.user_etd = newDate
+      setUser(updatedUser)
+      const message = await updateUser({data: newDate, type: "user_etd", id: user.id})
+      return message;
+    } catch(err) {
+      setError(err.message)
+    }
+  }
+
   useEffect(() => {
     if (window.sessionStorage.getItem("isLoggedIn")) {
       setIsLoggedIn(true)
