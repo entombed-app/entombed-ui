@@ -16,7 +16,7 @@ import PhotoAdd from "../PhotoAdd/PhotoAdd";
 import { GalleryPane } from "../GalleryPane/GalleryPane";
 import ObitPane from "../ObitPane/ObitPane";
 import Message from "../Messsage/Message";
-import { fetchUser, updateUser, postCredentials, sendFinalEmail, deleteRecipient } from "../../utilities/apiCalls"
+import { fetchUser, updateUser, postCredentials, sendFinalEmail, deleteRecipient, createRecipient } from "../../utilities/apiCalls"
 import { Switch, Link, Route, Redirect } from 'react-router-dom';
 import RecipientsPane from "../RecipientsPane/RecipientsPane";
 
@@ -98,6 +98,7 @@ const App = () => {
   const handleCreateRecipient = async (recipientInfo) => {
     try {
       const response = await createRecipient(user.id, recipientInfo)
+      console.log(response)
       const updatedRecipients = [...recipients, response.data]
       setRecipients(updatedRecipients)
     } catch(err) {
