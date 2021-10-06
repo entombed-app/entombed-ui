@@ -95,13 +95,23 @@ const App = () => {
     }
   }
 
+  const handleCreateRecipient = async (recipientInfo) => {
+    try {
+      const response = await createRecipient(user.id, recipientInfo)
+      const updatedRecipients = [...recipients, response.data]
+      setRecipients(updatedRecipients)
+    } catch(err) {
+      setError(err.message)
+    }
+  }
+
   const handleDeleteRecipient = async (recipientid) => {
     try {
       const response = await deleteRecipient(user.id, recipientid)
       const filtered = recipients.filter(recipient => recipient.id !== recipientid)
       setRecipients(filtered)
     } catch(err) {
-      throw Error(err.message)
+      setError(err.message)
     }
   }
 
@@ -191,7 +201,7 @@ const App = () => {
                 <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id}/>}/>
                 <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
                 <Route exact path="/executors" render={() => <ExecutorPane person={execs}/>}/>
-                <Route exact path="/recipients" render={() => <RecipientsPane recipients={recipients} handleDeleteRecipient={handleDeleteRecipient}/>}/>
+                <Route exact path="/recipients" render={() => <RecipientsPane recipients={recipients} handleDeleteRecipient={handleDeleteRecipient} handleCreateRecipient={handleCreateRecipient}/>}/>
                 <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
                 <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
                 <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
