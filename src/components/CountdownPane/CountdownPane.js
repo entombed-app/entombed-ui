@@ -12,6 +12,7 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   const [error, setError] = useState(err)
   const [message, setMessage] = useState("")
   const [timer, setTimer] = useState("");
+  const [showDate, setShowDate] = useState(false)
 
   useEffect(() => {
     calculateTimeLeft()
