@@ -182,13 +182,20 @@
   border-radius: 1vh;
   color: white;
   padding: .4rem;
-  /* margin-bottom: .83em; */
   width: 40%;
 }
 
 .edit-date-button:hover {
   background-color: rgba(114, 125, 126, 0.3);
   cursor: pointer;
+}
+
+.date-picker-show {
+  z-index: 1;
+}
+
+.date-picker-hidden {
+  display: none;
 }
 
 .progress-outer {
