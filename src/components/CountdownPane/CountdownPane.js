@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { sendFinalEmail } from "../../utilities/apiCalls";
+import { restructureDate } from "../../utilities/utils";
 
 export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   const [timeLeft, setTimeLeft] = useState(0)
@@ -65,11 +66,17 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   return (
     <section className="sundial-display">
       <section className="release-days">
-          {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
+          {error.length ? <h2>{error}</h2> : 
+            <>
+              <h2>Days until release:</h2>
+              <h3 className="countdown-num">{timeLeft.days}</h3>
+            </>
+          }
           {!!message && <div className="email-sent">{message}</div>}
       </section>
       <section className="date-of-release">
-        <h2></h2>
+        <h2>Date of release:</h2>
+        <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
       </section>
       <section className="sundial">
           <CircularProgressbar 

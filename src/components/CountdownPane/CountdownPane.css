@@ -138,6 +138,7 @@
 .release-days {
   color: #ad9976;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 5vh;
   border-radius: 1vh;
@@ -145,6 +146,25 @@
   border: 1px solid #ad9976;
   width: 35vh;
   text-align: center;
+}
+
+.date-of-release {
+  color: #ad9976;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vh;
+  border-radius: 1vh;
+  background-color: hsla(183, 9%, 32%, 0.3);
+  border: 1px solid #ad9976;
+  width: 35vh;
+  text-align: center;
+}
+
+.countdown-num {
+  color: hsla(174, 86%, 57%, 0.3);
+  font-size: 1.4rem;
+  margin-top: 0;
 }
 
 .progress-outer {
