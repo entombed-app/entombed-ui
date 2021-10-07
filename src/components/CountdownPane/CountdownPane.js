@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { sendFinalEmail } from "../../utilities/apiCalls";
-import { restructureDate } from "../../utilities/utils";
+import { restructureDate, reverseDate } from "../../utilities/utils";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
