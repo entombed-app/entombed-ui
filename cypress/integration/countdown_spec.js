@@ -38,8 +38,10 @@ describe('Countdown', () => {
   it("Should display the number of days until app release", () => {
     cy.get(".countdown-pane")
       .click()
-    cy.get("h2")
-      .contains("Days until release: ")
+    cy.get(".release-days")
+      .contains("Days until release:")
+      .get(".release-days")
+      .contains("35685")
   })
 
   it("Should display the a sundial graphic with roman numerals", () => {
