@@ -78,6 +78,7 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
         <section className="date-of-release">
           <h2>Date of release:</h2>
           <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
+          <button className="edit-date-button">Edit Date</button>
         </section>
       </div>
       <section className="sundial">
