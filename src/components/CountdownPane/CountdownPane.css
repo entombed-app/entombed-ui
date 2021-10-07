@@ -135,12 +135,17 @@
   transform: translateX(-2vh) rotate(360deg);
 }
 
+.date-container {
+  display: flex;
+}
+
 .release-days {
   color: #ad9976;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 5vh;
+  margin-right: 3%;
   border-radius: 1vh;
   background-color: hsla(183, 9%, 32%, 0.3);
   border: 1px solid #ad9976;

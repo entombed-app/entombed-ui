@@ -65,19 +65,21 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
 
   return (
     <section className="sundial-display">
-      <section className="release-days">
-          {error.length ? <h2>{error}</h2> : 
-            <>
-              <h2>Days until release:</h2>
-              <h3 className="countdown-num">{timeLeft.days}</h3>
-            </>
-          }
-          {!!message && <div className="email-sent">{message}</div>}
-      </section>
-      <section className="date-of-release">
-        <h2>Date of release:</h2>
-        <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
-      </section>
+      <div className="date-container">
+        <section className="release-days">
+            {error.length ? <h2>{error}</h2> : 
+              <>
+                <h2>Days until release:</h2>
+                <h3 className="countdown-num">{timeLeft.days}</h3>
+              </>
+            }
+            {!!message && <div className="email-sent">{message}</div>}
+        </section>
+        <section className="date-of-release">
+          <h2>Date of release:</h2>
+          <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
+        </section>
+      </div>
       <section className="sundial">
           <CircularProgressbar 
             value={percentage} 
