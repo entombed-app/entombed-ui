@@ -117,6 +117,7 @@ const App = () => {
   }
 
   const updateETD = async (newDate) => {
+    console.log(newDate)
     try {
       const updatedUser = {...user}
       updatedUser.attributes.user_etd = newDate
