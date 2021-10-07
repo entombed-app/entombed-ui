@@ -16,15 +16,16 @@ export const CountdownPane = ({etd, err, dob, id, user_etd, updateETD}) => {
   const [timer, setTimer] = useState("");
   const [showDate, setShowDate] = useState(false)
   const [newDate, setNewDate] = useState(new Date())
+  const [releaseDate, setReleaseDate] = useState(user_etd || etd)
 
   useEffect(() => {
     calculateTimeLeft()
-  }, [])
+  }, [releaseDate])
 
   const calculateTimeLeft = async() => {
     let newEtd;
     setError("")
-    const splitEtd = etd.split("-")
+    const splitEtd = releaseDate.split("-")
     newEtd = `${splitEtd[1]}/${splitEtd[2]}/${splitEtd[0]}`
     calculateProgress()
 
@@ -57,7 +58,7 @@ export const CountdownPane = ({etd, err, dob, id, user_etd, updateETD}) => {
   }
 
   const calculateProgress = () => {
-    const deathDay = +new Date(`${etd}`)
+    const deathDay = +new Date(`${releaseDate}`)
     const birthDay = +new Date(`${dob}`)
     const totalLife = deathDay - birthDay
     const today =  +new Date()
@@ -76,7 +77,9 @@ export const CountdownPane = ({etd, err, dob, id, user_etd, updateETD}) => {
   }
 
   const handleSubmitDate = () => {
-    updateETD(newDate.toISOString().slice(0, 10))
+    let dateToSubmit = newDate.toISOString().slice(0, 10)
+    setReleaseDate(dateToSubmit)
+    updateETD(dateToSubmit)
   }
 
   return (
