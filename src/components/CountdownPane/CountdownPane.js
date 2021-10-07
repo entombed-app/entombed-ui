@@ -15,6 +15,7 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   const [message, setMessage] = useState("")
   const [timer, setTimer] = useState("");
   const [showDate, setShowDate] = useState(false)
+  const [newDate, setNewDate] = useState(new Date())
 
   useEffect(() => {
     calculateTimeLeft()
@@ -70,6 +71,10 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
     showDate ? setShowDate(false) : setShowDate(true)
   }
 
+  const handleDateChange = (date) => {
+    setNewDate(date)
+  }
+
   return (
     <section className="sundial-display">
       <div className="date-container">
@@ -85,13 +90,18 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
         <section className="date-of-release">
           <h2>Date of release:</h2>
           <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
-          <button className="edit-date-button" onClick={() => handleShowDate()}>Edit Date</button>
-          <DatePicker
-            className={showDate ? "date-picker-show" : "date-picker-hidden"}
-            selected={new Date()}
-            // onSelect={handleDateSelect}
-            // onChange={handleDateChange} 
-          />
+          {showDate 
+          ? <div className="date-picker-container">
+              <DatePicker
+              className="date-picker"
+              selected={newDate}
+              // onSelect={handleDateSelect}
+              onChange={(date) => handleDateChange(date)} 
+              />
+              <button className="edit-date-button" onClick={() => handleShowDate()}>Submit</button>
+            </div>
+          : <button className="edit-date-button" onClick={() => handleShowDate()}>Edit Date</button>
+          }
         </section>
       </div>
       <section className="sundial">
