@@ -97,10 +97,11 @@ export const CountdownPane = ({etd, err, dob, id, user_etd, updateETD}) => {
           {showDate 
           ? <div className="date-picker-container">
               <DatePicker
-              className="date-picker"
-              selected={newDate}
-              onClickOutside={() => handleShowDate()}
-              onChange={(date) => handleDateChange(date)} 
+                className="date-picker"
+                selected={newDate}
+                minDate={new Date()}
+                onClickOutside={() => handleShowDate()}
+                onChange={(date) => handleDateChange(date)} 
               />
               <button className="edit-date-button" onClick={() => handleSubmitDate()}>Submit</button>
             </div>
