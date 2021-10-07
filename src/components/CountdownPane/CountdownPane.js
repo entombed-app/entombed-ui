@@ -5,7 +5,7 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { sendFinalEmail } from "../../utilities/apiCalls";
 
-export const CountdownPane = ({etd, err, dob, id}) => {
+export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   const [timeLeft, setTimeLeft] = useState(0)
   const [percentage, setPercentage] = useState(0)
   const [error, setError] = useState(err)
@@ -67,6 +67,9 @@ export const CountdownPane = ({etd, err, dob, id}) => {
       <section className="release-days">
           {error.length ? <h2>{error}</h2> : <h2> Days until release: {timeLeft.days}</h2>}
           {!!message && <div className="email-sent">{message}</div>}
+      </section>
+      <section className="date-of-release">
+        <h2></h2>
       </section>
       <section className="sundial">
           <CircularProgressbar 

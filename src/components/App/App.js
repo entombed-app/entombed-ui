@@ -211,7 +211,7 @@ const App = () => {
                     <div className='window-pane corner'></div>
                   </section>
                 </Route>
-                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id}/>}/>
+                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id} user_etd={user.attributes.user_etd}/>}/>
                 <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
                 <Route exact path="/executors" render={() => <ExecutorPane person={execs}/>}/>
                 <Route exact path="/recipients" render={() => <RecipientsPane recipients={recipients} handleDeleteRecipient={handleDeleteRecipient} handleCreateRecipient={handleCreateRecipient}/>}/>
