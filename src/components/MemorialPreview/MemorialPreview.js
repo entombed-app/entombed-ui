@@ -1,4 +1,5 @@
 import './MemorialPreview.css';
+import { restructureDate } from '../../utilities/utils';
 
 
 export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executors, obit, profPhoto, galPhotos }) => {
@@ -10,12 +11,6 @@ export const MemorialPreview = ({name, isLoggedIn, isVisitor, dob, etd, executor
       </div>
     )
   })
-
-  const restructureDate = (originalDate) => {
-    let separateDates = originalDate.split('-');
-    let [year, month, day] = separateDates;
-    return `${month}-${day}-${year}`;
-  }
   
   return (
     <>
