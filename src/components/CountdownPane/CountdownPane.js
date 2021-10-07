@@ -8,7 +8,7 @@ import { restructureDate } from "../../utilities/utils";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
+export const CountdownPane = ({etd, err, dob, id, user_etd, updateETD}) => {
   const [timeLeft, setTimeLeft] = useState(0)
   const [percentage, setPercentage] = useState(0)
   const [error, setError] = useState(err)
@@ -76,7 +76,7 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   }
 
   const handleSubmitDate = () => {
-
+    updateETD()
   }
 
   return (
