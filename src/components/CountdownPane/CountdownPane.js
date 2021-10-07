@@ -5,6 +5,8 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { sendFinalEmail } from "../../utilities/apiCalls";
 import { restructureDate } from "../../utilities/utils";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
   const [timeLeft, setTimeLeft] = useState(0)
@@ -80,6 +82,12 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
           <h2>Date of release:</h2>
           <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
           <button className="edit-date-button">Edit Date</button>
+          <DatePicker
+            className={showDate ? "date-picker-show" : "date-picker-hidden"}
+            selected={new Date()}
+            // onSelect={handleDateSelect}
+            // onChange={handleDateChange} 
+          />
         </section>
       </div>
       <section className="sundial">
