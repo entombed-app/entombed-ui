@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 3vh;
+  z-index: 0;
 }
 
 .circle {
@@ -139,6 +140,11 @@
   display: flex;
 }
 
+.date-picker-container {
+  display: flex;
+  width: 80%;
+}
+
 .release-days {
   background-color: hsla(183, 9%, 32%, 0.3);
   border-radius: 1vh;
@@ -162,7 +168,7 @@
   border-radius: 1vh;
   background-color: hsla(183, 9%, 32%, 0.3);
   border: 1px solid #ad9976;
-  width: 35vh;
+  width: 44vh;
   text-align: center;
 }
 
@@ -182,6 +188,7 @@
   border-radius: 1vh;
   color: white;
   padding: .4rem;
+  margin-left: 2%;
   width: 40%;
 }
 
@@ -190,12 +197,8 @@
   cursor: pointer;
 }
 
-.date-picker-show {
+.date-picker {
   z-index: 1;
-}
-
-.date-picker-hidden {
-  display: none;
 }
 
 .progress-outer {
