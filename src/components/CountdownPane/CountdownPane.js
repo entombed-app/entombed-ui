@@ -66,6 +66,10 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
     setPercentage((1 - perc) * 100)
   }
 
+  const handleShowDate = () => {
+    showDate ? setShowDate(false) : setShowDate(true)
+  }
+
   return (
     <section className="sundial-display">
       <div className="date-container">
@@ -81,7 +85,7 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
         <section className="date-of-release">
           <h2>Date of release:</h2>
           <h3 className="countdown-num">{user_etd ? restructureDate(user_etd) : restructureDate(etd)}</h3>
-          <button className="edit-date-button">Edit Date</button>
+          <button className="edit-date-button" onClick={() => handleShowDate()}>Edit Date</button>
           <DatePicker
             className={showDate ? "date-picker-show" : "date-picker-hidden"}
             selected={new Date()}
