@@ -239,21 +239,21 @@
 
 @keyframes slide2 {
   from {
-      transform: scale(0.1) translatex(-10px);
+      transform: scale(0.1) translatey(-10px);
       opacity: 0;
     }
 
     30% {
-      transform: scale(0.8) translatex(-100px);
+      transform: scale(1) translatey(-100px);
       opacity: 1;
     }
 
     70% {
-      transform: scale(0.8) translatex(-100px);
+      transform: scale(1) translatey(-100px);
       opacity: 1;
     }
     to {
-      transform: scale(0.8) translatex(-10px);
+      transform: scale(0.8) translatey(-10px);
       opacity: 0;
     }
 }
