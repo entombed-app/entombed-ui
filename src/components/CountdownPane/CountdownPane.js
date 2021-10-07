@@ -75,6 +75,10 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
     setNewDate(date)
   }
 
+  const handleSubmitDate = () => {
+
+  }
+
   return (
     <section className="sundial-display">
       <div className="date-container">
@@ -95,10 +99,10 @@ export const CountdownPane = ({etd, err, dob, id, user_etd}) => {
               <DatePicker
               className="date-picker"
               selected={newDate}
-              // onSelect={handleDateSelect}
+              onClickOutside={() => handleShowDate()}
               onChange={(date) => handleDateChange(date)} 
               />
-              <button className="edit-date-button" onClick={() => handleShowDate()}>Submit</button>
+              <button className="edit-date-button" onClick={() => handleSubmitDate()}>Submit</button>
             </div>
           : <button className="edit-date-button" onClick={() => handleShowDate()}>Edit Date</button>
           }
