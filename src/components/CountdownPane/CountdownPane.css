@@ -140,12 +140,25 @@
 }
 
 .release-days {
+  background-color: hsla(183, 9%, 32%, 0.3);
+  border-radius: 1vh;
+  border: 1px solid #ad9976;
   color: #ad9976;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 5vh;
+  height: 20vh;
+  justify-content: space-evenly;
   margin-right: 3%;
+  width: 35vh;
+  text-align: center;
+}
+
+.date-of-release {
+  align-items: center;
+  color: #ad9976;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   border-radius: 1vh;
   background-color: hsla(183, 9%, 32%, 0.3);
   border: 1px solid #ad9976;
@@ -153,23 +166,29 @@
   text-align: center;
 }
 
-.date-of-release {
-  color: #ad9976;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 5vh;
-  border-radius: 1vh;
-  background-color: hsla(183, 9%, 32%, 0.3);
-  border: 1px solid #ad9976;
-  width: 35vh;
-  text-align: center;
+.release-days > *, .date-of-release > * {
+  margin: 0;
 }
 
 .countdown-num {
   color: hsla(174, 86%, 57%, 0.3);
   font-size: 1.4rem;
   margin-top: 0;
+}
+
+.edit-date-button {
+  background-color: rgba(74,88,89,.3);
+  border: 1px solid #ad9976;
+  border-radius: 1vh;
+  color: white;
+  padding: .4rem;
+  /* margin-bottom: .83em; */
+  width: 40%;
+}
+
+.edit-date-button:hover {
+  background-color: rgba(114, 125, 126, 0.3);
+  cursor: pointer;
 }
 
 .progress-outer {
