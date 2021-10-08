@@ -41,7 +41,7 @@ describe('Countdown', () => {
     cy.get(".release-days")
       .contains("Days until release:")
       .get(".release-days")
-      .contains("35685")
+      .contains("35684")
   })
 
   it("Should display the a sundial graphic with roman numerals", () => {
