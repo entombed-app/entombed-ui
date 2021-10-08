@@ -103,11 +103,22 @@
 }
 
 .obit-head {
-    color: #AD9976;
-    font-size: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: hsla(183, 9%, 32%, 0.3);
+    border-radius: 1vh;
+    border: 1px solid #ad9976;
+    color: #ad9976;
+    margin-top: 5.9vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    width: 18vh;
+}
+
+.obit-title {
+    color: #AD9976;
+    font-size: 3vh;
 }
 
 @keyframes slide {
