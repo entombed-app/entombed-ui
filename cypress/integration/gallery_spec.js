@@ -1,4 +1,4 @@
-describe.only('Gallery', () => {
+describe('Gallery', () => {
   beforeEach(() => {
     cy.interceptGets()
     cy.visit("http://localhost:3000/gallery")
@@ -43,20 +43,20 @@ describe.only('Gallery', () => {
           })
           .get(".photo-edit-button")
           .click()
-          .wait("@updateProfPic")
-          .get(".sun > img")
-          .should("have.attr", "src").should("include", "blob:http://localhost:3000")
-          .get(".sun > img")
-          .click()
+          // .wait("@updateProfPic")
+          // .get(".sun > img")
+          // .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+          // .get(".sun > img")
+          // .click()
           // .get(".user-image")
           // .should("have.attr", "src").should("include", "blob:http://localhost:3000")
       })
-    cy.get("h1")  
-      .click()
-    cy.get(".gallery-pane")
-      .click()
-    cy.get(".gal-prof")
-      .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+    // cy.get("h1")  
+    //   .click()
+    // cy.get(".gallery-pane")
+    //   .click()
+    // cy.get(".gal-prof")
+    //   .should("have.attr", "src").should("include", "blob:http://localhost:3000")
   })
 
   it('Should have a button for the user to add a photo', () => {
