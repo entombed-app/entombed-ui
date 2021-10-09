@@ -57,7 +57,7 @@ const ObitPane = ({obit, updateObituary}) => {
                 }
                 <div className='small-square middle4'>{!!message && <div className="obit-message-container">{message}</div>}</div>
                 {editMode
-                    ? <div className='rectangle'><p className='remaining'>Limit: {usedChars}/500</p></div> 
+                    ? <div className='rectangle'><p className='remaining'>Limit: {usedChars}/3200</p></div> 
                     : <div className='rectangle'></div>
                 }
                 <div className='small-square corner4'></div>
