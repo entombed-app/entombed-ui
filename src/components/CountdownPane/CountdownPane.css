@@ -237,6 +237,24 @@
   background: #900c3f;
 }
 
+@media screen and (max-width: 550px) {
+  .date-container {
+    align-items: center;
+    flex-direction: column;
+    height: 35vh;
+    justify-content: space-between;
+  }
+
+  .date-of-release {
+    height: 25vh;
+    margin-top: 6%;
+  }
+
+  .sundial-display {
+    margin-top: 12%;
+  }
+}
+
 @keyframes slide2 {
   from {
       transform: scale(0.1) translatey(-10px);
