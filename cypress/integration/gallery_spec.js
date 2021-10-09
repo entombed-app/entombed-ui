@@ -50,7 +50,7 @@ describe('Gallery', () => {
           // .click()
           // .get(".user-image")
           // .should("have.attr", "src").should("include", "blob:http://localhost:3000")
-      })
+      // })
     // cy.get("h1")  
     //   .click()
     // cy.get(".gallery-pane")
