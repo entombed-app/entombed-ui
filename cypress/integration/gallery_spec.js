@@ -30,19 +30,19 @@ describe('Gallery', () => {
     cy.get("h1")  
       .click()
       .wait("@getRecipients")
-    cy.fixture("william.png")
-      .then(file => Cypress.Blob.base64StringToBlob(file))
-      .then((fileContent) => {
-          cy.get(".sun > img")
-          .click()
-          .get(".photo-upload")
-          .attachFile({
-              fileContent: fileContent,
-              fileName: "william.png",
-              mimeType: "image/png"
-          })
-          .get(".photo-edit-button")
-          .click()
+    // cy.fixture("william.png")
+    //   .then(file => Cypress.Blob.base64StringToBlob(file))
+    //   .then((fileContent) => {
+    //       cy.get(".sun > img")
+    //       .click()
+    //       .get(".photo-upload")
+    //       .attachFile({
+    //           fileContent: fileContent,
+    //           fileName: "william.png",
+    //           mimeType: "image/png"
+    //       })
+    //       .get(".photo-edit-button")
+    //       .click()
           // .wait("@updateProfPic")
           // .get(".sun > img")
           // .should("have.attr", "src").should("include", "blob:http://localhost:3000")
