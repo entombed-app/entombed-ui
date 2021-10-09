@@ -67,6 +67,7 @@
     grid-column: 2 / span 3;
     word-wrap: break-word;
     padding: 2vh;
+    overflow: scroll;
 }
 
 .obit-message-container {
