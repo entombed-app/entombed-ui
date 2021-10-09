@@ -26,7 +26,8 @@ describe('Gallery', () => {
       status: 200,
       body: {}
     }).as("updateProfPic")
-    cy.get("h1")  
+    cy.wait("@updateProfPic")
+      .get("h1")  
       .click()
     cy.fixture("william.png")
       .then(file => Cypress.Blob.base64StringToBlob(file))
