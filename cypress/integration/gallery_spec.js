@@ -1,4 +1,4 @@
-describe('Gallery', () => {
+describe.only('Gallery', () => {
   beforeEach(() => {
     cy.interceptGets()
     cy.visit("http://localhost:3000/gallery")
