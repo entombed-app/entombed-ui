@@ -1,4 +1,4 @@
-describe('Gallery', () => {
+describe.only('Gallery', () => {
   beforeEach(() => {
     cy.interceptGets()
     cy.visit("http://localhost:3000/gallery")
@@ -26,8 +26,7 @@ describe('Gallery', () => {
       status: 200,
       body: {}
     }).as("updateProfPic")
-    cy.wait("@updateProfPic")
-      .get("h1")  
+    cy.get("h1")  
       .click()
     cy.fixture("william.png")
       .then(file => Cypress.Blob.base64StringToBlob(file))
@@ -42,9 +41,10 @@ describe('Gallery', () => {
           })
           .get(".photo-edit-button")
           .click()
-          cy.get(".sun > img")
+          .wait("@updateProfPic")
+          .get(".sun > img")
           .should("have.attr", "src").should("include", "blob:http://localhost:3000")
-        cy.get(".sun > img")
+          .get(".sun > img")
           .click()
           .get(".user-image")
           .should("have.attr", "src").should("include", "blob:http://localhost:3000")
