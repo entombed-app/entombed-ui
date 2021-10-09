@@ -10,7 +10,8 @@ describe('Gallery', () => {
   })
 
   it('Should tell user which page they are visiting currently', () => {
-    cy.get(".gal-head")
+    cy.wait("@getRecipients")
+      .get(".gal-head")
       .contains("Gallery")
   })
 
