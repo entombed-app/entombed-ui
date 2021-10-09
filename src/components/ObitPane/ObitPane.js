@@ -68,7 +68,7 @@ const ObitPane = ({obit, updateObituary}) => {
                             placeholder='How do you want to be remembered?'
                             value={obituary}
                             onChange={(e) => {handleChange(e)}}
-                            maxLength='500'
+                            maxLength='3200'
                         >
                         </textarea>   
                         
