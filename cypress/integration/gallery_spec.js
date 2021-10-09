@@ -29,6 +29,7 @@ describe('Gallery', () => {
     }).as("updateProfPic")
     cy.get("h1")  
       .click()
+      .wait("@getRecipients")
     cy.fixture("william.png")
       .then(file => Cypress.Blob.base64StringToBlob(file))
       .then((fileContent) => {
