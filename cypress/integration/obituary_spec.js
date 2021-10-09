@@ -24,7 +24,7 @@ describe('Obituary', () => {
         .get(".obit-text")
         .type(" I was always good but I could have been better.")
         .get(".remaining")
-        .contains("Limit: 82/500")
+        .contains("Limit: 82/3200")
     })
 
     it("Should show the newly typed obituary after clicking submit", () => {
