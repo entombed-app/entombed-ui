@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 
 export const Login = ({logIn, isLoggedIn}) => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("ex@ample.com")
+  const [password, setPassword] = useState("password")
   const [error, setError] = useState("")
   const [disabled, setDisabled] = useState(true)
 
@@ -27,7 +27,7 @@ export const Login = ({logIn, isLoggedIn}) => {
   }
 
   const submitCredentials = async e => {
-    e.preventDefault()
+    if (e) e.preventDefault()
     const creds =   { 
       email: email.trim(),
       password: password.trim()
@@ -41,6 +41,13 @@ export const Login = ({logIn, isLoggedIn}) => {
       setError("Mismatch")
     }
   }
+
+  useEffect(() => {
+    //for demo purposes only
+    if (!isLoggedIn) {
+      submitCredentials()
+    } 
+  }, [])
 
   return (
     <>
@@ -66,7 +73,7 @@ export const Login = ({logIn, isLoggedIn}) => {
                 required
                 className="login-input"
                 data-cy="password"
-                type="text" 
+                type="password" 
                 name="password" 
                 placeholder="password"
                 value={password}
