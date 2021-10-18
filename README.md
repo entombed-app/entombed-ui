@@ -1,7 +1,7 @@
 # Elegy
-### Deployed Link: [https://elegy-app.herokuapp.com/](https://elegy-app.herokuapp.com/)
 ### Deployment Status: [![CircleCI](https://circleci.com/gh/entombed-app/entombed-ui/tree/main.svg?style=svg)](https://circleci.com/gh/entombed-app/entombed-ui/tree/main)
-### Link to Back-End Repo: [https://github.com/entombed-app/entombed_api](https://github.com/entombed-app/entombed_api)
+#### View App: [https://elegy-app.herokuapp.com/](https://elegy-app.herokuapp.com/)
+#### Back-End Repo: [https://github.com/entombed-app/entombed_api](https://github.com/entombed-app/entombed_api)
 
 ### Table of Contents
 - [Overview](#overview)
