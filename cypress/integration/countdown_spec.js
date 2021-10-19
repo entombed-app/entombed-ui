@@ -43,7 +43,7 @@ describe('Countdown', () => {
       .get(".release-days")
       .contains("Days until release:")
       .get(".release-days")
-      .contains("35649")
+      .contains("356")
   })
 
   it("Should display the a sundial graphic with roman numerals", () => {
