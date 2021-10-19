@@ -36,14 +36,14 @@ describe('Countdown', () => {
   })
 
   it("Should display the number of days until app release", () => {
-    const now = new Date(2021, 10, 11)
+    const now = new Date(2021, 10, 12)
     cy.clock(now)
       .get(".countdown-pane")
       .click()
       .get(".release-days")
       .contains("Days until release:")
       .get(".release-days")
-      .contains("35650")
+      .contains("35649")
   })
 
   it("Should display the a sundial graphic with roman numerals", () => {
