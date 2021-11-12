@@ -51,6 +51,9 @@ export const Login = ({logIn, isLoggedIn}) => {
               {!!error ? <h2 className="login-message error">Email and password do not match. Please try again!</h2>
                     : <h2 className="login-message">Welcome! Please sign in.</h2>}
             </div>
+            <p>To view a demo profile, use the following credentials:</p>
+            <p>Email: ex@ample.com</p>
+            <p>Password: password</p>
             <div className="modal-body">
               <input 
                 required
