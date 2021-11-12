@@ -1,3 +1,5 @@
+import { secureImages } from "./utils"
+
 const baseURL = "https://elegy-backend.herokuapp.com/api/v1/"
 
 export const updateUser = async ({data, type, id}) => {
@@ -44,6 +46,7 @@ export const fetchUser = async (userID) => {
     try {
       const response = await fetch(url)
       const userData = await response.json()
+      const updatedUserData = secureImages(userData)
 
       const execsRes = await fetch(`${url}/executors`)
       const execData = await execsRes.json()
@@ -51,7 +54,7 @@ export const fetchUser = async (userID) => {
       const recipsRes = await fetch(`${url}/recipients`)
       const recipsData = await recipsRes.json()
       
-      const allUserData = await Promise.all([userData, execData, recipsData])
+      const allUserData = await Promise.all([updatedUserData, execData, recipsData])
       return allUserData
     } catch (err) {
         throw Error("Apologies for the error. Please try refreshing the page.")
