@@ -1,5 +1,3 @@
-//Cypress.config()
-
 describe('Login', () => {
   beforeEach(() => {
     cy.interceptGets()
@@ -20,8 +18,6 @@ describe('Login', () => {
       .should("have.value", "")
       .get("[data-cy=password]")
       .should("have.value", "")
-      .get(".submit-login")
-      .should("be.disabled")
   })
 
   it("Should be able to type in both inputs", () => {
@@ -31,19 +27,6 @@ describe('Login', () => {
     cy.get("[data-cy=password]")
       .type("password")
       .should("have.value", "password")
-  })
-
-  it("Submit button should be disabled if email or password inputs are empty", () => {
-    cy.get("[data-cy=email]")
-      .type("email")
-    cy.get(".submit-login")
-      .should("be.disabled")
-    cy.get("[data-cy=email]")
-      .clear()
-    cy.get("[data-cy=password]")
-      .type("password")
-    cy.get(".submit-login")
-      .should("be.disabled")
   })
 
   it("Should enable submit button if there are characters typed in inputs", () => {
