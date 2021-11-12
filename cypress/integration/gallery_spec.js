@@ -1,4 +1,4 @@
-describe('Gallery', () => {
+describe.only('Gallery', () => {
   beforeEach(() => {
     cy.interceptGets()
     cy.visit("http://localhost:3000/gallery")
@@ -33,6 +33,7 @@ describe('Gallery', () => {
     cy.fixture("william.png")
       .then(file => Cypress.Blob.base64StringToBlob(file))
       .then((fileContent) => {
+          cy.wait(3000)
           cy.get(".sun > img")
           .click()
           .get(".photo-upload")
