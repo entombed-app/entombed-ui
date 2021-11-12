@@ -277,3 +277,14 @@ main, html {
   }
 
 }
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    .left { 
+        margin-left: 9vh;
+    }
+
+    .title-diamond > .right {
+        margin-left: -9vh;
+    }
+}}
