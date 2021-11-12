@@ -12,7 +12,9 @@ export const secureImages = (userData) => {
     return url
   })
   const profile_url = userData.data.attributes.profile_picture_url
-  userData.data.attributes.profile_picture_url = `https${profile_url.slice(4, profile_url.length)}`
-  userData.data.attributes.images_urls = urls
+  if (profile_url.slice(0, 5) === 'http:') {
+    userData.data.attributes.profile_picture_url = `https${profile_url.slice(4, profile_url.length)}`
+    userData.data.attributes.images_urls = urls
+  }
   return userData
 }  
