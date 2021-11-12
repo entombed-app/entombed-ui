@@ -16,7 +16,7 @@ describe('Gallery', () => {
   })
 
   it('Should direct the user to add a profile photo if there is none', () => {
-    cy.wait(3000)
+    cy.wait("@getRecipients")
     cy.get(".gal-rule")
     .should("contain", "Please add a Profile Photo")
   })
@@ -30,33 +30,33 @@ describe('Gallery', () => {
     cy.get("h1")  
       .click()
       .wait("@getRecipients")
-    // cy.fixture("william.png")
-    //   .then(file => Cypress.Blob.base64StringToBlob(file))
-    //   .then((fileContent) => {
-    //       cy.get(".sun > img")
-    //       .click()
-    //       .get(".photo-upload")
-    //       .attachFile({
-    //           fileContent: fileContent,
-    //           fileName: "william.png",
-    //           mimeType: "image/png"
-    //       })
-    //       .get(".photo-edit-button")
-    //       .click()
-          // .wait("@updateProfPic")
-          // .get(".sun > img")
-          // .should("have.attr", "src").should("include", "blob:http://localhost:3000")
-          // .get(".sun > img")
-          // .click()
-          // .get(".user-image")
-          // .should("have.attr", "src").should("include", "blob:http://localhost:3000")
-      // })
-    // cy.get("h1")  
-    //   .click()
-    // cy.get(".gallery-pane")
-    //   .click()
-    // cy.get(".gal-prof")
-    //   .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+    cy.fixture("william.png")
+      .then(file => Cypress.Blob.base64StringToBlob(file))
+      .then((fileContent) => {
+          cy.get(".sun > img")
+          .click()
+          .get(".photo-upload")
+          .attachFile({
+              fileContent: fileContent,
+              fileName: "william.png",
+              mimeType: "image/png"
+          })
+          .get(".photo-edit-button")
+          .click()
+          .wait("@updateProfPic")
+          .get(".sun > img")
+          .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+          .get(".sun > img")
+          .click()
+          .get(".user-image")
+          .should("have.attr", "src").should("include", "blob:http://localhost:3000")
+      })
+    cy.get("h1")  
+      .click()
+    cy.get(".gallery-pane")
+      .click()
+    cy.get(".gal-prof")
+      .should("have.attr", "src").should("include", "blob:http://localhost:3000")
   })
 
   it('Should have a button for the user to add a photo', () => {
