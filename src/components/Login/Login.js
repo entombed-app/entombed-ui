@@ -5,7 +5,7 @@ export const Login = ({logIn, isLoggedIn}) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
-  const [disabled, setDisabled] = useState(true)
+  const [disabled, setDisabled] = useState(false)
 
   const handleUserChange = e => {
     setEmail(e.target.value)
