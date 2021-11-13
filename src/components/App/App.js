@@ -160,85 +160,92 @@ const App = () => {
       }
       }/>
       <Route path="/" render={() => 
-        <main>
-          {!isLoggedIn && <Login isLoggedIn={isLoggedIn} logIn={logIn}/>}
-          {!user.attributes || error 
-          ? <Message error={error} profilePic={""} logOut={logOut}/>
-          : <>
-              <Header profilePic={user.attributes.profile_picture_url} logOut={logOut}/>
-              <Switch>
-                <Route exact from='/'>
-                  <section className='window'>
-                    <div className="window-pane corner"></div>
-                    <Link className='preview-pane' to='/preview'><img src={preview}/></Link>
-                    <div className="window-pane center4"></div>
-                    <Link className='executor-pane' to='/executors'><img src={suit}/></Link>
-                    <div className="window-pane corner"></div>
-                    <div className="window-pane border1"></div>
-                    <div className="window-pane center3"></div>
-                    <div className="window-pane center2"></div>
-                    <Link className='countdown-pane' to='/countdown'><img src={sundial}/></Link>
-                    <div className="window-pane center6"></div>
-                    <div className="window-pane center7"></div>
-                    <div className="window-pane lightest"></div>
-                    <div className="window-pane border3"></div>
-                    <div className="window-pane border3"></div>
-                    <div className="window-pane lightest"></div>
-                    <div className="window-pane center6"></div>
-                    <div className="window-pane center1"></div>
-                    <div className="window-pane center2"></div>
-                    <div className="window-pane center3"></div>
-                    <div className="window-pane border2"></div>
-                    <div className="window-pane border1"></div>
-                    <div className="window-pane center7"></div>
-                    <Link className='gallery-pane' to='/gallery'><img src={galleryImg}/></Link>
-                    <div className="window-pane center5"></div>
-                    <div className="window-pane center1"></div>
-                    <Link className="recipient-pane" to='recipients'><img src={familyTree}/></Link>
-                    <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
-                    <div className="window-pane border2"></div>
-                    <div className="window-pane center2"></div>
-                    <div className="window-pane lightest"></div>
-                    <div className="window-pane border1"></div>
-                    <div className="window-pane center1"></div>
-                    <div className="window-pane center5"></div>
-                    <div className="window-pane border3"></div>
-                    <div className="window-pane corner"></div>
-                    <div className="window-pane center1"></div>
-                    <div className='window-pane center4'></div>
-                    <div className='window-pane center5'></div>
-                    <div className='window-pane center3'></div>
-                    <div className='window-pane corner'></div>
-                  </section>
-                </Route>
-                <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id} user_etd={user.attributes.user_etd} updateETD={updateETD}/>}/>
-                <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
-                <Route exact path="/executors" render={() => <ExecutorPane person={execs}/>}/>
-                <Route exact path="/recipients" render={() => <RecipientsPane recipients={recipients} handleDeleteRecipient={handleDeleteRecipient} handleCreateRecipient={handleCreateRecipient}/>}/>
-                <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
-                <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
-                <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
-                <Route exact path="/preview" render={() => <MemorialPreview isLoggedIn={isLoggedIn} executors={execs} obit={user.attributes.obituary} galPhotos={galleryPhotos} profPhoto={user.attributes.profile_picture_url} name={user.attributes.name} dob={user.attributes.date_of_birth} etd={user.attributes.etd}/>}/>
-                <Route exact path="/add-photo/:type" render={({ match }) => 
-                  { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
-                                                                      : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
+          <>
+            {!isLoggedIn 
+              ? <>
+                  <Header logOut={logOut}/>
+                  <Login isLoggedIn={isLoggedIn} logIn={logIn}/>
+                </>
+              : <main>
+                  {!user.attributes || error 
+                  ? <Message error={error} profilePic={""} logOut={logOut}/>
+                  : <>
+                      <Header profilePic={user.attributes.profile_picture_url} logOut={logOut}/>
+                      <Switch>
+                        <Route exact from='/'>
+                          <section className='window'>
+                            <div className="window-pane corner"></div>
+                            <Link className='preview-pane' to='/preview'><img src={preview}/></Link>
+                            <div className="window-pane center4"></div>
+                            <Link className='executor-pane' to='/executors'><img src={suit}/></Link>
+                            <div className="window-pane corner"></div>
+                            <div className="window-pane border1"></div>
+                            <div className="window-pane center3"></div>
+                            <div className="window-pane center2"></div>
+                            <Link className='countdown-pane' to='/countdown'><img src={sundial}/></Link>
+                            <div className="window-pane center6"></div>
+                            <div className="window-pane center7"></div>
+                            <div className="window-pane lightest"></div>
+                            <div className="window-pane border3"></div>
+                            <div className="window-pane border3"></div>
+                            <div className="window-pane lightest"></div>
+                            <div className="window-pane center6"></div>
+                            <div className="window-pane center1"></div>
+                            <div className="window-pane center2"></div>
+                            <div className="window-pane center3"></div>
+                            <div className="window-pane border2"></div>
+                            <div className="window-pane border1"></div>
+                            <div className="window-pane center7"></div>
+                            <Link className='gallery-pane' to='/gallery'><img src={galleryImg}/></Link>
+                            <div className="window-pane center5"></div>
+                            <div className="window-pane center1"></div>
+                            <Link className="recipient-pane" to='recipients'><img src={familyTree}/></Link>
+                            <Link className='obit-pane' to='/obituary'><img src={scrollImg}/></Link>
+                            <div className="window-pane border2"></div>
+                            <div className="window-pane center2"></div>
+                            <div className="window-pane lightest"></div>
+                            <div className="window-pane border1"></div>
+                            <div className="window-pane center1"></div>
+                            <div className="window-pane center5"></div>
+                            <div className="window-pane border3"></div>
+                            <div className="window-pane corner"></div>
+                            <div className="window-pane center1"></div>
+                            <div className='window-pane center4'></div>
+                            <div className='window-pane center5'></div>
+                            <div className='window-pane center3'></div>
+                            <div className='window-pane corner'></div>
+                          </section>
+                        </Route>
+                        <Route exact path="/countdown" render={() => <CountdownPane etd={user.attributes.etd} err={error} dob={user.attributes.date_of_birth} id={user.id} user_etd={user.attributes.user_etd} updateETD={updateETD}/>}/>
+                        <Route exact path="/obituary" render={() => <ObitPane obit={user.attributes.obituary} updateObituary={updateObituary}/>}/>
+                        <Route exact path="/executors" render={() => <ExecutorPane person={execs}/>}/>
+                        <Route exact path="/recipients" render={() => <RecipientsPane recipients={recipients} handleDeleteRecipient={handleDeleteRecipient} handleCreateRecipient={handleCreateRecipient}/>}/>
+                        <Route exact path="/add-photo/profile" render={() => <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>}/>
+                        <Route exact path="/add-photo/gallery" render={() => <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>}/> 
+                        <Route exact path="/gallery" render={() => <GalleryPane profPhoto={user.attributes.profile_picture_url} galPhotos={galleryPhotos}/>}/>
+                        <Route exact path="/preview" render={() => <MemorialPreview isLoggedIn={isLoggedIn} executors={execs} obit={user.attributes.obituary} galPhotos={galleryPhotos} profPhoto={user.attributes.profile_picture_url} name={user.attributes.name} dob={user.attributes.date_of_birth} etd={user.attributes.etd}/>}/>
+                        <Route exact path="/add-photo/:type" render={({ match }) => 
+                          { const whichType = match.params.type === "profile" ? <PhotoAdd updateProfilePicture={updateProfilePicture} currentProfilePic={user.attributes.profile_picture_url} type={"profile"}/>
+                                                                              : <PhotoAdd addGalleryPhoto={addGalleryPhoto} profPhoto={user.attributes.profile_picture_url} type={"gallery"}/>
+                          }
+                        }/>
+                        <Route
+                          exact
+                          path='/page-not-found'
+                          render={() => <Message error={'404 page not found. Click title above.'} />}
+                        />
+                        <Route
+                          exact
+                          path='/*/page-not-found'
+                          render={() => <Message error={'404 page not found. Click title above.'} />}
+                        />
+                        <Redirect to="/page-not-found" />
+                      </Switch>
+                    </>
                   }
-                }/>
-                <Route
-                  exact
-                  path='/page-not-found'
-                  render={() => <Message error={'404 page not found. Click title above.'} />}
-                />
-                <Route
-                  exact
-                  path='/*/page-not-found'
-                  render={() => <Message error={'404 page not found. Click title above.'} />}
-                />
-                <Redirect to="/page-not-found" />
-              </Switch>
-            </>
-          }
-        </main>
+                </main>
+            }
+          </>
       }/>
     </Switch>
   );
