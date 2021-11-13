@@ -64,7 +64,6 @@ const App = () => {
     setError('')
     try {
       const userData = await fetchUser(10)
-      console.log(userData)
       setUser(userData[0].data)
       setExecs(userData[1].data)
       setRecipients(userData[2].data)
