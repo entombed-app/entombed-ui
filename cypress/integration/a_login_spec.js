@@ -77,10 +77,14 @@ describe('Login', () => {
       .should("not.exist")
   })
 
-  it("Should be able to log out once logged in", () => {
+  it("Should be able to log out once logged in and there should not be any visible user info", () => {
     cy.wait(2000)
       .logout()
       .get(".modal")
       .should("be.visible")
+      .get("main")
+      .should("not.exist")
+      .get(".sun > img")
+      .should("have.attr", "src").should("include", "/static/media/user.ff788981.png")
   })
 })
