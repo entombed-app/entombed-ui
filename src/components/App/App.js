@@ -77,13 +77,14 @@ const App = () => {
   const logIn = async credentials => {
     setError("")
     try {
+      setIsLoggedIn(true)
       const response = await postCredentials(credentials)
       if (response.data) {
         await getUser()
-        setIsLoggedIn(true)
         window.sessionStorage.setItem("isLoggedIn", "true")
       } 
     } catch (err) {
+      setIsLoggedIn(false)
       throw Error("Email and password do not match.")
     }
   }
