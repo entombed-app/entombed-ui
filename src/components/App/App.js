@@ -76,8 +76,7 @@ const App = () => {
   const logIn = async credentials => {
     setError("")
     try {
-      const response = await postCredentials(credentials)
-      console.log(response.data)
+      await postCredentials(credentials)
       setIsLoggedIn(true)
       await getUser()
       window.sessionStorage.setItem("isLoggedIn", "true")
