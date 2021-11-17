@@ -73,3 +73,11 @@
 .submit-login:hover {
   background-color: #3891a6
 }
+
+.loading-message{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 50vh;
+}
