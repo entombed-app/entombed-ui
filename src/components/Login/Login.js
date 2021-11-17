@@ -6,6 +6,7 @@ export const Login = ({logIn, isLoggedIn}) => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [disabled, setDisabled] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleUserChange = e => {
     setEmail(e.target.value)
@@ -28,14 +29,15 @@ export const Login = ({logIn, isLoggedIn}) => {
 
   const submitCredentials = async e => {
     e.preventDefault()
-    const creds =   { 
+    setIsLoading(true)
+    const creds = { 
       email: email.trim(),
       password: password.trim()
     }
-
     setError("")
     try {
       await logIn(creds)
+      setIsLoading(false)
       clearInputs()
     } catch {
       setError("Mismatch")
@@ -44,7 +46,7 @@ export const Login = ({logIn, isLoggedIn}) => {
 
   return (
     <>
-      {!isLoggedIn ?
+      {!isLoading || error ?
         <section className="overlay">
           <section className="modal">
             <div className="modal-header">
@@ -86,7 +88,7 @@ export const Login = ({logIn, isLoggedIn}) => {
             </div>
           </section>
         </section>
-      : <> </>}
+      : <p className='loading-message'>Loading...</p>}
     </>
   )
 }
