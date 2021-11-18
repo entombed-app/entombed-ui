@@ -61,6 +61,27 @@ describe('Login', () => {
       .contains("Email and password do not match. Please try again!")
   })
 
+  it("Should show the loading component while waiting for login", () => {
+    let sendResponse;
+    const trigger = new Promise((resolve) => {
+      sendResponse = resolve;
+    });
+    cy.intercept("POST", 'https://elegy-backend.herokuapp.com/api/v1/login',(request) => {
+      return trigger.then(() => {
+        request.reply();
+      });
+    });
+
+    cy.get("[data-cy=email]")
+      .type("ex@ample.com")
+      .get("[data-cy=password]")
+      .type("password")
+      .get(".submit-login")
+      .click()
+
+    cy.get(".loading-message").should('be.visible')
+  })
+
   it("Modal should disappear after a successful login attempt", () => {
     cy.get("[data-cy=email]")
       .type("ex@ample.com")
