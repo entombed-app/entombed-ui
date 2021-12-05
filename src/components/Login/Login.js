@@ -6,7 +6,6 @@ export const Login = ({logIn, isLoggedIn}) => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [disabled, setDisabled] = useState(false)
-  const [sendingCredentials, setSendingCredentials] = useState(false);
 
   const handleUserChange = e => {
     setEmail(e.target.value)
@@ -29,7 +28,6 @@ export const Login = ({logIn, isLoggedIn}) => {
 
   const submitCredentials = async e => {
     e.preventDefault()
-    setSendingCredentials(true);
     const creds =   { 
       email: email.trim(),
       password: password.trim()
@@ -39,10 +37,8 @@ export const Login = ({logIn, isLoggedIn}) => {
     try {
       await logIn(creds)
       clearInputs()
-      setSendingCredentials(false);
     } catch {
       setError("Mismatch")
-      setSendingCredentials(false);
     }
   }
 
@@ -81,14 +77,12 @@ export const Login = ({logIn, isLoggedIn}) => {
               />
             </div>
             <div className="modal-footer">
-              {sendingCredentials ? <div class="loader">Loading...</div>: 
               <button 
                 className="submit-login"
                 disabled={disabled} 
                 onClick={e => submitCredentials(e)}>
                   Login
-                </button>
-              }
+              </button>
             </div>
           </section>
         </section>
